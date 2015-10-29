@@ -15,3 +15,12 @@ m[i,\,w]=\max(m[i-1,\,w],\,m[i-1,w-w_i]+v_i) if w_i \leqslant w.
 The solution can then be found by calculating m[n,W]. To do this efficiently we can use a table to store previous computations.
 
 %=====================================================================%
+One common variant is that each item can be chosen multiple times. The bounded knapsack problem specifies, for each item j, an upper bound uj (which may be a positive integer, or infinity) on the number of times item j can be selected:
+maximize \sum_{j=1}^n p_j x_j	
+subject to	\sum_{j=1}^n w_j x_j \leq W,	
+ u_j \geq x_j \geq 0, x_j integral for all j
+The unbounded knapsack problem (sometimes called the integer knapsack problem) does not put any upper bounds on the number of times an item may be selected:
+maximize \sum_{j=1}^n p_j x_j	
+subject to	\sum_{j=1}^n w_j x_j \leq W,	
+ x_j \geq 0, x_j integral for all j
+The unbounded variant was shown to be NP-complete in 1975 by Lueker.[1] Both the bounded and unbounded variants admit an FPTAS (essentially the same as the one used in the 0-1 knapsack problem).
