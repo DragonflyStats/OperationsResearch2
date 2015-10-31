@@ -1,0 +1,46 @@
+Every linear programming problem, referred to as a primal problem, can be converted into a dual problem, which provides an upper bound to the optimal value of the primal problem. In matrix form, we can express the primal problem as:
+Maximize cTx subject to Ax ≤ b, x ≥ 0;
+with the corresponding symmetric dual problem,
+Minimize bTy subject to ATy ≥ c, y ≥ 0.
+An alternative primal formulation is:
+Maximize cTx subject to Ax ≤ b;
+with the corresponding asymmetric dual problem,
+Minimize bTy subject to ATy = c, y ≥ 0.
+There are two ideas fundamental to duality theory. One is the fact that (for the symmetric dual) the dual of a dual linear program is the original primal linear program. Additionally, every feasible solution for a linear program gives a bound on the optimal value of the objective function of its dual. The weak duality theorem states that the objective function value of the dual at any feasible solution is always greater than or equal to the objective function value of the primal at any feasible solution. The strong duality theorem states that if the primal has an optimal solution, x*, then the dual also has an optimal solution, y*, and cTx*=bTy*.
+A linear program can also be unbounded or infeasible. Duality theory tells us that if the primal is unbounded then the dual is infeasible by the weak duality theorem. Likewise, if the dual is unbounded, then the primal must be infeasible. However, it is possible for both the dual and the primal to be infeasible. As an example, consider the linear program:
+Maximize: 2x_1 -x_2
+Subject to:	x_1 -x_2 \le 1
+-x_1 +x_2 \le -2
+x_1, x_2 \geq 0.
+Example[edit]
+Revisit the above example of the farmer who may grow wheat and barley with the set provision of some L land, F fertilizer and P pesticide. Assume now that y unit prices for each of these means of production (inputs) are set by a planning board. The planning board's job is to minimize the total cost of procuring the set amounts of inputs while providing the farmer with a floor on the unit price of each of his crops (outputs), S1 for wheat and S2 for barley. This corresponds to the following linear programming problem:
+Minimize: L\cdot y_L + F\cdot y_F + P\cdot y_P	(minimize the total cost of the means of production as the "objective function")
+subject to:	y_L+F_1\cdot y_F+P_1\cdot y_P\geq S_1	(the farmer must receive no less than S1 for his wheat)
+y_L+F_2\cdot y_F+P_2\cdot y_P\geq S_2	(the farmer must receive no less than S2 for his barley)
+y_L, y_F, y_P\geq 0	(prices cannot be negative).
+In matrix form this becomes:
+Minimize: \begin{bmatrix} L & F & P \end{bmatrix} \begin{bmatrix} y_L \\ y_F \\ y_P \end{bmatrix} 
+subject to: \begin{bmatrix} 1 & F_1 & P_1 \\ 1 & F_2 & P_2 \end{bmatrix} \begin{bmatrix} y_L \\ y_F \\ y_P \end{bmatrix} \ge \begin{bmatrix} S_1 \\ S_2 \end{bmatrix}, \, \begin{bmatrix} y_L \\ y_F \\ y_P \end{bmatrix} \ge 0. 
+The primal problem deals with physical quantities. With all inputs available in limited quantities, and assuming the unit prices of all outputs is known, what quantities of outputs to produce so as to maximize total revenue? The dual problem deals with economic values. With floor guarantees on all output unit prices, and assuming the available quantity of all inputs is known, what input unit pricing scheme to set so as to minimize total expenditure?
+To each variable in the primal space corresponds an inequality to satisfy in the dual space, both indexed by output type. To each inequality to satisfy in the primal space corresponds a variable in the dual space, both indexed by input type.
+The coefficients that bound the inequalities in the primal space are used to compute the objective in the dual space, input quantities in this example. The coefficients used to compute the objective in the primal space bound the inequalities in the dual space, output unit prices in this example.
+Both the primal and the dual problems make use of the same matrix. In the primal space, this matrix expresses the consumption of physical quantities of inputs necessary to produce set quantities of outputs. In the dual space, it expresses the creation of the economic values associated with the outputs from set input unit prices.
+Since each inequality can be replaced by an equality and a slack variable, this means each primal variable corresponds to a dual slack variable, and each dual variable corresponds to a primal slack variable. This relation allows us to speak about complementary slackness.
+Another example[edit]
+Sometimes, one may find it more intuitive to obtain the dual program without looking at the program matrix. Consider the following linear program:
+Minimize	 \sum_{i=1}^m{c_i x_i} + \sum_{j=1}^n{d_j t_j} 
+subject to	 \sum_{i=1}^m{a_{ij} x_i} + e_j t_j \ge g_j	,	 1 \le j \le n 
+ f_i x_i + \sum_{j=1}^n{b_{ij} t_j} \ge h_i	,	 1 \le i \le m 
+ x_i \ge 0,\, t_j \ge 0 	,	 1 \le i \le m, 1 \le j \le n 
+We have m + n conditions and all variables are non-negative. We shall define m + n dual variables: yj and si. We get:
+Minimize	 \sum_{i=1}^m{c_i x_i} + \sum_{j=1}^n{d_j t_j} 
+subject to	 \sum_{i=1}^m{a_{ij} x_i} \cdot y_j + e_j t_j \cdot y_j \ge g_j \cdot y_j 	,	 1 \le j \le n 
+ f_i x_i \cdot s_i + \sum_{j=1}^n{b_{ij} t_j} \cdot s_i \ge h_i \cdot s_i	,	 1 \le i \le m 
+ x_i \ge 0,\, t_j \ge 0 	,	 1 \le i \le m, 1 \le j \le n 
+ y_j \ge 0,\, s_i \ge 0 	,	 1 \le j \le n, 1 \le i \le m 
+Since this is a minimization problem, we would like to obtain a dual program that is a lower bound of the primal. In other words, we would like the sum of all right hand side of the constraints to be the maximal under the condition that for each primal variable the sum of its coefficients do not exceed its coefficient in the linear function. For example, x1 appears in n + 1 constraints. If we sum its constraints' coefficients we get a1,1y1 + a1,2y2 + ... + a1,nyn + f1s1. This sum must be at most c1. As a result, we get:
+Maximize	 \sum_{j=1}^n{g_j y_j} + \sum_{i=1}^m{h_i s_i} 
+subject to	 \sum_{j=1}^n{a_{ij} y_j} + f_i s_i \le c_i	,	 1 \le i \le m 
+ e_j y_j + \sum_{i=1}^m{b_{ij} s_i} \le d_j	,	 1 \le j \le n 
+ y_j \ge 0,\, s_i \ge 0 	,	 1 \le j \le n, 1 \le i \le m 
+Note that we assume in our calculations steps that the program is in standard form. However, any linear program may be transformed to standard form and it is therefore not a limiting factor.
