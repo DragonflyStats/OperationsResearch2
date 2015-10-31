@@ -193,6 +193,18 @@ that solution is optimal for (IP) too.
 \end{figure}
 
 \end{frame}
+\subsection{Divide and Conquer}
+\begin{frame}
+\Large
+	\noindent \textbf{Divide and Conquer}
+	\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{divideandconquer}
+\caption{}
+\label{fig:divideandconquer}
+\end{figure}
+
+\end{frame}
 %======================================================= %
 \subsection{Knapsack Problems}
 % - https://www.utdallas.edu/~metin/Or6302/Notes/integer.pdf
@@ -211,12 +223,30 @@ that solution is optimal for (IP) too.
 	\frametitle{The Knapsack Problem}
 \Large
 \begin{itemize}
-\item The knapsack problem or rucksack problem is a problem in combinatorial optimization: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
+\item The knapsack problem or rucksack problem is a problem in combinatorial optimization
+\item Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
 \end{itemize}
 	
 \end{frame}
+%================================= %
 \begin{frame}
-	The most common problem being solved is the 0-1 knapsack problem, which restricts the number xi of copies of each kind of item to zero or one. Given a set of n items numbered from 1 up to n, each with a weight wi and a value vi, along with a maximum weight capacity W,
+	\frametitle{Knapsack Problems}
+	\Large
+	\begin{itemize}
+		\item Remark: The 0-1 knapsack problems is an optimization problem.
+		\item Brute force: Try all $2^n$ possible subsets (Recall definition of Power Set)
+		.
+		\item	Question: Any solution better than the brute-force?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Knapsack Problems}
+	\Large
+	\begin{itemize}
+	\item The most common problem being solved is the 0-1 knapsack problem, which restricts the number xi of copies of each kind of item to zero or one. 
+	\item Given a set of n items numbered from 1 up to n, each with a weight wi and a value vi, along with a maximum weight capacity W,
+	\end{itemize}
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{01knapsack}
@@ -228,16 +258,6 @@ that solution is optimal for (IP) too.
 	\frametitle{Knapsack Problems}
 	\Large
 	Here xi represents the number of instances of item i to include in the knapsack. Informally, the problem is to maximize the sum of the values of the items in the knapsack so that the sum of the weights is less than or equal to the knapsack's capacity.
-\end{frame}
-\begin{frame}
-	\frametitle{Knapsack Problems}
-	\Large
-\begin{itemize}
-\item Remark: The 0-1 knapsack problems is an optimization problem.
-	\item Brute force: Try all $2^n$ possible subsets (Recall definition of Power Set)
-	.
-\item	Question: Any solution better than the brute-force?
-\end{itemize}
 \end{frame}
 \begin{frame}
 	\frametitle{Knapsack Problems}
@@ -329,7 +349,30 @@ current L.P. solution.
 \begin{frame}
 \frametitle{Fathoming}
 \Large
-	
+\begin{itemize}
+\item[1] Pruning by Optimality
+\item[2] Pruning by Bound
+\item[3] Pruning by Infeasibility
+\end{itemize}	
+\end{frame}
+%==========================================================
+\begin{frame}
+	\frametitle{Branch-and-bound}
+	%= http://web.mit.edu/15.053/www/AMP-Chapter-09.pdf
+\begin{itemize}
+\item Branch-and-bound is essentially a strategy of ‘‘divide and conquer.’’ The idea is to partition the feasible
+region into more manageable subdivisions and then, if required, to further partition the subdivisions. 
+\item In
+general, there are a number of ways to divide the feasible region, and as a consequence there are a number of
+branch-and-bound algorithms. 
+
+\item We shall consider one such technique, for problems with only binary variables,
+in Section 9.7. 
+\item For historical reasons, the technique that will be described next usually is referred to as the
+branch-and-bound procedure.
+
+\end{itemize}
+
 \end{frame}
 %======================================================= %
 \subsection{Branch and Bound}
@@ -387,6 +430,29 @@ current L.P. solution.
 	\end{figure}
 	
 \end{frame}
+%=============================================== %
+\subsection{Enumeration Tree}
+\begin{frame}
+	\frametitle{Enumeration Tree}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{enumerationtree1}
+\caption{}
+\label{fig:enumerationtree1}
+\end{figure}
+	
+\end{frame}
+\begin{frame}
+	\frametitle{Enumeration Tree}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{enumerationtree2}
+		\caption{}
+		\label{fig:enumerationtree2}
+	\end{figure}
+	
+\end{frame}
+%================================================ %
 \subsection{Difficulties of Integer Programming}
 % % - http://www.inf.ufpr.br/aurora/disciplinas/topicosia2/livros/search/integer.pdf
 \begin{frame}
