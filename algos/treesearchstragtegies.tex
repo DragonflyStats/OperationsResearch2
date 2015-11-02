@@ -1,0 +1,46 @@
+%% = https://cs.brown.edu/courses/csci1490/slides/CS149-BranchBound.pdf
+
+%% - Search Strategies
+
+%===========================================================================%
+\begin{frame}
+\frametitle{Search Strategies}
+
+– Depth First Search
+• Finds feasible solutions quickly.
+• Is very memory efficient.
+• Can easily get stuck in sub-optimal parts of the
+search space.
+\end{frame}
+%===========================================================================%
+\begin{frame}
+\frametitle{Search Strategies}
+– Best First Search
+• Look at the node with best relaxation value next.
+• Is provably optimal in the sense that it never visits a
+node that could be pruned otherwise.
+• A lot of jumping is necessary and memory
+requirements are prohibitively large (often search
+degenerates to breadth first search).
+\end{frame}
+%===========================================================================%
+\begin{frame}
+\frametitle{Search Strategies}
+– Depth First Search with Best Backtracking
+• Is a mix of both depth and best first search: perform depth first
+search until a leaf is found, then backtrack to the node with best
+relaxation value and so on.
+• Much less jumping than best first search.
+• Is more memory efficient than best first search, but less than
+DFS – could still be very memory intensive.
+\end{frame}
+%===========================================================================%
+\begin{frame}
+\frametitle{Search Strategies}
+
+– Least Discrepancy Search
+• Follow DFS with heuristic branching direction selection.
+Investigate leaves in order of increasing discrepancy wrt that
+heuristic.
+• Memory requirements are within limits.
+• Often finds good solutions early in the search.
