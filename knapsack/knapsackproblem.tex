@@ -1,27 +1,6 @@
+<<<<<<< HEAD:knapsackproblem.tex
+=======
 %%- http://www.win.tue.nl/~wscor/OW/2V300/H4.pdf
 The knapsack problem or rucksack problem is a problem in combinatorial optimization: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
+>>>>>>> origin/master:knapsack/knapsackproblem.tex
 
-The knapsack problem or rucksack problem is a problem in combinatorial optimization: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible. It derives its name from the problem faced by someone who is constrained by a fixed-size knapsack and must fill it with the most valuable items.
-The problem often arises in resource allocation where there are financial constraints and is studied in fields such as combinatorics, computer science, complexity theory, cryptography and applied mathematics.
-The knapsack problem has been studied for more than a century, with early works dating as far back as 1897.[1] It is not known how the name "knapsack problem" originated, though the problem was referred to as such in the early works of mathematician Tobias Dantzig (1884–1956),[2] suggesting that the name could have existed in folklore before a mathematical problem had been fully defined.[3]
-
-%==================================================================%
-
-0/1 knapsack problem[edit]
-A similar dynamic programming solution for the 0/1 knapsack problem also runs in pseudo-polynomial time. Assume w_1,\,w_2,\,\ldots,\,w_n,\, W are strictly positive integers. Define m[i,w] to be the maximum value that can be attained with weight less than or equal to w using items up to i (first i items).
-We can define m[i,w] recursively as follows:
-m[0,\,w]=0
-m[i,\,w]=m[i-1,\,w] if w_i > w\,\! (the new item is more than the current weight limit)
-m[i,\,w]=\max(m[i-1,\,w],\,m[i-1,w-w_i]+v_i) if w_i \leqslant w.
-The solution can then be found by calculating m[n,W]. To do this efficiently we can use a table to store previous computations.
-
-%=====================================================================%
-One common variant is that each item can be chosen multiple times. The bounded knapsack problem specifies, for each item j, an upper bound uj (which may be a positive integer, or infinity) on the number of times item j can be selected:
-maximize \sum_{j=1}^n p_j x_j	
-subject to	\sum_{j=1}^n w_j x_j \leq W,	
- u_j \geq x_j \geq 0, x_j integral for all j
-The unbounded knapsack problem (sometimes called the integer knapsack problem) does not put any upper bounds on the number of times an item may be selected:
-maximize \sum_{j=1}^n p_j x_j	
-subject to	\sum_{j=1}^n w_j x_j \leq W,	
- x_j \geq 0, x_j integral for all j
-The unbounded variant was shown to be NP-complete in 1975 by Lueker.[1] Both the bounded and unbounded variants admit an FPTAS (essentially the same as the one used in the 0-1 knapsack problem).

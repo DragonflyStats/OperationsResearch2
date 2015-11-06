@@ -1,0 +1,58 @@
+%%-  http://www.inf.ufpr.br/aurora/disciplinas/topicosia2/livros/search/integer.pdf
+
+\section{Facility Location}
+
+We consider a facihty location problem. A chemical company owns four
+factories that manufacture a certain chemical in raw form. The company would
+like to get in the business of refining the chemical. It is interested in building
+refining facilities, and it has identified three possible sites. 
+
+\end{frame}
+%==============================================================%
+
+\begin{frame}
+
+
+Table 3.1 contains
+variable costs, fixed costs, and weekly capacities for the three possible refining
+facility sites, and weekly production amounts for each factory. The variable
+costs are in dollars per week and include transportation costs. The fixed costs
+are in dollars per year. The production amounts and capacities are in tons per
+week.
+\end{frame}
+%==============================================================%
+
+\begin{frame}
+\item The decision maker who faces this problem must answer two very different
+types of questions: questions that require numerical answers (for example,
+how many tons of chemical should factory / send to the site-y refining facility
+each week?) and questions that require yes-no answers (for example, should
+the site-y facility be constructed?). 
+\item While we can easily model the first type
+of question by using continuous decision variables (by letting Xij equal the number of tons of chemical sent from factory / to site j each week), we cannot
+do this with the second. We need to use integer variables. If we let yj equal 1
+if the site-y refining facihty is constructed and 0 if it is not, we quickly arrive
+at an IP formulation of the problem: 
+\end{frame}
+%================================================================= %
+
+The objective is to minimize the yearly cost, the sum of the variable costs
+(which are measured in dollars per week) and the fixed costs (which are measured
+in dollars per year). The first set of constraints ensures that each factory's
+weekly chemical production is sent somewhere for refining. Since factory 1
+produces 1000 tons of chemical per week, factory 1 must ship a total of 1000
+tons of chemical to the various refining facilities each week. The second set
+of constraints guarantees two things: (1) if a facihty is open, it will operate
+at or below its capacity, and (2) if a facility is not open, it will not operate
+at all. If the site-1 facility is open (yi = 1) then the factories can send it up
+to 1500^1 = 1500 • 1 = 1500 tons of chemical per week. If it is not open 
+
+(_yj =: 0), then the factories can send it up to 1500};i = 1500 0 = 0 tons per
+week.
+This introductory example demonstrates the need for integer variables. It
+also shows that with integer variables, one can model simple logical requirements
+(if a facility is open, it can refine up to a certain amount of chemical;
+if not, it cannot do any refining at all). It turns out that with integer variables,
+one can model a whole host of logical requirements. One can also model fixed
+costs, sequencing and scheduling requirements, and many other problem aspects.
+
