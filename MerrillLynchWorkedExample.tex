@@ -1,0 +1,23 @@
+ Solved Exercises
+1. Merrill Lynch is considering investments into 6 projects: A, B, C, D, E and F. Each project has an
+initial cost, an expected profit rate (one year from now) expressed as a percentage of the initial cost,
+8
+and an associated risk of failure. These numbers are given in the table below:
+A B C D E F
+Initial cost (in M) 1.3 0.8 0.6 1.8 1.2 2.4
+Profit rate 10% 20% 20% 10% 10% 10%
+Failure risk 6% 4% 6% 5% 5% 4%
+a) Provide a formulation to choose the projects that maximize total expected profit, such that Merrill
+Lynch does not invest more than 4M dollars and its average failure risk is not over 5%. For example,
+if Merrill Lynch invests only into A and B, it invests only 2.1M dollars and its average failure risk is
+(6%+4%)/2=5%.
+b) Suppose that if A is chosen, B must be chosen. Modify your formulation.
+c) Suppose that if C and D are chosen, E must be chosen. Mofdify your formulation.
+Solution: a) Let yA = 1 if project A is chosen, yA = 0 otherwise. Define yB, yC, yD, yE, yF similarly.
+M ax 0.13yA + 0.16yB + 0.12yC + 0.18yD + 0.12yE + 0.24yF
+St
+1.3yA + 0.8yB + 0.6yC + 1.8yD + 1.2yE + 2.4yF ≤ 4
+0.06yA + 0.04yB + 0.06yC + 0.05yD + 0.05yE + 0.04yF ≤ 0.05(yA + yB + yC + yD + yE + yF )
+yA, yB, yC, yD, yE, yF ∈ {0, 1}.
+b) Add : yB ≥ yA.
+c) Add : yE ≥ yC + yD − 1
