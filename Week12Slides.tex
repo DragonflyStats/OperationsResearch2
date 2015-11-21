@@ -1,19 +1,43 @@
-5 Consider the IP:
-max x1 + 2x2
-−x1 + x2 ≤ 10
-15x1 + 16x2 ≤ 240
+%=====================================================%
+Consider the IP:
+max 16x1 + 7x2
+7x1 + 3x2 ≤ 26
+5x1 + 2x2 ≤ 22
 x1, x2 ≥ 0 and integer.
+%=========================================================================%
+You will be asked to partly solve the IP, using the Branch and Bound
+Method. You should draw an enumeration tree/diagram to keep
+track of your progress — draw the enumeration tree on an otherwise
+blank page.
+
+
 %==========================================================================%
 You will be asked to partly solve the IP, using the Branch and Bound Method.
 You should draw an enumeration tree/diagram to keep track of your
 progress — draw the enumeration tree on an otherwise blank page.
 %==========================================================================%
+\begin{frame}
 The corresponding Simplex Tableau (transforming the max problem into a
 min problem) is:
 T0 =
-0 −1 −2 0 0
-10 −1 1 1 0
-240 15 16 0 1
+0 −16 −7 0 0
+26 7 3 1 0
+22 5 2 0 1
+
+\end{frame}
+%==========================================================================%
+
+\begin{frame}
+
+The columns are for $x_1$,$x_2$, $s_1$ and $s_2$. 
+$S_1$ and $s_2$ are called slack variables.
+
+\begin{itemize}
+\item $7x1 + 3x2 ≤ 26$  
+\item $5x1 + 2x2 ≤ 22$
+
+\end{itemize}
+\end{frame}
 
 %==========================================================================%
 
