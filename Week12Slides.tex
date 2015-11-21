@@ -1,0 +1,145 @@
+5 Consider the IP:
+max x1 + 2x2
+−x1 + x2 ≤ 10
+15x1 + 16x2 ≤ 240
+x1, x2 ≥ 0 and integer.
+%==========================================================================%
+You will be asked to partly solve the IP, using the Branch and Bound Method.
+You should draw an enumeration tree/diagram to keep track of your
+progress — draw the enumeration tree on an otherwise blank page.
+%==========================================================================%
+The corresponding Simplex Tableau (transforming the max problem into a
+min problem) is:
+T0 =
+0 −1 −2 0 0
+10 −1 1 1 0
+240 15 16 0 1
+
+%==========================================================================%
+
+\begin{frame}
+\begin{itemize}
+\item In contrast to the material used in Week 11 , the indicator row is listed at the top of the tableau
+\item The $b$ column is listed on the left hand side of the tableau
+\end{itemize}
+\end{fame}
+%==========================================================================%
+N.B. The Simplex Method and the Dual Simplex Method are stated on
+the last page of this paper.
+You will partly solve the IP, following the steps on the next pages — remember
+to draw and fill in an enumeration tree.
+%==========================================================================%
+(a) Apply one iteration of the Simplex Method to the starting tableau (T0)
+and show that the Simplex Tableau now takes the form: 3%
+20 −3 0 2 0
+10 −1 1 1 0
+80 31 0 −16 1
+%==========================================================================%
+(b) After a second iteration of the Simplex Method the Simplex Tableau
+now takes the form: (N.B. Do not perform the arithmetic!)
+T2 =
+27.74 0 0 0.45 0.10
+12.58 0 1 0.48 0.03
+2.58 1 0 −0.52 0.03
+%==========================================================================%
+(i) Explain why this Tableau is LP optimal. 1%
+(ii) What is the solution to the LP Relaxation of the IP? 1%
+(iii) Why is this not IP-optimal? 1%
+(iv) What bound can you conclude for the optimal value of the objective
+for the original IP? 1%
+%==========================================================================%
+
+(v) What are the two possible branches on x1 and what are the two
+possible branches on x2? 1%
+(c) Consider the right branch corresponding to a lower bound on x2 (x2 ≥
+?).
+%==========================================================================%
+(i) The LP-optimal tableau T2 must be amended by adding an extra
+row & column corresponding to the extra constraint. Explain
+carefully why the new tableau T3 (with 4 rows and 6 columns)
+takes the form: 2%
+T3 =
+27.74 0 0 0.45 0.10 0
+12.58 0 1 0.48 0.03 0
+2.58 1 0 −0.52 0.03 0
+−13 0 −1 0 0 1
+(ii) Which element of T3 should you pivot on next? Explain carefully. 1%
+%==========================================================================%
+(iii) The resulting tableau is
+T4 =
+27.74 0 0 0.45 0.10 0
+12.58 0 1 0.48 0.03 0
+2.58 1 0 −0.52 0.03 0
+−0.42 0 0 0.48 0.03 1
+(iv) Explain carefully why T4 is infeasible and update your enumeration
+tree. 1%
+(d) Consider the left branch corresponding to an upper bound on x2 (x2 ≤
+?).
+(i) The LP-optimal tableau T2 must be amended by adding an extra
+row & column corresponding to the extra constraint. Explain
+carefully why the new tableau T5 (with 4 rows and 6 columns)
+takes the form: 2%
+T5 =
+27.74 0 0 0.45 0.10 0
+12.58 0 1 0.48 0.03 0
+2.58 1 0 −0.52 0.03 0
+12 0 1 0 0 1
+%==========================================================================%
+(ii) Which element of T5 should you pivot on next? Explain carefully. 1%
+(iii) The resulting tableau is
+T6 =
+27.74 0 0 0.45 0.10 0
+12.58 0 1 0.48 0.03 0
+2.58 1 0 −0.52 0.03 0
+−0.58 0 0 −0.48 −0.03 1
+Using the Dual Simplex Method, which element should you pivot
+on next so that the tableau is LP-optimal? Explain carefully. 2%
+%==========================================================================%
+
+(iv) The resulting tableau is:
+T7 =
+27.20 0 0 0 0.07 0.93
+12 0 1 0 0 1
+3.20 1 0 0 0.07 −1.07
+1.20 0 0 1 0.07 −2.07
+(v) Is T7 LP-optimal? Explain carefully. 1%
+(vi) Is T7 IP-optimal? Explain carefully. 1%
+(e) Consider the left branch corresponding to an upper bound on x1 (x1 ≤
+?).
+%=============================================================================%
+
+(i) As T7 is not IP-optimal it must be amended by adding an extra row
+& column corresponding to the extra constraint. Explain carefully
+why the new tableau T8 (with 5 rows and 7 columns) takes the
+form: 2%
+T8 =
+27.20 0 0 0 0.07 0.93 0
+12 0 1 0 0 1 0
+3.20 1 0 0 0.07 −1.07 0
+1.20 0 0 1 0.07 −2.07 0
+3 1 0 0 0 0 1
+%==========================================================================%
+(ii) Which element of T8 should you pivot on next? Explain carefully. 1%
+%==========================================================================%
+(iii) The resulting tableau is
+T9 =
+27.20 0 0 0 0.07 0.93 0
+12 0 1 0 0 1 0
+3.20 1 0 0 0.07 −1.07 0
+1.20 0 0 1 0.07 −2.07 0
+−0.20 0 0 0 −0.07 1.07 1
+%==========================================================================%
+(iv) Using the Dual Simplex Method, which element of T9 should you
+pivot on next? Explain carefully. 1%
+
+(v) The resulting tableau is:
+27 0 0 0 0 2 1
+12 0 1 0 0 1 0
+3 1 0 0 0 0 1
+1 0 0 1 0 −1 1
+3 0 0 0 1 −16 −15
+%==========================================================================%
+(vi) Does this tableau represent the optimal solution to the IP? Explain
+carefully why or why not. 1%
+(vii) What are the solution x and the objective value z associated with
+the tableau? 1%
