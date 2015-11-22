@@ -31,27 +31,33 @@ Consider the IP:
 %=========================================================================%
 \begin{frame}
 \large
+\noindent \textbf{MS4315 2014 Exam Question}
 \begin{itemize}
-\item You will be asked to partly solve the IP, using the Branch and Bound
-Method. 
+\item You will be asked to partly solve the IP, using the \textbf{\textit{Branch and Bound
+Method}}. 
 \item You should draw an enumeration tree/diagram to keep
 track of your progress — draw the enumeration tree on an otherwise
 blank page.
 \end{itemize}
 \end{frame}
 %==========================================================================%
-\begin{frame}
-\large
-\begin{itemize}
-\item You will be asked to partly solve the IP, using the Branch and Bound Method.
-\item You should draw an enumeration tree/diagram to keep track of your
-\item progress — draw the enumeration tree on an otherwise blank page.
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\large
+%\begin{itemize}
+%\item You will be asked to partly solve the IP, using the Branch and Bound Method.
+%\item You should draw an enumeration tree/diagram to keep track of your
+%\item progress — draw the enumeration tree on an otherwise blank page.
+%\end{itemize}
+%\end{frame}
 %==========================================================================%
 \begin{frame}
-The corresponding Simplex Tableau (transforming the max problem into a
-min problem) is:
+\begin{figure}
+	\centering
+	\includegraphics[width=0.55\linewidth]{Exam14-Question}
+	
+\end{figure}
+The corresponding \textbf{Simplex Tableau} (transforming the \textbf{max} problem into a
+\textbf{min} problem) is:
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{Exam14-a}
@@ -63,20 +69,23 @@ min problem) is:
 \begin{frame}
 
 The columns are for $x_1$,$x_2$, $s_1$ and $s_2$. 
-$S_1$ and $s_2$ are called slack variables.
+$S_1$ and $s_2$ are called \textbf{slack variables}.
 
 \begin{itemize}
-\item $7x1 + 3x2 \leq 26$  
-\item $5x1 + 2x2 \leq 22$
+\item $7x1 + 3x2 \leq 26$ becomes $7x1 + 3x2 + 1s_1+0s_2= 26$ 
+\item $5x1 + 2x2 \leq 22$ becomes $5x1 + 2x2 + 0s_1+1s_2= 22$
 \end{itemize}
-\end{frame}
+
+ In contrast to the material used in Week 11 , the indicator row is listed at the top of the tableau
+The $b$ column is listed on the left hand side of the tableau
 
 %==========================================================================%
 
 \begin{frame}
+	\frametitle{Integer Programming}
+\large
 \begin{itemize}
-\item In contrast to the material used in Week 11 , the indicator row is listed at the top of the tableau
-\item The $b$ column is listed on the left hand side of the tableau
+
 \end{itemize}
 \end{frame}
 %==========================================================================%
@@ -84,6 +93,8 @@ $S_1$ and $s_2$ are called slack variables.
 \begin{quote}
 N.B. The Simplex Method and the Dual Simplex Method are stated on
 the last page of this paper.
+
+
 You will partly solve the IP, following the steps on the next pages — remember
 to draw and fill in an enumeration tree.
 \end{quote}
