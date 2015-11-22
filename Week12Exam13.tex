@@ -1,0 +1,122 @@
+Exam13
+
+Explain briefly why the following strategy for the solution of I.P.’s
+is not useful: “Solve the L.P. relaxation then round off the components
+of the solution to the nearest integers”.
+\end{frame}
+%================================================%
+\begin{frame}
+
+(b) Consider the Integer Linear Program (IP):
+max 5x1 + 2x2
+5x1 + x2 \leq 5/2
+10x1 + 6x2 \leq 45
+x1, x2 \leq 0 and integer.
+\end{frame}
+%================================================%
+\begin{frame}
+
+The corresponding Simplex Tableau (transforming the max problem
+into a min problem) is:
+0 -5 -2 0 0
+5/2 5 1 1 0
+45 10 6 0 1
+N.B. The Simplex Method and the Dual Simplex Method are stated
+on the last page of this paper.
+\end{frame}
+%================================================%
+\begin{frame}
+
+(i) Apply one iteration of the Simplex Method and show that the Simplex
+Tableau now takes the form: 4
+2.5 0 -1 1 0
+0.5 1 0.2 0.2 0
+40 0 4 -2 1
+
+\end{frame}
+%================================================%
+\begin{frame}
+
+(ii) After a second iteration of the Simplex Method the Simplex Tableau
+now takes the form: (N.B.do not perform the arithmetic!)
+5 5 0 2 0
+2.5 5 1 1 0
+30 -20 0 -6 1
+Explain why this Tableau is optimal. 1
+\end{frame}
+%================================================%
+\begin{frame}
+(iii) Explain why the solution to the LP Relaxation of the IP is x1 =
+0, x2 = 2.5 and why we must now branch on x2 and what are the
+two branches? 1
+\end{frame}
+%================================================%
+\begin{frame}
+(iv) Consider the branch S0 : x2 \leq 2.
+\begin{itemize{
+\item[A.] First show that the basic variable x2 may be expressed in
+terms of the non-basic variables x1 & x3 as:
+x2 = 2.5 − 5x1 − x3. 1
+\item[B.] Substitute this expression for x2 into the S0 branch constraint
+and show that it takes the form −5x1 − x3 + s = −0.5. (The
+variable s is the slack variable for the constraint x2 \leq 2.) 1
+\end{itemize}
+
+\end{frame}
+%================================================%
+\begin{frame}
+\frametitle{2013 Exam)
+\large
+
+C. Show that the Simplex Tableau with the addition of this constraint
+takes the form: 1
+5 5 0 2 0 0
+2.5 5 1 1 0 0
+30 -20 0 -6 1 0
+-0.5 -5 0 -1 0 1
+\end{frame}
+%================================================%
+\begin{frame}
+\frametitle{2013 Exam)
+\large
+
+
+(v) Explain why this tableau is optimal but infeasible. 1
+(vi) Apply one iteration of the Dual Simplex Method (DSM) to this
+tableau and show that the Simplex Tableau now takes the form: 4
+4.5 0 0 1 0 1
+2 0 1 0 0 1
+32 0 0 -2 1 -4
+0.1 1 0 0.20 0 -0.2
+\end{frame}
+%================================================%
+\begin{frame}
+\frametitle{2013 Exam)
+\large
+\begin{itemize}
+\item[(vii)] Is this tableau LP optimal? Is it integer feasible? Explain. What
+is the solution to this LP relaxation? 1
+\item[(viii)] What branching should you now make?
+\end{itemize}
+\end{frame}
+%================================================%
+\begin{frame}
+\frametitle{2013 Exam)
+\large
+(ix) Having chosen a suitable branching, explain why the new tableau
+for the left-hand branch (x1 = 0) is:
+4.5 0 0 1 0 1
+2 0 1 0 0 1
+32 0 0 -2 1 -4
+0.1 1 0 0.2 0 -0.2
+-0.1 0 0 -0.2 0 0.2
+
+A. What row and column is selected for pivoting with DSM? 1
+B. Check that, after pivoting with DSM, x1 and x2 remain basic
+with x1 = 0 and x2 = 2. (No need to update the full tableau,
+just the top left-hand element and the second-last element in
+the the left-hand column.) and hence find the integer optimal
+value of z? 
+\end{frame}
+%================================================%
+\
