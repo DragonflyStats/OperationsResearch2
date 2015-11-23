@@ -1,0 +1,76 @@
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chngpage}
+%\usepackage{bigints}
+
+\voffset=-1.5cm
+\oddsidemargin=1.5cm
+\textwidth = 490pt
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+	\normalsize	
+	\begin{tabular}{||c|c||c|c||c|c||}
+		\hline  & Node 0 &   & Node 1A &  & Node 1B     \\  \hline
+		\hline (i) & $x= 6.00$, $y= 8.5715$ & (i) & $x= 6.00$, $y= 7.00$ &  (i)  & $x= 5.75$, $y = 9.125$\\  \hline
+		\hline (ii)  & $x= 6.50$, $y= 7.00$  &  (ii) & $x= 7.00$, $y= 9.00$ & (ii) & $x= 5.25$, $y = 9.00 $ \\  \hline
+		\hline (iii) & $x= 7.20$, $y = 8.1428$  & (iii) & $x= 4.50$, $y = 8.50$ & (iii) & $x= 5.625$, $y = 6.875$ \\  \hline
+		\hline (iv)  & $x= 5.50$, $y =9.00 $  &  (iv) & $x= 6.00$, $y = 8.00 $ & (iv)  & $x= 5.50$, $y= 4.1428$\\  \hline
+		\hline (v) & $x= 7.50$, $y= 5.75$ & (v)  & $x= 7.00$, $y= 7.00$ & (v) & $x= 7.00$, $y= 3.75$\\  \hline & & & & & \\
+		\hline 
+		%	\end{tabular} 
+		%	
+		%	\begin{tabular}{||c|c||c|c||c|c||}
+		\hline  & Node 2A &   & Node 2B &  & Node 2C  \\  \hline
+		\hline (i) & $x= 6.50$, $y= 4.50$ & (i)  & $x= 7.25 $, $y = 5.75 $  & (i)  & $x= 5.00$, $y = 8.00$\\  \hline
+		\hline (ii)  & $x= 6.25$, $y= 5.50$  &  (ii) &$x= 6.25$, $y= 5.50$ & (ii) & $x= 5.00$, $y = 9.75 $ \\  \hline
+		\hline (iii) & $x= 5.625  $, $y = 5.00 $  &  (iii) &$x= 7.25 $, $y = 5.25 $ &  (iii) & $x= 5.625$, $y = 6.75$ \\  \hline
+		\hline (iv)  & $x= 7.50$, $y = 4.75 $  & (iv) & $x= 7.00 $, $y = 4.00 $ & (iv)  & $x= 4.7272$, $y = 9$\\  \hline
+		\hline (v) & $x= 7.25 $, $y = 5.25 $ & (v) & $x= 7.50$, $y= 4.50$  &(v) & $x= 5$, $y= 9.1428$\\  \hline & & & & & \\
+		\hline 
+		%		
+		%	\end{tabular} 
+		%	
+		%	\begin{tabular}{||c|c||c|c||c|c||}
+		\hline  & Node 2D &   & Node 3A &  & Node 3B   \\  \hline
+		\hline (i) & $x= 6.75$, $y= 7.00$ &  (i) & $x= 6.125$, $y= 2.50$  & (i)  & $x= 6.75$, $y= 3.50$\\  \hline
+		\hline (ii)  & $x= 6.00$, $y = 9.50$  &  (ii) & $x= 6.75$, $y= 3.50$ & (ii) & $x= 6.25$, $y= 5.50$ \\  \hline
+		\hline (iii) & $x= 6.625$, $y= 6.75$  & (iii) & $x= 6.8$, $y =3.666 $ &(iii) & $x= 6.125$, $y= 2.50$ \\  \hline
+		\hline (iv)  & $x= 7.50$, $y= 4.00$  & (iv) & $x= 7.2$, $y = 2.9$ & (iv)  & $x= 6.00$, $y= 4.50$\\  \hline
+		\hline (v) & $x= 6.00$, $y= 6$ & (v) & $x= 7.00$, $y= 3.875$  &(v) & $x= 7.00$, $y= 3.875$\\  \hline & & & & & \\
+		\hline 
+		%	\end{tabular} 
+		%	
+		%	\begin{tabular}{||c|c||c|c||c|c||}
+		\hline  & Node 3C &   & Node 3D &  & Node 3E  \\  \hline
+		\hline (i) & $x= 5.75$, $y= 6.75$ &  (i) & $x= 7.125$, $y = 3.333$  & (i)  & $x= 5.2$, $y= 9.00$\\  \hline
+		\hline (ii) & $x= 5.625$, $y= 7.333$  & (ii) & $x= 4.833$, $y =6.5 $ &(ii) & $x= 5.75$, $y= 9.00$ \\  \hline
+		\hline (iii)  & $x= 7.125$, $y= 7.125$  & (iii) & $x= 3.7333$, $y = 8.666$ & (iii)  & $x= 5.00$, $y= 8.75$\\  \hline
+		\hline (iv)  & $x= 7.125$, $y = 7.00$  &  (iv) & $x= 5.25$, $y = 4.33$ & (iv) & $x= 5.00,  y = 9.1428$ \\  \hline
+		\hline (v) & $x= 7.00$, $y= 8$ & (v) & $x= 5 $, $y= 5.50$  &(v) & $x= 5.00$, $y= 9.00$\\  \hline & & & & & \\
+		\hline 
+		%		
+		%	\end{tabular} 
+		%	
+		%	\begin{tabular}{||c|c||c|c||c|c||}
+		\hline  &  Node 3F &  & Node 3G &   & Node 3H \\  \hline
+		\hline (i) & $x= 3.75$, $y= 10.00$ & (i) & $x= 5.00$, $y = 6.00$  & (i)  & $x= 6.75$, $y= 5.50$\\  \hline
+		\hline (ii)  & $x= 4.00$, $y = 10.00$  & (ii) & $x= 6.75 $, $y= 3.50$ & (ii) & $x= 6.75$, $y = 2.1$ \\  \hline
+		\hline (iii) & $x= 3.125$, $y = 8.00 $   & (iii) & $x= 6.75$, $y= 4.50$ &(iii) & $x= 6.75$, $y= 3.50$ \\  \hline
+		\hline (iv)  & $x= 4.00$, $y= 9.00$  & (iv) & $x= 6.75$, $y= 4.50$ & (iv)  & $x= 9.00 $, $y = 4.00$\\  \hline
+		\hline (v) & $x= 3.5$, $y = 10.00$ & (v)  & $x= 3.666$, $y = 8.50 $ & (v) & $x= 7$, $y= 3.50$\\  \hline
+		\hline 
+		
+	\end{tabular} 
+\end{document}
