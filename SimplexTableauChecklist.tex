@@ -1,0 +1,138 @@
+\documentclass{beamer}
+
+\usepackage{framed}
+
+\begin{document}
+%======================================%
+\begin{frame}
+\vspace{-0.5cm}
+	\noindent \textbf{Checklist}
+	
+	\begin{itemize}
+        \item \textbf{Important:} Read Each Question Carefully - dont rush into doing things you are not asked to do
+		\item Picking Pivot Column (most negative value in indicator row  a.k.a. the top row)
+		\item Picking Pivot Row 
+		
+		\begin{itemize}
+		
+		\item[$\ast$] \textit{(focus only on \textbf{positive} values entries in Pivot column only.)} 
+		\item[$\ast$]	Divide the ``Barrier" column by pivot column for each corresponding
+			entry - computing ratios
+			\item[$\ast$] Choose the smallest (positive) ratio (i.e. closed to zero)
+		\end{itemize}
+		\item Picking Pivot Point (Intersection of Pivot Row and Pivot Column)
+	\end{itemize}
+	
+\end{frame}
+%==============================================================%
+\begin{frame}
+	\vspace{-0.5cm}
+	\noindent \textbf{Checklist - Continued}
+	
+	\begin{itemize}
+		\item Performing Elementary Row Operations 
+			\begin{itemize}
+				\item[$\ast$] Turn Pivot Point into a value of 1
+				\item[$\ast$] Make other values in Pivot Column 0
+			\end{itemize}
+		\item \textbf{Important:} Recognize when iteration process is complete 
+		\item \textbf{Important:} Recognize when iteration process isn't complete - particularly important when new constraints are added.
+
+	\end{itemize}
+	
+\end{frame}
+%==============================================================%
+\begin{frame}
+\vspace{-0.5cm}
+	\noindent \textbf{Checklist - Continued}
+	
+	\begin{itemize}
+				\item Recognize when optimal feasible solution has been found
+				\item Recognize infeasibility 
+		\item State the solution of Tableau(i.e. for LP relaxation)
+		\item (Recognize which variables necessarily have a value of zero).
+		\item LP Relaxation.
+		\item Recognize that LP optimality does not equate to IP optimality.
+		\item Adding bounds (based on LP optimal solution) . Be able to state what these new constraints are.
+	\end{itemize}
+\end{frame}
+%==============================================================%
+\begin{frame}
+	\noindent \textbf{Addition of Constraints to Simplex Tableau}
+	
+	\begin{itemize}
+\item Important: Construction of New Constraints further to branch and bound.
+\item This will involve adding new rows and columns to the tableau.
+\item Remark: Exam 2012 Q1 Part D is very useful to practice with in this regard.
+\item See slides for \textbf{exceedance constraints} (i.e. $x_i \geq  k$)
+\end{itemize}
+\end{frame}
+%==============================================================%
+\begin{frame}
+\noindent \textbf{Dual Simplex Method}	\\
+\noindent \textbf{(In General  : Tranpose/Reverse of Simplex Method)}
+\begin{itemize}
+	\item Pick most negative value from LHS column (i.e. the barrier column)
+	\item We pick the associated row
+	\item In the example below - we'd pick the last row, the row for -3.
+\end{itemize}
+{
+	\large
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|}
+	\hline 25 & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\  
+\hline	\hline 15 & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\ 
+	\hline 4 & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\  
+	\hline \textbf{-3} & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\ 
+	\hline 
+\end{tabular} 	
+\end{center}
+}
+\end{frame}
+%================================================= %
+\begin{frame}
+\noindent \textbf{Dual Simplex Method}	\\
+	\begin{itemize}
+		\item We are mainly interested in negative values on this row. Concentrate only on them.
+	\end{itemize}
+{
+	\large
+	\begin{center}
+		\begin{tabular}{|c||c|c|c|c|c|}
+			\hline 25 & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\  \hline
+			\hline 15 & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\ 
+			\hline 4 & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\  
+			\hline \textbf{-3} & $\ldots$ & -5 & $\ldots$ & -2 & $\ldots$ \\ 
+			\hline 
+		\end{tabular} 	
+	\end{center}
+}
+\end{frame}
+\begin{frame}
+\noindent \textbf{Dual Simplex Method}	\\
+	\begin{itemize}
+		\item Compare this values to the values in the top row. Compute the ratios. 
+	\end{itemize}
+	{
+		\large
+		\begin{center}
+			\begin{tabular}{|c||c|c|c|c|c|}
+				\hline 25 & $\ldots$ & 10 & $\ldots$ & 8 & $\ldots$ \\  \hline
+				\hline 15 & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\ 
+				\hline 4 & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\  
+				\hline \textbf{-3} & $\ldots$ & -5 & $\ldots$ & -2 & $\ldots$ \\ 
+				\hline 
+			\end{tabular} 	
+		\end{center}
+	}
+\begin{itemize}
+	\item[$\ast$] Ratio: 10 /-5  = -2
+	\item[$\ast$] Ratio: 8 /-2 = -4
+\end{itemize}
+\bigskip
+\begin{itemize}
+	\item Dont Expect any positive values here. 
+	\item Choose highest value (i.e closest to 0)
+\end{itemize}
+\end{frame}
+\end{document}
