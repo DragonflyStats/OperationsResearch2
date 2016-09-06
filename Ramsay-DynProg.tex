@@ -1,4 +1,10 @@
 Chapter 2: Dynamic Programming (DP)
+%=======================================================================%
+
+dynamic programming (also known as dynamic optimization) is a method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions
+
+%=======================================================================%
+
 2.1 Formulation of a DP Problem: The Optimality (Bellman)
 Equations
 Suppose you want to find the shortest route from Limerick to
@@ -12,7 +18,10 @@ choose the shortest one. However, this is not an efficient method.
 The Intuition of DP
 The idea behind DP is to build up the optimal solution in stages.
 This can be done inductively or recursively.
-2 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+2 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Network (Graphical) Representation of the Problem
 Suppose the possible routes can be described by a network. A
 represents Limerick, K represents Belfast and the other letters
@@ -95,7 +104,10 @@ H
 100
 J
 K
-3 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+% End of Slide 3 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 The Formulation of a DP Problem
 In order to define a dynamic programming problem, we must define
 i. The time horizon of the problem (number of decision
@@ -123,7 +135,11 @@ iv) The immediate costs (or benefits) of each possible
 action.
 Here, this cost is the distance cj,k between
 neighbouring towns.
-5 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+%End of Slide 5 
+\end{frame}  
+%=================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
 Formulation- ctd.
 We have s0 = A, S1 = {B, C, D}, S2 = {E, F,G}, S3 = {H, I, J},
 s4 = K (K is the only possible finishing state).
@@ -132,8 +148,12 @@ The states are nodes of the graph and the decision made at each
 stage corresponds to an edge of the graph between two states
 (here a path between two towns).
 This correspondence is general for any deterministic problem.
-6 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-2.1.1 The Inductive Procedure
+%End of Slide 6 
+\end{frame}  
+%=========================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{2.1.1 The Inductive Procedure}
 Working inductively, we would first calculate the shortest path
 between Limerick and each of the towns that can be visited at
 Stage 1 (this is banal).
@@ -141,7 +161,11 @@ When calculating the shortest subroute between Limerick and each
 of the towns that can be visited at stage i + 1, we only need to
 consider those routes which contain subroutes that are the shortest
 from Limerick to the town visited at stage i.
-7 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+%End of Slide 7 
+\end{frame} 
+%=======================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
 The Inductive Procedure
 In mathematical terms, let di(j) be the the length of the shortest
 subroute from Limerick to town j, which is visited at stage i, i.e.
