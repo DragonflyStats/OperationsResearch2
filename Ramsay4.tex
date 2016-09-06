@@ -1,0 +1,763 @@
+2.4 Value Iteration
+Value iteration is based on approximating an infinite horizon
+problem by a finite horizon problem.
+Let vn(i) be the optimal value starting in state i with n stages to
+go and v(i) be the value of starting in state i in the infinite stage
+problem.
+Let cmax < ∞ be the maximum immediate cost (reward) incurred
+in a stage and β be the discount factor. It is reasonably simple to
+show that
+lim
+n→∞
+vn(i)=v(i)
+|v(i) − vn(i)|<
+β
+n
+cmax
+1 − β
+.
+1 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Idea of value iteration
+Also, for large n, it is intuitively clear that the optimal action to
+take in state i is optimal or close to being optimal in the infinite
+horizon problem.
+It follows that the optimal stationary policy and values can be
+approximated by the optimal policy and values in the first step of a
+problem with horizon n.
+Returning to Example 2.2.1, it can be seen that the optimal policy
+when 2 or more stages are left is the same as the optimal policy in
+the infinite horizon problem, i.e. fix when in state B and leave
+when in state G.
+2 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 2.3.3
+Suppose an individual has 2 possible actions A, B and there are 3
+states 1, 2, 3 (poor, intermediate, good). The transition
+probabilities and payoffs are
+Payoff 3 2 1
+A, 3 10 0.2 0.4 0.4
+A, 2 5 0.1 0.3 0.6
+A, 1 2 0.0 0.1 0.9
+B, 3 5 0.9 0.1 0.0
+B, 2 3 0.6 0.3 0.1
+B, 1 1 0.4 0.4 0.2
+3 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Recursive solution of the infinite horizon problem
+With 1 stage to go an individual should just maximise their
+immediate reward, i.e. take action A in any state. We have
+R1(3) = 10, R1(2) = 5, R1(1) = 2.
+The maximum error in estimating R(j) (the value in the infinite
+horizon problem) at this stage is 10β
+1−β = 40.
+4 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Recursive solution of the infinite horizon problem-ctd.
+With two stages to go in state 3
+R2(3)=max{10 + 0.8[0.2R1(3) + 0.4R1(2) + 0.4R1(1)],
+5 + 0.8[0.9R1(3) + 0.1R1(2)]}
+=max{13.84, 12.6} = 13.84.
+The optimal action is A.
+With two stages to go in state 2
+R2(2)=max{5 + 0.8[0.1R1(3) + 0.3R1(2) + 0.6R1(1)],
+3 + 0.8[0.6R1(3) + 0.3R1(2) + 0.1R1(1)]}
+=max{7.96, 9.16} = 9.16.
+The optimal action is B.
+5 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Recursive solution of the infinite horizon problem-ctd.
+With two stages to go in state 1
+R2(1)=max{2 + 0.8[0.1R1(2) + 0.9R1(1)],
+1 + 0.8[0.2R1(3) + 0.4R1(2) + 0.4R1(1)]}
+=max{3.84, 4.84} = 4.84.
+The optimal action is B.
+Calculating in a similar way, we derive the following optimal values
+and actions, an(i). These calculations can be done using a simple
+programme or in Excel.
+6 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Recursive solution of the infinite horizon problem-ctd.
+n Rn(3) an(3) Rn(2) an(2) Rn(1) an(1)
+1 10 A 5 A 2 A
+2 13.84 A 9.16 B 4.84 B
+3 16.69 A 12.23 B 7.69 B
+4 19.05 A 14.56 B 10.05 B
+5 20.92 A 16.44 B 11.92 B
+6 22.42 A 17.94 B 13.42 B
+7 23.63 A 19.14 B 14.63 B
+8 24.59 A 20.10 B 15.59 B
+9 25.35 A 20.87 B 16.35 B
+10 25.97 A 21.49 B 16.97 B
+It can be seen that for n ≥ 2 the optimal policy is to take action A
+when in state 3, otherwise take action B. This is in fact the
+optimal policy in the infinite horizon problem.
+7 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Advantages and disadvantages of these 2 methods
+The calculations involved in value iteration are simpler than the
+calculations used in policy iteration. However, value iteration does
+have some problems.
+The main problem is convergence. The condition that
+an+1(i) = an(i), ∀i ∈ 1, 2, . . . , m (i.e. the optimal set of actions
+with n + 1 steps to go is the same as the optimal set of actions
+with n steps to go) is not sufficient to state that the optimal policy
+in the infinite horizon problem is {an(i)}
+m
+j=1.
+8 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Convergence of value iteration
+Convergence can be checked at stage n by calculating
+n(i) = |vn(i) − wn(i)| for each state i, where wn(i) is the cost
+incurred by taking the second best action with n steps to go and
+thereafter using the optimal policy.
+For example, if
+δn = max
+1≤i≤m
+{n(i)} ≥ cmaxβ
+n
+1 − β
+,
+then we may stop and state that {a(i)}
+m
+j=1 is the optimal policy in
+the infinite stage problem.
+It should be noted that this is a rather conservative condition and
+convergence may be very slow, especially when β is close to 1. In
+the example given above, the convergence criterion is met after 18
+iterations.
+9 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Advantages of policy iteration and hybrid algorithms
+The calculations involved in policy iteration are more complex.
+However, if πn+1 = πn, then πn is the optimal policy in the infinite
+horizon problem.
+For these reasons in complex problems where the set of stationary
+strategies is large, a hybrid algorithm may be used.
+A few iterations of the value iteration algorithm allow us to find a
+good solution cheaply. Afterwards, the policy iteration algorithm
+can be implemented using this good solution as the starting point.
+10 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Policy iteration and random time horizons
+It should also be noted that the policy iteration algorithm can also
+be used in stochastic problems where the process finishes when an
+absorbing state is attained. In such problems the time horizon is
+random (see Tutorial Sheet 2).
+11 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+2.3.2 Average cost problems
+Deterministic problems As before, we consider only stationary
+strategies and a finite state space.
+Let a(i) be the action carried out in state i.
+Since the state space is finite, the state must at some point return
+to a state that has previously been visited. A deterministic process
+will then cycle (we must carry out the same sequence of actions in
+all the following cycles).
+The states observed in such a cycle are referred to as recurrent
+states. The number of recurrent states must be equal to the cycle
+length.
+It should be noted that the average costs incurred in such a cycle
+do not depend on the initial state (possibly non-recurrent).
+12 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Deterministic problems
+It should be noted that the assumption of a finite state space may
+be relaxed to the assumption that the set of recurrent states under
+a stationary strategy is finite (see following example).
+Suppose the cycle length is Lπ and the cost per cycle is Ccyc,π.
+The average costs incurred are
+Cav,π =
+Ccyc,π
+Lπ
+.
+The optimal policy π minimises Cav,π.
+13 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 1.4.4 - The equipment replacement problem
+Consider the problem of replacing a car (see Tutorial Sheet 1).
+I want to minimise the average costs of running a car. I start with
+a new car.
+The annual costs of running a car which will be x years old at the
+end of the year are 1000 + 2000x.
+At the end of each year I can make one of two decisions: a) sell my
+present car and buy a new car. The cost of a new car is 20 000
+and the price I get for my old car is 20000
+x+1 , or b) continue.
+Calculate the optimal average costs.
+14 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.4
+First note that it cannot be optimal to never sell the car, since the
+annual running costs tend to infinity (i.e. the average running
+costs per year tend to infinity).
+The average annual cost of buying a new car every year is 13 000
+(buy for 20 000, running costs 3 000 and sale price 10 000), i.e.
+finite.
+It follows that it must be optimal to sell the car at some given age.
+Let k (finite) be the youngest age at which it is optimal to sell the
+car. It is clear that the age of the car at each decision point (at
+the end of a year) in a cycle goes from 1 to k. Hence, the set of
+recurrent states is finite.
+15 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.4
+Let Cav,k be the average costs incurred under such a policy.
+Since the cycle length is k (after k years we have a new car again),
+the costs incurred in a cycle Ccyc,k are:
+a) Running costs:
+X
+k
+i=1
+1000 + 2000k = 1000k + 1000k(k + 1) = 1000k
+2 + 2000k
+b) Costs of selling the old car and buying a new one:
+20000 −
+20000
+k+1 .
+16 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.4-ctd.
+Hence, we have
+Cav,k=
+Ccyc,k
+k
+=
+1000k
+2 + 2000k + 20000 − 20000/(k + 1)
+k
+=1000k + 2000 + 20000
+k
+−
+20000
+k(k + 1)
+=1000k + 2000 + 20000
+k + 1
+.
+17 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.4-ctd.
+We could find the optimal solution by evaluating the average cost
+for k = 1, 2, . . . until the average costs start to increase and then
+pick the k that minimises the average costs.
+There are two problems with this approach
+1. The optimal value of k may be large (i.e. a large
+number of evaluations need to be carried out).
+2. There may be multiple local minima of the optimal
+cost function. Hence, this procedure is not
+guaranteed to find the global minimum.
+18 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.4-ctd.
+We can find the solution using differentiation, but remembering
+that k is defined to be an integer.
+If the average cost function has a unique (global) minimum at k,
+then bkc and dke are the only candidates for the global minimiser
+of the average cost function over the set of integers.
+bkc is the integer part of k (the largest integer not larger than k)
+and dke is the ceiling of k (the smallest integer not smaller than k).
+19 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.4-ctd.
+If there is a local minimum of the average cost function at k,
+then bkc and dke are candidates for the global minimiser of the
+average cost function over the set of integers.
+In this case we can find the global minimiser by evaluating the
+average costs incurred under all the candidate strategies.
+20 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.4-ctd.
+We have
+dCav,k
+dk = 1000 −
+20000
+(k + 1)2
+This derivative is 0 when k = 3.47, negative for k < 3.47 and
+positive for k > 3.47. Hence, the cost function has a global
+minimum at k = 3.47.
+Since k is defined to be an integer, using the argument above the
+optimal value of k must be either 3 or 4.
+21 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.4-ctd.
+By direct calculation, we have
+Cav,3 = 10000; Cav,4 = 10000
+It can be seen that selling each car at age 3 or 4 years is optimal.
+The average cost incurred under either of these stationary policies
+is 10000 Euro/year.
+Note that there are also infinitely many non-stationary strategies
+which are optimal. These strategies involve sometimes having a car
+for 3 years and sometimes for 4 years.
+22 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Stochastic Problems
+It will be assumed that the number of states is finite and each
+state is recurrent under any policy.
+Given this, the expected time go from the present state to any
+other (including returning to the present state) is finite.
+Let Lπ(i, j) be the expected time required to go from state i to
+state j and let Cπ(i, j) be the expected costs incurred in going
+from state i to state j under the strategy π.
+23 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Average cost incurred under a policy
+The average cost incurred under a policy π, Cav,π is given by
+Cav,π =
+Cπ(i, i)
+Lπ(i, i)
+, i ∈ {1, 2, . . . , m}.
+It should be noted that this average cost is independent of i (it
+does not depend on which state the process is in at the beginning
+of a ”cycle”).
+We now consider how to calculate Cπ(i, i) and Lπ(i, i).
+24 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Expected length of a cycle starting in state i
+Under a given policy, there is an m × m matrix defining the
+transition probabilities pi,j,π, where pi,j,π is the probability of going
+from state i to state j in one stage under policy π.
+Supppose we wish to calculate Lπ(i, j), the expected number of
+stages required to go from state i to state j under the policy π.
+Suppose at stage 0, we are in state i. We will be in state j at stage
+1 with probability pi,j,π. In this case, the number of stages required
+to get to state j is 1.
+25 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Expected length of a cycle starting in state i-ctd.
+At stage 1 with probability pi,k,π, we will be in state k. In this case
+the expected number of additional stages required to get to j is
+Lπ(k, j) [i.e. in total on average 1 + Lπ(k, j) stages will be
+required].
+Applying the law of total probability to expected values, we have
+Lπ(i, j)=pi,j,π +
+X
+1≤k≤m;k6=j
+pi,k,π(1 + Lπ(k, j))
+=1 + X
+1≤k≤m;k6=j
+pi,k,πLπ(k, j)
+By varying i from 1 to m and fixing the finishing state j, we obtain
+a system of m linear equations that can be used to derive
+Lπ(1, j), Lπ(2, j), . . . , Lπ(m, j).
+26 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Expected costs incurred in a cycle starting in state i-ctd.
+Now consider Cπ(i, j). Let ci,k,π be the immediate cost of
+transition from state i to state k in one stage (i.e. the cost of the
+action plus the cost of being in the appropriate state - can be
+defined to be the initial state or the final state as long as this
+choice is made consistently).
+Applying the law of total probability as above, we have
+Cπ(i, j) = pi,j,πci,j,π +
+X
+1≤k≤m;k6=j
+pi,k,π(ci,k,π + Cπ(k, j))
+Again, by varying i from 1 to m, we obtain a system of m linear
+equations that can be used to derive
+Cπ(1, j), Cπ(2, j), . . . , Cπ(m, j).
+27 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 2.3.5
+Calculate the average reward obtained in the infinite horizon,
+non-discounted problem described in Example 2.3.3 under the
+policy π, where π is the strategy: always take the action B
+28 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.5
+The first thing to do is to define the transition matrix under π.
+In state 1 we take action B and hence the following state is 1 with
+probability 0.2, 2 with probability 0.4 and 3 with probability 0.4.
+Hence, p1,1,π = 0.2, p1,2,π = 0.4, p1,3,π = 0.4. Arguing similarly,
+the transition matrix is given by
+1 2 3
+1 0.2 0.4 0.4
+2 0.1 0.3 0.6
+3 0.0 0.1 0.9
+29 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.5-ctd.
+We now calculate the expected transition times to state 3, say. We
+have
+Lπ(i, 3) = 1 +X
+2
+k=1
+pi,k,πLπ(k, 3).
+Hence,
+Lπ(1, 3)=1 + p1,1,πLπ(1, 3) + p1,2,πLπ(2, 3)
+=1 + 0.2Lπ(1, 3) + 0.4Lπ(2, 3)
+Lπ(2, 3)=1 + p2,1,πLπ(1, 3) + p2,2,πLπ(2, 3)
+=1 + 0.1Lπ(1, 3) + 0.3Lπ(2, 3)
+Lπ(3, 3)=1 + p3,1,πLπ(1, 3) + p3,2,πLπ(2, 3)
+=1 + 0.1Lπ(2, 3).
+30 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.5-ctd.
+We can use the first and second equations to find Lπ(1, 3) and
+Lπ(2, 3). Rearranging the first equation and substituting it into the
+second,
+Lπ(1, 3)=5 + 2Lπ(2, 3)
+4
+Lπ(2, 3)=1 + 0.1
+5 + 2Lπ(2, 3)
+4
++ 0.3Lπ(2, 3).
+Solving these equations, we obtain
+Lπ(2, 3) = 45
+26
+; Lπ(1, 3) = 55
+26
+; Lπ(3, 3) = 61
+52
+31 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.5-ctd.
+We now calculate the expected rewards obtained from going from
+state i to state 3 under π, Rπ(i, 3). We have
+Rπ(i, j) = pi,j,πri,j,π +
+X
+1≤k≤m;k6=j
+pi,k,π(ri,k,π + Rπ(k, j)),
+where ri,k,π is the reward of transition from i to k in one step (this
+is just the reward gained in the initial state). Since r1,k,π = 1,
+r2,k,π = 3, r3,k,π = 5, we have
+Rπ(1, 3)=p1,3,π + p1,1,π(1 + Rπ(1, 3)) + p1,2,π(1 + Rπ(2, 3))
+=1 + 0.2Rπ(1, 3) + 0.4Rπ(2, 3)
+Rπ(2, 3)=3p2,3,π + p2,1,π(3 + Rπ(1, 3)) + p2,2,π(3 + Rπ(2, 3))
+=3 + 0.1Rπ(1, 3) + 0.3Rπ(2, 3)
+Rπ(3, 3)=5p3,3,π + p3,1,π(5 + Rπ(1, 3)) + p3,2,π(5 + Rπ(2, 3))
+=5 + 0.1Rπ(2, 3)
+32 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.5-ctd.
+This system of equations may be solved in the same way as the
+system above to give
+Rπ(1, 3) = 95
+26
+; Rπ(2, 3) = 125
+26
+; Rπ(3, 3) = 285
+52
+.
+The average reward obtained under policy π is thus
+Rav,π =
+Rπ(3, 3)
+Lπ(3, 3) =
+285
+61
+≈ 4.6721.
+33 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Policy Iteration
+Suppose we have calculated Lπ(i, i) and Cπ(i, i).
+We can check whether the policy π could be improved by changing
+the action used when in state i.
+Consider the strategy (a(i), π), which uses the action a(i) in state
+i and otherwise uses the action defined by π.
+34 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Perturbed strategies in discounted value problems and
+average value problems
+Note that the interpretation of such a perturbed strategy is slightly
+different to the notion of a perturbed strategy we used in
+discounted problems.
+In discounted problems, a perturbed strategy uses a different
+action at stage 1, but then always follows the original strategy.
+In average value problems, a perturbed strategy changes the action
+every time one given state is entered.
+35 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Average costs under modified strategy: Policy
+improvement
+The expected time required to return to state i under this policy is
+L(a(i),π)
+(i, i) = 1 + X
+1≤k≤m;k6=i
+pi,k,a(i)Lπ(k, i).
+Note that this follows from the fact that if the state does not
+immediately return to i, then the policy π is followed until the end
+of the cycle.
+This expression can simply be evaluated using previous calculations.
+Similarly, the expected cost incurred in a cycle starting in state i
+under this policy is
+C(a(i),π)
+(i, i) = pi,i,a(i)ci,i,a(i)+
+X
+1≤k≤m;k6=i
+pi,k,a(i)
+(ci,k,a(i)+Cπ(k, i)).
+36 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Average costs under modified strategy: Policy
+improvement
+We have
+Cav,(a(i),π) =
+C(a(i),π)
+(i, i)
+L(a(i),π)
+(i, i)
+.
+If Cav,(a(i),π) < Cav,π, then we can improve π by changing the
+action taken in state i to a(i).
+37 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Policy iteration algorithm
+At each step of the policy iteration algorithm, we use this method
+to see if we can improve the action taken in each of the states
+1, 2, . . . , m.
+If the action cannot be improved in any of the states, then we have
+found the optimal policy.
+Otherwise, we replace the strategy π with the strategy π
+0 made up
+of the set of the best actions in each state found using the
+algorithm above and repeat the policy improvement step.
+38 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 2.3.6
+Using the policy iteration algorithm, find a policy that is better
+than π: always use B.
+39 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 1.4.6
+Since we have calculated {Lπ(i, 3)}i=1,2,3, we consider changing
+the action carried out in state 3, i.e. the perturbed policy
+(a(3), π), where a(3) = A. This is the policy use A in state 3,
+otherwise use B.
+The reward gained at stage 1 is 10 and the transition probabilities
+are p3,1,A = 0.4, p3,2,A = 0.4, p3,3,A = 0.2.
+40 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.3.6-ctd.
+The expected time to return to state 3 is given by
+L(A,π)
+(3, 3)=1 + p3,1,ALπ(1, 3) + p3,2,ALπ(2, 3)
+=1 + 0.4 ×
+55
+26
++ 0.4 ×
+45
+26
+=
+66
+26
+.
+The expected reward obtained in such a cycle is given by
+R(A,π)
+(3, 3)=10 + p3,1,ARπ(1, 3) + p3,2,ARπ(2, 3)
+=10 + 0.2 ×
+95
+26
++ 0.4 ×
+125
+26
+=
+348
+26
+.
+The expected average reward is given by
+Rav,(A,π) =
+R(A,π)
+(3, 3)
+L(A,π)
+(3, 3) =
+348
+66
+≈ 5.2727.
+Since Rav,(A,π) > Rav,π, the policy defined by (A, π) i.e. play A in
+state 3, otherwise play B is better than the strategy of always
+playing B.
+41 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+2.4 Optimal stopping problems - The classical marriage
+problem
+It is assumed that a person (searcher) observes a sequence of
+objects (candidates to be a marriage partner).
+The value of the i-th candidate seen is Xi
+, where the Xi are
+non-negative, independent and identically distributed (i.i.d.)
+random variables with known density function f (x).
+The cost of observing a candidate is c. On observing a candidate
+the searcher must decide to either accept the candidate, thus
+ceasing to search and obtaining a reward of Xi − ci, or reject the
+candidate and continue. It is assumed that c < E(Xi).
+Once a candidate has been rejected, it cannot be later accepted.
+42 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+2.4.1 The form of the optimal policy for the finite horizon
+problem
+Let the time horizon be n.
+It is clear that starting at stage i, the expected total reward from
+search can be maximised by maximising the expected reward from
+future search (the search costs incurred before time i do not affect
+the rule that should be used from time i onwards).
+Suppose the optimal expected reward from search starting at stage
+i (ignoring previous costs) is vi
+.
+43 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+The Bellman equation for the finite horizon problem
+By accepting a candidate of value Xi
+, the searcher obtains a
+reward of Xi − c. By rejecting this candidate, the searcher obtains
+an expected reward of vi+1 − c.
+Hence, an individual should accept a candidate at stage i, if and
+only if its value is greater than vi+1 (i.e. the expected reward from
+future search).
+The Bellman equation is given by
+vi=E[max{Xi
+, vi+1}] − c =
+Z ∞
+0
+max{x, vi+1}f (x)dx − c
+=
+Z vi+1
+0
+vi+1f (x)dx +
+Z ∞
+vi+1
+xf (x)dx − c
+=vi+1P(Xi < vi+1) + Z ∞
+vi+1
+xf (x)dx − c
+44 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+The Bellman equation for the finite horizon problem
+If the time horizon is n, then vn = E(Xn) − c, since the last
+candidate should always be chosen when none has been previously
+chosen.
+The optimal reward from search is given by v1.
+45 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Alternative form of the Bellman equation
+Since
+E[Xi
+|Xi > vi+1] =
+R ∞
+vi+1
+xf (x)dx
+P(Xi > vi+1)
+,
+the above equation can be written in the form
+vi = vi+1P(Xi < vi+1) + E[Xi
+|Xi > vi+1]P(Xi > vi+1) − c
+46 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 2.4.1
+Suppose the objects have i.i.d. values from the uniform
+distribution on [0, 1] and the cost of observing an object is 0.1.
+i. Derive a recursive formula for the optimal expected
+reward in the finite horizon problem.
+ii. Calculate the optimal expected reward when a
+maximum of 5 objects can be observed.
+47 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.4.1-i
+i. We have f (x) = 1, x ∈ [0, 1].
+vi=E[max{Xi
+, vi+1}] − c
+=
+Z vi+1
+0
+vi+1f (x)dx +
+Z ∞
+vi+1
+xf (x)dx − c
+=vi+1P(Xi < vi+1) + Z ∞
+vi+1
+xf (x)dx − c
+=v
+2
+i+1 +
+Z 1
+vi+1
+xdx − 0.1 = v
+2
+i+1 +
+1 − v
+2
+i+1
+2
+− 0.1
+=
+1 + v
+2
+i+1
+2
+− 0.1.
+48 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.4.1-ii
+ii. Working recursively v5 = E(X5) − 0.1 = 0.4.
+v4=
+1 + v
+2
+5
+2
+− 0.1 = 0.48
+v3=
+1 + v
+2
+4
+2
+− 0.1 = 0.5152
+v2=
+1 + v
+2
+3
+2
+− 0.1 = 0.5327
+v1=
+1 + v
+2
+2
+2
+− 0.1 = 0.5419.
+49 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+The optimal policy
+The threshold used at stage i is vi+1 (i.e. accept a candidate if
+his/her value is greater than the expected reward from future
+search).
+Thus in the problem considered above
+1. At the last stage (stage 5) accept any candidate.
+2. At stage 4 accept candidates of value ≥ 0.4.
+3. At stage 3 accept candidates of value ≥ 0.48.
+4. At stage 2 accept candidates of value ≥ 0.5152.
+5. At stage 1 accept candidates of value ≥ 0.5327.
+50 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Discounted payoffs
+The rewards may be discounted over time according to the number
+of candidates seen. When the discount factor is β, the Bellman
+equation is given by
+vi=βE[max{Xi
+, vi+1}] − c
+=β
+ Z vi+1
+0
+vi+1f (x)dx +
+Z ∞
+vi+1
+xf (x)dx!
+− c
+=β
+
+vi+1P(Xi < vi+1) + Z ∞
+vi+1
+xf (x)dx!
+− c.
+At stage i, it is optimal to accept a candidate if Xi ≥ vi+1.
+51 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+2.4.2 The form of the optimal policy for infinite horizon
+problems
+Let v be the expected reward in the infinite horizon problem. If the
+first candidate is rejected, then the expected future reward
+(ignoring the cost of observing the first observation) is again
+simply v. Hence, the Bellman equation is given by
+v=E[max{Xi
+, v}] − c
+=
+Z v
+0
+vf (x)dx +
+Z ∞
+v
+xf (x)dx − c
+=vP(Xi < v) + Z ∞
+v
+xf (x)dx − c.
+This gives us an equation for v. The optimal policy is to accept a
+candidate iff its value is ≥ v (i.e. a fixed threshold rule).
+52 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 2.4.2
+Find the optimal threshold rule for the infinite-horizon version of
+the problem in Example 2.4.1.
+53 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.4.2
+The Bellman equation is
+v=vP(Xi < v) + Z ∞
+v
+xf (x)dx − c
+=v
+2 +
+Z 1
+v
+xdx − 0.1 = 1 + v
+2
+2
+− 0.1
+54 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Solution to Example 2.4.2
+This leads to the quadratic equation v
+2 − 2v + 0.8 = 0.
+There are two roots of this equation: v1 =
+2+√
+0.8
+2
+and
+v2 =
+2−
+√
+0.8
+2
+.
+The first solution cannot be the correct solution, since the reward
+from search is bounded above by 1. Hence, we have
+v =
+2 −
+√
+0.8
+2
+≈ 0.5528.
+This threshold is equal to the expected reward from search.
+55 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
