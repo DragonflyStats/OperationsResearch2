@@ -3,8 +3,9 @@ Lecturer: David Ramsey
 Room B-2026
 david.ramsey@ul.ie
 www.ul.ie/ramsey
-August 31, 2011
-1 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Recommended Text
 Operations Research- An Introduction. Hamdy A. Taha
 (003/TAH)
@@ -13,7 +14,11 @@ has 4 copies of this edition. In addition, there are around 25 copies
 of older editions. Also,
 Introduction to Operations Research. Hillier and Lieberman.
 Course notes and tutorial sheets will be available on the Internet.
-2 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+2 
+\end{frame}  
+%=========================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
 Module Outline
 1. Integer Programming. Applications to the travelling
 salesperson’s problem and the knapsack (packing) problem.
@@ -23,7 +28,10 @@ problems.
 3. Game Theory. Matrix Games. Minimax solutions. Nash
 equilibria. Correlated Equilibrium. Applications to economics and
 biology.
-3 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+3 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 CHAPTER 1 - INTEGER PROGRAMMING AND THE
 BRANCH AND BOUND ALGORITHM
 1.1 The definition of an integer programming problem
@@ -31,7 +39,7 @@ An integer programming problem can be defined by the description
 of a linear programming problem together with the constraint that
 the variables must be integers. It is assumed that the variables are
 constrained to be non-negative.
-4 
+% end of Slide 4 
 \end{frame}  
 %=====================================================================================%
 \begin{frame} 
@@ -48,15 +56,24 @@ Note that we can describe any integer programming problem as a
 maximisation problem (the minimisation of 4x1 + 5x2 is equivalent
 to the maximisation of −4x1 − 5x2). The function z = 4x1 + 5x2 is
 called the objective function.
-5 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-1.2 The Branch and Bound Method - The initial bound
+5 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{1.2 The Branch and Bound Method - The initial bound}
+\begin{itemize}
+\item 
 We may find an initial upper bound on the optimal value in the
 integer programming problem by solving the corresponding linear
 programming problem.
-Consider the problem given above. If the values of x1 and x2 at the
+\item Consider the problem given above. If the values of x1 and x2 at the
 optimal solution to this problem are integers, then this must be the
 optimal solution to the integer programming problem.
-6 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+\end{itemize}
+% end of slide 6 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 The Branch and Bound Method - The initial branching
 step
 Suppose x1 = c at this optimal solution, where c is not an integer.
@@ -66,26 +83,36 @@ The first problem is obtained by adding the constraint x1 ≤ bcc
 (bcc is the largest integer not greater than c).
 The second is obtained by adding the constraint x1 ≥ dce (dce is
 the smallest integer not less than c).
-7 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-The initial branching step
-The union of the feasible sets for these two LP problems is the
+7 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The initial branching step}
+\begin{itemie}
+\item The union of the feasible sets for these two LP problems is the
 feasible set for the initial LP problem with the set of (x1, x2)
 satisfying bcc < x1 < dce removed.
-Since no feasible solutions in which both x1 and x2 are integers
+\item Since no feasible solutions in which both x1 and x2 are integers
 have been removed (see diagram below, the dots show the feasible
 points in the integer programming problem), the optimal solution
 to the integer programming problem must lie in one of the feasible
 regions of these two new problems.
-8 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Solution of the IP problem
+8 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Solution of the IP problem}\\
 Consider the linear programming problem
 max z = 4x1 + 5x2
 subject to
 x1 + x2≤5
 6x1 + 10x2≤45,
 The feasible region is illustrated in the figure on the next slide.
-9 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Soultion of the IP problem
+9 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Solution of the IP problem}\\
 0
 5
 5 7.5
@@ -121,8 +148,10 @@ F2
 
 
 
-10 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Solution of the initial LP problem
+10 \end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Solution of the IP problem}\\
 We can solve this graphically. The solution must lie at one of the
 apexes of the feasible set.
 The point of intersection of the two lines representing the linear
@@ -131,7 +160,8 @@ x1 + x2=5
 6x1 + 10x2=45.
 This leads to x1 = 1.25, x2 = 3.75. The value obtained at this
 point is 4 × 1.25 + 5 × 3.75 = 23.75.
-11 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+11 \end{frame}  
+\begin{frame} \frametitle{Integer Programming}     
 Solution of the initial LP problem
 The other apexes are (0, 0), (0, 4.5) and (5, 0) and the
 corresponding values are 0, 22.5, 20.
@@ -153,8 +183,12 @@ of the present LP problem, where ci
 is not an integer.
 We add the constraint xi ≤ bci c to obtain one of the LP problems
 and add the constraint xi ≥ dci e to obtain the other LP problem.
-13 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-The two initial branch LPs
+13 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The two initial branch LPs}\\
+
 In this case setting i = 1, the first LP problem obtained is thus
 max z = 4x1 + 5x2
 subject to
@@ -162,8 +196,11 @@ x1 + x2≤5
 6x1 + 10x2≤45
 x1≤1.
 The feasible region of this problem is denoted in the diagram as F1.
-14 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-The two initial branch LPs
+% End of Slide 14 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The two initial branch LPs}\\
 The second LP problem is
 max z = 4x1 + 5x2
 subject to
@@ -173,21 +210,31 @@ x1≥2.
 The feasible region is denoted F2 in the diagram above.
 The interior of the shaded area has been removed from our
 considerations.
-15 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-The branching mechanism
+15 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The Branching Mechanism}\\
+
 This is the branching part of the algorithm. Each branch creates 2
 LP problems from one LP problem and thus it may seem that the
 number of LP problems considered increases. However,
-1. If the solution of one of the ”branch” LP problems is
+\begin{itemize}
+\item[1.] If the solution of one of the ”branch” LP problems is
 a vector of integers, then we do not have to branch
 any longer. Also, we can use bounds on the optimal
 value to check whether a solution is or cannot be
 optimal.
-2. Many of the branches will lead to LP problems whose
+\item[2.] Many of the branches will lead to LP problems whose
 set of feasible solutions is empty.
 It can be shown that the branch and bound algorithm will always
 come to a halt.
-16 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+\end{itemize}
+%% End of Slide 16 
+\end{frame}  
+%------------------------------------------------------%
+\begin{frame} 
+\frametitle{Integer Programming}     
 Choice of way to split
 It should be noted that after solving the initial LP problem, we can
 form the next 2 LP problems by adding constraints on x2. In this
@@ -197,7 +244,11 @@ subject to
 x1 + x2≤5
 6x1 + 10x2≤45
 x2≤3.
-17 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+% End of Slide 17 
+\end{frame} 
+%================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
 Choice of way to split
 The second LP problem is given by
 max z = 4x1 + 5x2
@@ -205,7 +256,11 @@ subject to
 x1 + x2≤5
 6x1 + 10x2≤45
 x2≥4.
-18 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+% End of Slide 18 
+\end{frame}  
+%==================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
 Bounds on the optimal value and adding branches
 1. If the solution of one of the ”branch” LP problems is
 a vector of integers, then this gives a lower bound on
@@ -220,7 +275,10 @@ resulting from this one. Furthermore, if the
 coefficients are integers and the variables must be
 integers, the integer part of the value is an upper
 bound on valid solutions found in ”lower branches”.
-19 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+% End of Slide 19 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Bounds on the optimal value and adding branches
 If we have already found a feasible solution whose value is greater
 or equal to the upper bound on the value in a particular branch,
@@ -235,22 +293,35 @@ A branch is said to be presently active, if it has not yet been split
 and a split is under consideration under the criterion above, or we
 have not yet solved both LP problems of a branch that has been
 split.
-20 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+% End of Slide 20 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Bounds on the optimal value and adding branches
-3. The present upper bound on the objective function is
+\begin{itemize}
+\item[3.] The present upper bound on the objective function is
 the maximum of the upper bounds found in the
 branches that are presently active.
-4. The present lower bound on the objective function is
+\item[4.] The present lower bound on the objective function is
 the value of the best feasible solution found so far.
-21 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Example 1.1
+\end{itemize}
+% End of Slide  21 
+\end{frame}  
+%=============================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Example 1.1}\\\
 Solve the IP problem.
 max z = 4x1 + 5x2
 subject to
 x1 + x2 ≤ 5
 6x1 + 10x2 ≤ 45,
 where x1 and x2 are non-negative integers.
-22 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+% End of Slide 22 
+\end{frame}  
+%===================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
 Solution
 The first part of the solution is to find an upper bound on the
 objective function by solving the corresponding LP problem.
@@ -261,8 +332,12 @@ problem.
 We now split this LP problem into 2 LP problems. The first is
 obtained by adding the constraint x1 ≤ 1. The second is obtained
 by adding the constraint x2 ≥ 2.
-23 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Solution
+% End of Slide 23 
+\end{frame}  
+%===================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Solution}
 We now consider these LP problems in turn. The apexes of the
 feasible region F1 of the first problem (see diagram) are (0, 0), (1,
 0), (0, 4.5) and (1, 3.9) [the intersection point of the lines x1 = 1
@@ -273,7 +348,11 @@ and the optimal value 23.5.
 Arguing as above, since x2 is not an integer at this point, it follows
 that 23 is an upper bound on the value of the IP problem obtained
 in any of the branches starting from this problem.
-24 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+% End of Slide 24 
+\end{frame}  
+%=========================================================%
+\begin{frame}
+\frametitle{Integer Programming}     
 Solution
 We now consider the second LP problem. The apexes of the
 feasible region are (2, 0), (5, 0) and (2, 3). The corresponding
@@ -285,11 +364,16 @@ problem.
 Since we have already shown that 23 is an upper bound on the
 optimal value of the IP problem, it is clear that this solution is an
 optimal solution to the IP problem.
-25 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Summary of the branch and bound procedure
+% End of Slide 25 
+\end{frame}  
+%=========================================================%
+\begin{frame}
+\frametitle{Integer Programming}     
+\noindent \textbf{Summary of the branch and bound procedure}
 The branch and bound method may be summarised as follows
-Figure: Summary of the branch and bound process for Example 1.1 26 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Note on choice of branches
+Figure: Summary of the branch and bound process for Example 1.1 26 \end{frame}  
+\begin{frame} \frametitle{Integer Programming}     
+\noindent \textbf{Note on choice of branches}
 It is not clear what the optimal procedure for solving such a
 problem should be. For example, if we first solved the LP problem
 with feasible region F2, we would find the optimal solution
@@ -300,8 +384,12 @@ feasible region into 2.
 Since the optimal solution to this LP problem is (1,3.9), the first
 LP problem is obtained by adding the constraint x2 ≤ 3 and the
 second LP problem is obtained by adding the constraint x2 ≥ 4.
-27 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Note on choice of branches
+% End of Slide 27 
+\end{frame}  
+%=========================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Note on choice of branches}
 The apexes of the feasible region in the first problem are (0, 0), (1,
 0), (0, 3) and (1, 3). The values corresponding to these points are
 0, 4, 15 and 19. Hence, 19 is a lower bound on the optimal value.
@@ -313,7 +401,11 @@ The apexes of the feasible region in the second problem are (0, 4),
 .
 This gives an upper bound of 23 for solutions to the IP problem in
 this region. This region may then be split into two.
-28 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+% End of Slide 28 
+\end{frame}  
+%=========================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
 Note on choice of branches
 It can be seen that the complexity of solution depends on the
 choice of LP problem to be solved at each stage. There is no
@@ -328,7 +420,11 @@ splits required to obtain it from the original LP problem. Such a
 procedure is likely to avoid the extremely long search times that
 may result from exhausitively searching a non-optimal branch
 before searching along other branches.
-29 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+29 
+\end{frame}  
+%=========================================================%
+\begin{frame}
+\frametitle{Integer Programming}     
 1.3 Mixed Integer/Linear Programming problems (IP/LP
 problems)
 In such problems some, but not all, of the variables are constrained
@@ -351,8 +447,12 @@ before. If xi = c ∈/ Z, 1 ≤ i ≤ k at the optimal solution of this
 problem, then the first LP problem is obtained by adding the
 constraint xi ≤ bcc and the second LP problem is obtained by
 adding the constraint xi ≥ dce.
-31 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-The bounding procedure
+%End of Slide 31 
+\end{frame}  
+%=============================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The bounding procedure}
 The bounding procedure is as for pure IP problems with the
 following change:
 1. If the components of the solution of one of the
@@ -360,7 +460,11 @@ following change:
 integers are integers, then this gives a lower bound
 on the optimal value. This branch does not need to
 investigated any further.
-32 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+32 
+\end{frame}  
+%=========================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
 Example 1.2
 Solve the mixed LP/IP problem.
 max z = 4x1 + 5x2
@@ -368,7 +472,11 @@ subject to
 x1 + x2 ≤ 5
 6x1 + 10x2 ≤ 45,
 where x1, x2 are non-negative and x2 is an integer.
-33 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+%% End of Slide 33 
+\end{frame}  
+%=========================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
 Solution
 As before the first step is to solve the LP problem obtained by
 ignoring the constraint that x2 is an integer. The solution of this
@@ -378,7 +486,10 @@ It should be noted that the optimal value in this problem is not
 necessarily an integer and hence we cannot immediately improve
 this upper bound as in the pure IP problem with integer
 coefficients.
-34 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+%% End of Slide 34 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Solution
 We now split the initial linear programming problem into 2
 problems. Since x1 does not have to be an integer, the two LP
@@ -407,7 +518,10 @@ The problems obtained are illustrated below:
 ❜❜❜❜❜❜❜❜❜❜❜❜❜❜❜
 F1
 F2
-36 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+%% End of Sldie 36 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Solution
 The apexes of F1 are (0,4), (0,4.5), ( 5
 6
@@ -437,8 +551,10 @@ Suppose the distance between city i and j is di,j
 define di,i = ∞.
 Let xi,j = 1 if a tour goes to city j after visiting city i, otherwise
 xi,j = 0.
-38 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-The Travelling Salesperson Problem
+38 \end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The Travelling Salesperson Problem}\\
 The mathematical formulation of the TSP is as follows: Minimize
 z =
 Xn
@@ -456,8 +572,12 @@ i=1
 xi,j = 1, j = 1, 2, . . . , n
 xi,j ≥ 0 xi,j
 is an integer
-39 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-The Travelling Salesperson Problem
+% End of Slid e39 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The Travelling Salesperson Problem}\\
+
 The first constraint states that exactly one city must be visited
 immediately after city i.
 The second constraint states that exactly one city must be visited
@@ -495,8 +615,7 @@ optimal solution.
 %=====================================================================================%
 \begin{frame} 
 \frametitle{Integer Programming}     
-
-Example 1.3
+\noindent \textbf{Example 1.3}\\
 Consider the following 5-city TSP problem given by the distance
 matrix
 D =
@@ -510,7 +629,7 @@ D =
 
 
 42 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Example 1.3
+\noindent \textbf{Example 1.3}\\
 First we find an initial tour. Starting from city 1, we go to city 2
 (the closest). Distance 12
 From city 2, we can go to any city except city 1. City 3 is the
@@ -519,23 +638,34 @@ From city 3, we can go to city 4 or 5. City 4 is the closest.
 Distance 16
 From city 4, we must go to city 5. Distance 19.
 Finally, we return to city 1. Distance 21.
-43 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Example 1.3
+%% End of Slide 43 
+\end{frame}  
+%===================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent\textbf{Example 1.3}\\
 Hence, the initial tour is 1-2-3-4-5-1.
 The length of this tour is 12+8+16+19+21=76.
 We now consider reversing any two cities in the tour.
 It should be noted that city 1 should not be moved, since the
 resulting sequence does not define a tour.
-44 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Example 1.3
+%% End of Slide 44 
+\end{frame}  
+%====================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Example 1.3}\\
 Hence, we consider the following reversals
 Old Tour New Tour Length
 1-2-3-4-5-1 1-3-2-4-5-1 22+8+11+19+21=81
 1-2-3-4-5-1 1-2-4-3-5-1 12+11+16+19+21=79
 1-2-3-4-5-1 1-2-3-5-4-1 12+8+19+19+21=79
 None of these tours is better than the initial tour.
-45 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Example 1.3
+%% End of Slide 45 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Example 1.3}\\
 Next we consider the reversal of three cities in a tour in the best
 tour found so far (the initial tour).
 Old Tour New Tour Length
@@ -543,7 +673,7 @@ Old Tour New Tour Length
 1-2-3-4-5-1 1-2-5-4-3-1 12+13+19+16+22=82
 Hence, the best tour found so far is 1-4-3-2-5-1. Length 73.
 46 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
-Example 1.3
+\noindent \textbf{Example 1.3}\\
 Finally, we consider the reversal of four cities in this new tour.
 Old Tour New Tour Length
 1-4-3-2-5-1 1-5-2-3-4-1 21+13+8+16+15=73
@@ -552,7 +682,9 @@ which are of the same length.
 It should be noted that if the distance matrix is symmetric, then
 reversing n − 1 cities in a tour results in a tour of unchanged
 length as the tour obtained is a pure reversal of the original tour.
-47 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+47 \end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 1.4.2 The Branch and Bound Method for Solving the TSP
 This method finds the optimal tour by solving an appropriate
 sequence of assignment problems.
