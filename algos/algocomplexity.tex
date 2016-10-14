@@ -166,7 +166,7 @@ Here we have three variables A, B and C and one constant. Hence S(P) = 1+3. Now 
 \end{frame}
 
 %==========================================================================%
-\section{1A - Brute Force and Combinatorial explosion}
+\subsection{1A - Brute Force and Combinatorial explosion}
 \begin{frame}
 \frametitle{Brute Force Search}
 \begin{itemize}
@@ -193,6 +193,34 @@ For instance, if we are seeking a particular rearrangement of 10 letters, then w
 
 For 20 letters, the number of candidates is 20!, which is about 2.4×1018 or 2.4 quintillion; and the search will take about 10 years. This unwelcome phenomenon is commonly called the combinatorial explosion, or the curse of dimensionality.
 \end{frame}
+\subsection{Combinatorial Explosions}
+\begin{frame}
+	\frametitle{Combinatorial Explosions}
+	\begin{itemize}
+	\item  Enumerating all possible solutions is of course not feasible
+	when there are too many items.
+	\item  What is “too many”?
+	\begin{itemize}
+	\item  500? 200? 100? 50? 10?
+	\item Take a guess!
+	\end{itemize}
+	\item  Assume we can investigate 1 solution per cpu cycle at a
+	rate of 10 GHz (that’s 10 billion per second). Then,
+	enumerating all Knapsacks with 60 items takes more than
+	85 years!
+	\end{itemize}
+\end{frame}
+%=====================================================================%
+\begin{frame}
+	\begin{itemize}
+		\item This effect is called a combinatorial explosion.
+	\item If $NP \neq P$, it cannot be avoided. However, we can aim at
+pushing the intractable instance sizes as far as possible – far enough to solve real-world instances. This is what
+combinatorial optimization is all about!
+\end{itemize}
+\end{frame}
+%=====================================================================%
+
 \section{Section 2}
 %%- http://www.tutorialspoint.com/data_structures_algorithms/asymptotic_analysis.htm
 %=====================================%
@@ -397,22 +425,27 @@ Common Asymptotic Notations
 \frametitle{Greedy Algorithms}
 \large
 
-Image result for greedy algorithm
+%%Image result for greedy algorithm
 A greedy algorithm is an algorithmic paradigm that follows the problem solving heuristic of making the locally optimal choice at each stage with the hope of finding a global optimum.
 \end{frame}
 %==================================%
 \begin{frame}
 \frametitle{Greedy Algorithms}
 \large
-An algorithm is designed to achieve optimum solution for given problem. In greedy algorithm approach, decisions are made from the given solution domain. As being greedy, the closest solution that seems to provide optimum solution is chosen.
+\begin{itemize}
+	\item An algorithm is designed to achieve optimum solution for given problem. In greedy algorithm approach, decisions are made from the given solution domain. 
+	\item As being greedy, the closest solution that seems to provide optimum solution is chosen.
+	
+\item Greedy algorithms tries to find localized optimum solution which may eventually land in globally optimized solutions. But generally greedy algorithms do not provide globally optimized solutions.
+\end{itemize}
 
-Greedy algorithms tries to find localized optimum solution which may eventually land in globally optimized solutions. But generally greedy algorithms do not provide globally optimized solutions.
 \end{frame}
 %==================================%
-\begin{frame}
-Counting Coins
+\begin{frame}[fragile]
+\frametitle{Counting Coins}
 This problem is to count to a desired value by chosing least possible coins and greedy approach forces the algorithm to pick the largest possible coin. If we are provided coins of € 1, 2, 5 and 10 and we are asked to count € 18 then the greedy procedure will be −
 
+\begin{verbatim}
 1 − Select one € 10 coin, remaining count is 8
 
 2 − Then select one € 5 coin, remaining count is 3
@@ -420,6 +453,7 @@ This problem is to count to a desired value by chosing least possible coins and 
 3 − Then select one € 2 coin, remaining count is 1
 
 3 − And finally selection of one € 1 coins solves the problem
+\end{verbatim}
 \end{frame}
 %==================================%
 \begin{frame}
@@ -437,17 +471,73 @@ Hence, we may conclude that greedy approach picks immediate optimized solution a
 \large
 Examples
 Most networking algorithms uses greedy approach. Here is the list of few of them −
-
-Travelling Salesman Problem
-Prim's Minimal Spanning Tree Algorithm
-Kruskal's Minimal Spanning Tree Algorithm
-Dijkstra's Minimal Spanning Tree Algorithm
-Graph - Map Coloring
-Graph - Vertex Cover
-Knapsack Problem
-Job Scheduling Problem
+\begin{itemize}
+\item Travelling Salesman Problem
+\item Prim's Minimal Spanning Tree Algorithm
+\item Kruskal's Minimal Spanning Tree Algorithm
+\item Dijkstra's Minimal Spanning Tree Algorithm
+\item Graph - Map Coloring
+\item Graph - Vertex Cover
+\item Knapsack Problem
+\item Job Scheduling Problem
+\end{itemize}
 These and there are lots of similar problems which uses greedy approach to find an optimum solution.
 
+\end{frame}
+%% = https://cs.brown.edu/courses/csci1490/slides/CS149-BranchBound.pdf
+
+%% - Search Strategies
+
+%===========================================================================%
+\begin{frame}
+	\frametitle{Search Strategies}
+	
+	– Depth First Search
+	\begin{itemize}
+		\item Finds feasible solutions quickly.
+		\item Is very memory efficient.
+		\item Can easily get stuck in sub-optimal parts of the
+		search space.
+	\end{itemize}
+\end{frame}
+%===========================================================================%
+\begin{frame}
+	\frametitle{Search Strategies}
+	– Best First Search
+	\begin{itemize}
+		\item Look at the node with best relaxation value next.
+		\item Is provably optimal in the sense that it never visits a
+		node that could be pruned otherwise.
+		\item A lot of jumping is necessary and memory
+		requirements are prohibitively large (often search
+		degenerates to breadth first search).
+	\end{itemize}
+\end{frame}
+%===========================================================================%
+\begin{frame}
+	\frametitle{Search Strategies}
+	– Depth First Search with Best Backtracking
+	\begin{itemize}
+		\item Is a mix of both depth and best first search: perform depth first
+		search until a leaf is found, then backtrack to the node with best
+		relaxation value and so on.
+		\item Much less jumping than best first search.
+		\item Is more memory efficient than best first search, but less than
+		DFS – could still be very memory intensive.
+	\end{itemize}
+\end{frame}
+%===========================================================================%
+\begin{frame}
+	\frametitle{Search Strategies}
+	
+	– Least Discrepancy Search
+	\begin{itemize}
+		\item Follow DFS with heuristic branching direction selection.
+		Investigate leaves in order of increasing discrepancy wrt that
+		heuristic.
+		\item Memory requirements are within limits.
+		\item Often finds good solutions early in the search.
+	\end{itemize}
 \end{frame}
 %===================================================%
 \section{Section 4 : Divide and Conquer approach}
@@ -455,25 +545,32 @@ These and there are lots of similar problems which uses greedy approach to find 
 \begin{frame}
 \frametitle{Divide and Conquer}
 \large
-n divide and conquer approach, the problem in hand, is divided into smaller sub-problems and then each problem is solved independently. When we keep on dividing the sub-problems into even smaller sub-problems, we may eventually reach at a stage where no more dividation is possible. Those "atomic" smallest possible sub-problem (fractions) are solved. The solution of all sub-problems is finally merged in order to obtain the solution of original problem.
+\begin{itemize}
+\item n divide and conquer approach, the problem in hand, is divided into smaller sub-problems and then each problem is solved independently. When we keep on dividing the sub-problems into even smaller sub-problems, we may eventually reach at a stage where no more dividation is possible. 
+\item Those "atomic" smallest possible sub-problem (fractions) are solved. The solution of all sub-problems is finally merged in order to obtain the solution of original problem.
+\end{itemize}
 \end{frame}
 %==================================%
 \begin{frame}
 \frametitle{Divide and Conquer}
 \large
 Broadly, we can understand divide-and-conquer approach as three step process.
+\begin{description}
+	\item[Divide/Break] This step involves breaking the problem into smaller sub-problems. Sub-problems should represent as a part of original problem. This step generally takes recursive approach to divide the problem until no sub-problem is further dividable. \\ At this stage, sub-problems become atomic in nature but still represents some part of actual problem.
+\end{description}
 
-Divide/Break
-This step involves breaking the problem into smaller sub-problems. Sub-problems should represent as a part of original problem. This step generally takes recursive approach to divide the problem until no sub-problem is further dividable. At this stage, sub-problems become atomic in nature but still represents some part of actual problem.
+
 \end{frame}
 
 %==================================%
 \begin{frame}
-Conquer/Solve
+\begin{description}
+	\item[Conquer/Solve]
 This step receives lot of smaller sub-problem to be solved. Generally at this level, problems are considered 'solved' on their own.
 
-Merge/Combine
+	\item[Merge/Combine]
 When the smaller sub-problems are solved, this stage recursively combines them until they formulate solution of the original problem.
+\end{description}
 \end{frame}
 %==================================%
 \begin{frame}
@@ -517,7 +614,7 @@ The optimum solution can be achieved by using optimum solution of smaller sub-pr
 \begin{frame}
 \frametitle{Dynamic Programming}
 \large
-Dynamic algorithms use memoization.
+Dynamic algorithms use \textbf{memoization}.
 
 Comparison
 In contrast to greedy algorithms, where local optimization is addressed, dynamic algorithms are motivated for overall optimization of the problem.
@@ -530,13 +627,16 @@ In contrast to divide and conquer algorithms, where solutions are combined to ac
 \large
 Example
 The following computer problems can be solved using dynamic programming approach −
-
+\begin{itemize}
+\item 
 Fibonacci number series
-Knapsack problem
-Tower of Hanoi
-All pair shortest path by Floyd-Warshall
-Shortest path by Dijkstra
-Project scheduling
+\item Knapsack problem
+\item Tower of Hanoi
+\item All pair shortest path by Floyd-Warshall
+\item Shortest path by Dijkstra
+\item Project scheduling
+\end{itemize}
+
 Dynamic programming can be used in both top-down and bottom-up manner. And ofcourse, most of the times, referring to previous solution output is cheaper than re-computing in terms of CPU cycles.
  
 \end{frame}
@@ -590,6 +690,7 @@ end procedure
 
 \end{frame}
 %==================================%
+\section{Binary Search}
 \begin{frame}
 %========================================================================%
 Data Structure - Binary Search
@@ -721,7 +822,9 @@ An example of BST −
 \begin{frame}
 Binary Search Tree
 We observe that the root node key (27) has all less-valued keys on the left sub-tree and higher valued keys on the right sub-tree.
-
+\end{frame}
+%======================================%
+\begin{frame}
 Basic Operations
 Following are basic primary operations of a tree which are following.
 
@@ -757,14 +860,17 @@ struct node *rightChild;
 %-http://web.mit.edu/16.070/www/lecture/big_o.pdf
 
 %=========================================================================%
+\frametitle{Dynamic Programmings}
+\begin{itemize}
+	\item Dynamic Programming (also known as \textbf{dynamic optimization}) is a method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions.
+	
+\item Dynamic Programming is a powerful technique that allows one to solve many different types of
+	problems in time O($n^2$) or O($n^3$) for which a naive approach would take exponential time. 
+	
+\item Dynamic Programmingis a general approach to solving problems, much like “divide-and-conquer” is a general
+	method, except that unlike divide-and-conquer, the subproblems will typically overlap.
+\end{itemize}
 
-Dynamic Programming (also known as dynamic optimization) is a method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions.
-
-Dynamic Programming is a powerful technique that allows one to solve many different types of
-problems in time O(n2) or O(n3) for which a naive approach would take exponential time. 
-
-Dynamic Programmingis a general approach to solving problems, much like “divide-and-conquer” is a general
-method, except that unlike divide-and-conquer, the subproblems will typically overlap.
 \end{frame}
 %======================================%
 
@@ -828,17 +934,19 @@ bool ContainsDuplicates(IList<string> elements)
 \end{verbatim}
 \end{frame}
 %======================================%
-\begin{frame}
+\begin{frame}[fragile]
 O(2N)
 
 O(2N) denotes an algorithm whose growth doubles with each additon to the input data set. The growth curve of an O(2N) function is exponential - starting off very shallow, then rising meteorically. An example of an O(2N) function is the recursive calculation of Fibonacci numbers:
-
+\begin{verbatim}
 int Fibonacci(int number)
 {
-	if (number <= 1) return number;
-	
-	return Fibonacci(number - 2) + Fibonacci(number - 1);
+if (number <= 1) return number;
+
+return Fibonacci(number - 2) + Fibonacci(number - 1);
 }
+\end{verbatim}
+
 
 \end{frame}
 %======================================%
@@ -850,12 +958,23 @@ Logarithms are slightly trickier to explain so I'll use a common example:
 \end{frame}
 %======================================%
 \begin{frame}
+	\frametitle{Binary Search}
+	\large
 Binary search is a technique used to search sorted data sets. It works by selecting the middle element of the data set, essentially the median, and compares it against a target value. If the values match it will return success. If the target value is higher than the value of the probe element it will take the upper half of the data set and perform the same operation against it. Likewise, if the target value is lower than the value of the probe element it will perform the operation against the lower half. It will continue to halve the data set with each iteration until the value has been found or until it can no longer split the data set.
 
 \end{frame}
 %======================================%
 \begin{frame}
-This type of algorithm is described as O(log N). The iterative halving of data sets described in the binary search example produces a growth curve that peaks at the beginning and slowly flattens out as the size of the data sets increase e.g. an input data set containing 10 items takes one second to complete, a data set containing 100 items takes two seconds, and a data set containing 1000 items will take three seconds. Doubling the size of the input data set has little effect on its growth as after a single iteration of the algorithm the data set will be halved and therefore on a par with an input data set half the size. This makes algorithms like binary search extremely efficient when dealing with large data sets.
+		\frametitle{Binary Search}
+		\large
+This type of algorithm is described as O(log N). The iterative halving of data sets described in the binary search example produces a growth curve that peaks at the beginning and slowly flattens out as the size of the data sets increase e.g. an input data set containing 10 items takes one second to complete, a data set containing 100 items takes two seconds, and a data set containing 1000 items will take three seconds. 
+
+\end{frame}
+%======================================%
+\begin{frame}
+	\frametitle{Binary Search}
+	\large
+Doubling the size of the input data set has little effect on its growth as after a single iteration of the algorithm the data set will be halved and therefore on a par with an input data set half the size. This makes algorithms like binary search extremely efficient when dealing with large data sets.
 
 This article only covers the very basics or Big O and logarithms. For a more in-depth explanation take a look at their respective Wikipedia entries: Big O Notation, Logarithms.
 
@@ -973,11 +1092,13 @@ If the difference in the height of left and right sub-trees is more than 1, the 
 \large
 
 To make itself balanced, an AVL tree may perform four kinds of rotations −
-
+\begin{enumerate}
+	\item
 Left rotation
-Right rotation
-Left-Right rotation
-Right-Left rotation
+\item Right rotation
+\item Left-Right rotation
+\item Right-Left rotation
+\end{enumerate}
 First two rotations are single rotations and next two rotations are double rotations. Two have an unbalanced tree we at least need a tree of height 2. With this simple tree, let's understand them one by one.
 \end{frame}
 %======================================%
