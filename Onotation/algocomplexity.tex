@@ -230,14 +230,21 @@ Following are commonly used asymptotic notations used in calculating running tim
 \begin{frame}
 \frametitle{Big O notation}
 \large
-Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. It is a member of a family of notations invented by Paul Bachmann,[1] Edmund Landau,[2] and others, collectively called Bachmann-Landau notation or asymptotic notation.
+\begin{itemize}
+\item Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. 
+\item It is a member of a family of notations invented by Paul Bachmann, Edmund Landau, and others, collectively called Bachmann-Landau notation or asymptotic notation.
+\end{itemize}
 \end{frame}
 
 %==================================%
 \begin{frame}
 \frametitle{Big O notation}
 \large
-In computer science, big O notation is used to classify algorithms by how they respond to changes in input size, such as how the processing time of an algorithm changes as the problem size becomes extremely large.[3] In analytic number theory it is used to estimate the "error committed" while replacing the asymptotic size of an arithmetical function by the value it takes at a large finite argument. A famous example is the problem of estimating the remainder term in the prime number theorem.
+\begin{itemize}
+\item In computer science, big O notation is used to classify algorithms by how they respond to changes in input size, such as how the processing time of an algorithm changes as the problem size becomes extremely large.
+\item In analytic number theory it is used to estimate the "error committed" while replacing the asymptotic size of an arithmetical function by the value it takes at a large finite argument. 
+\item A famous example is the problem of estimating the remainder term in the prime number theorem.
+\end{itemize}
 \end{frame}
 %==================================%
 \begin{frame}
@@ -308,7 +315,8 @@ In typical usage, the formal definition of O notation is not used directly; rath
 %==================================================%
 \begin{frame}
 \begin{itemize}
-\item For example, let f(x) = 6x4 − 2x3 + 5, and suppose we wish to simplify this function, using O notation, to describe its growth rate as x approaches infinity. This function is the sum of three terms: 6x4, −2x3, and 5. Of these three terms, the one with the highest growth rate is the one with the largest exponent as a function of x, namely 6x4. 
+\item For example, let f(x) = 6x4 − 2x3 + 5, and suppose we wish to simplify this function, using O notation, to describe its growth rate as x approaches infinity. 
+\item This function is the sum of three terms: $6x^4$, $−2x^3$, and 5. Of these three terms, the one with the highest growth rate is the one with the largest exponent as a function of x, namely $6x^4$. 
 \item Now one may apply the second rule: 6x4 is a product of 6 and x4 in which the first factor does not depend on x. Omitting this factor results in the simplified form x4. 
 \item Thus, we say that f(x) is a "big-oh" of (x4). Mathematically, we can write f(x) = O(x4). 
 \end{itemize}
@@ -331,15 +339,21 @@ so
 \begin{frame}
 \frametitle{Big O-Notation}
 For example, for a function f(n)
+\begin{verbatim}
+Ο(f(n)) = { g(n) : there exists c > 0 and n0 such that g(n) ≤ c.
 
-Ο(f(n)) = { g(n) : there exists c > 0 and n0 such that g(n) ≤ c.f(n) for all n > n0. }
+       f(n) for all n > n0. }
+\end{verbatim}
 \end{frame}
 %==================================%
 \begin{frame}
 \frametitle{Omega Notation}
 \large
-Omega Notation, Ω
-The Ω(n) is the formal way to express the lower bound of an algorithm's running time. It measures the best case time complexity or best amount of time an algorithm can possibly take to complete.
+\noindent \textbf{Omega Notation, $\Omega$}
+\begin{itemize}
+\item The $\theta (n)$ is the formal way to express the lower bound of an algorithm's running time. 
+\item It measures the best case time complexity or best amount of time an algorithm can possibly take to complete.
+\end{itemize}
 \end{frame}
 %==================================%
 \begin{frame}
@@ -348,6 +362,7 @@ The Ω(n) is the formal way to express the lower bound of an algorithm's running
 For example, for a function f(n)
 
 Ω(f(n)) ≥ { g(n) : there exists c > 0 and n0 such that g(n) ≤ c.f(n) for all n > n0. }
+
 Theta Notation, θ
 The θ(n) is the formal way to express both the lower bound and upper bound of an algorithm's running time. It is represented as following −
 \end{frame}
@@ -372,7 +387,7 @@ Common Asymptotic Notations
 \end{frame}
 
 %===================================================%
-\section{Section 3: Greedy Alogorithms}
+\section{Section 3: Greedy Algorithms}
 %==================================%
 \begin{frame}
 \frametitle{Greedy Algorithms}
