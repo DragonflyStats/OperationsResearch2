@@ -194,51 +194,61 @@ For instance, if we are seeking a particular rearrangement of 10 letters, then w
 %%- http://www.tutorialspoint.com/data_structures_algorithms/asymptotic_analysis.htm
 %=====================================%
 \begin{frame}
-
-Data Structures - Asymptotic Analysis
+\frametitle{Data Structures - Asymptotic Analysis}
  
-Asymptotic analysis of an algorithm, refers to defining the mathematical boundation/framing of its run-time performance. Using asymptotic analysis, we can very well conclude the best case, average case and worst case scenario of an algorithm.
-
+ \begin{itemize}
+\item Asymptotic analysis of an algorithm, refers to defining the mathematical boundation/framing of its run-time performance. Using asymptotic analysis, we can very well conclude the best case, average case and worst case scenario of an algorithm.
+\item 
 Asymptotic analysis are input bound i.e., if there's no input to the algorithm it is concluded to work in a constant time. Other than the "input" all other factors are considered constant.
-
+\item 
 Asymptotic analysis refers to computing the running time of any operation in mathematical units of computation. For example, running time of one operation is computed as f(n) and may be for another operation it is computed as g(n2). Which means first operation running time will increase linearly with the increase in n and running time of second operation will increase exponentially when n increases. Similarly the running time of both operations will be nearly same if n is significantly small.
+\end{itemize}
 \end{frame}
 %==================================%
 \begin{frame}
 
 Usually, time required by an algorithm falls under three types −
+\begin{description}
+\item[Best Case] − Minimum time required for program execution.
 
-Best Case − Minimum time required for program execution.
+\item[Average Case] − Average time required for program execution.
 
-Average Case − Average time required for program execution.
-
-Worst Case − Maximum time required for program execution.
+\item[Worst Case] − Maximum time required for program execution.
+\end{description}
 \end{frame}
 %===================================================%
 \begin{frame}
 Asymptotic Notations
 Following are commonly used asymptotic notations used in calculating running time complexity of an algorithm.
 
-Ο Notation
-
-Ω Notation
-
-θ Notation
+\begin{itemize}
+\item Ο Notation
+\item Ω Notation
+\item θ Notation
 \end{frame}
+%===========================%
 \begin{frame}
+\frametitle{Big O notation}
+\large
 Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. It is a member of a family of notations invented by Paul Bachmann,[1] Edmund Landau,[2] and others, collectively called Bachmann-Landau notation or asymptotic notation.
 \end{frame}
 
 %==================================%
 \begin{frame}
+\frametitle{Big O notation}
+\large
 In computer science, big O notation is used to classify algorithms by how they respond to changes in input size, such as how the processing time of an algorithm changes as the problem size becomes extremely large.[3] In analytic number theory it is used to estimate the "error committed" while replacing the asymptotic size of an arithmetical function by the value it takes at a large finite argument. A famous example is the problem of estimating the remainder term in the prime number theorem.
 \end{frame}
 %==================================%
 \begin{frame}
-
-Big O notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same O notation.
-
-The letter O is used because the growth rate of a function is also referred to as order of the function. A description of a function in terms of big O notation usually only provides an upper bound on the growth rate of the function. Associated with big O notation are several related notations, using the symbols o, Ω, ω, and Θ, to describe other kinds of bounds on asymptotic growth rates.
+\frametitle{Big O notation}
+\large
+\begin{itemize}
+\item Big O notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same O notation.
+\item 
+The letter O is used because the growth rate of a function is also referred to as order of the function. A description of a function in terms of big O notation usually only provides an upper bound on the growth rate of the function.
+\item Associated with big O notation are several related notations, using the symbols o, Ω, ω, and Θ, to describe other kinds of bounds on asymptotic growth rates.
+\end{itemize}
 \end{frame}
 %==================================%
 \begin{frame}
@@ -278,28 +288,35 @@ Additionally, the notation O(g(x)) is also used to denote the set of all functio
 
 \[{\displaystyle f(x)\in O(g(x))} f(x)\in O(g(x))\].
 \end{frame}
+%======================================================%
 \begin{frame}
-Big Oh Notation, Ο
-The Ο(n) is the formal way to express the upper bound of an algorithm's running time. It measures the worst case time complexity or longest amount of time an algorithm can possibly take to complete.
-
+\frametitle{Big Oh Notation, Ο}
+\begin{itemize}
+\item The Ο(n) is the formal way to express the upper bound of an algorithm's running time. It measures the worst case time complexity or longest amount of time an algorithm can possibly take to complete.
+\end{itemize}
 \end{frame}
 
 %==================================================%
 \begin{frame}
-Example[edit]
+\frametitle{Example}
 In typical usage, the formal definition of O notation is not used directly; rather, the O notation for a function f is derived by the following simplification rules:
-
-If f(x) is a sum of several terms, if there is one with largest growth rate, it can be kept, and all others omitted.
-If f(x) is a product of several factors, any constants (terms in the product that do not depend on x) can be omitted.
+\begin{itemize}
+\item If f(x) is a sum of several terms, if there is one with largest growth rate, it can be kept, and all others omitted.
+\item If f(x) is a product of several factors, any constants (terms in the product that do not depend on x) can be omitted.
+\end{itemize}
 \end{frame}
 %==================================================%
 \begin{frame}
-For example, let f(x) = 6x4 − 2x3 + 5, and suppose we wish to simplify this function, using O notation, to describe its growth rate as x approaches infinity. This function is the sum of three terms: 6x4, −2x3, and 5. Of these three terms, the one with the highest growth rate is the one with the largest exponent as a function of x, namely 6x4. Now one may apply the second rule: 6x4 is a product of 6 and x4 in which the first factor does not depend on x. Omitting this factor results in the simplified form x4. Thus, we say that f(x) is a "big-oh" of (x4). Mathematically, we can write f(x) = O(x4). 
+\begin{itemize}
+\item For example, let f(x) = 6x4 − 2x3 + 5, and suppose we wish to simplify this function, using O notation, to describe its growth rate as x approaches infinity. This function is the sum of three terms: 6x4, −2x3, and 5. Of these three terms, the one with the highest growth rate is the one with the largest exponent as a function of x, namely 6x4. 
+\item Now one may apply the second rule: 6x4 is a product of 6 and x4 in which the first factor does not depend on x. Omitting this factor results in the simplified form x4. 
+\item Thus, we say that f(x) is a "big-oh" of (x4). Mathematically, we can write f(x) = O(x4). 
+\end{itemize}
 \end{frame}
 %==================================================%
 \begin{frame}
 \frametitle{Big O-Notation}
-One may confirm this calculation using the formal definition: let f(x) = 6x4 − 2x3 + 5 and g(x) = x4. Applying the formal definition from above, the statement that f(x) = O(x4) is equivalent to its expansion,
+One may confirm this calculation using the formal definition: let $f(x) = 6x^4 − 2x^3 + 5$ and $g(x) = x^4$. Applying the formal definition from above, the statement that f(x) = O(x4) is equivalent to its expansion,
 \[
 {\displaystyle |f(x)|\leq \;M|x^{4}|} {\displaystyle |f(x)|\leq \;M|x^{4}|}\]
 for some suitable choice of x0 and M and for all x > x0. To prove this, let x0 = 1 and M = 13. Then, for all x > x0:
@@ -316,12 +333,18 @@ so
 For example, for a function f(n)
 
 Ο(f(n)) = { g(n) : there exists c > 0 and n0 such that g(n) ≤ c.f(n) for all n > n0. }
+\end{frame}
+%==================================%
+\begin{frame}
+\frametitle{Omega Notation}
+\large
 Omega Notation, Ω
 The Ω(n) is the formal way to express the lower bound of an algorithm's running time. It measures the best case time complexity or best amount of time an algorithm can possibly take to complete.
 \end{frame}
 %==================================%
 \begin{frame}
-Omega Notation
+\frametitle{Omega Notation}
+\large
 For example, for a function f(n)
 
 Ω(f(n)) ≥ { g(n) : there exists c > 0 and n0 such that g(n) ≤ c.f(n) for all n > n0. }
@@ -332,26 +355,36 @@ The θ(n) is the formal way to express both the lower bound and upper bound of a
 \begin{frame}
 Theta Notation
 θ(f(n)) = { g(n) if and only if g(n) =  Ο(f(n)) and g(n) = Ω(f(n)) for all n > n0. }
+\end{frame}
+%==================================%
+\begin{frame}
 Common Asymptotic Notations
-constant	−	Ο(1)
-logarithmic	−	Ο(log n)
-linear	−	Ο(n)
-n log n	−	Ο(n log n)
-quadratic	−	Ο(n2)
-cubic	−	Ο(n3)
-polynomial	−	nΟ(1)
-exponential	−	2Ο(n)
-
+\begin{itemize}
+\item constant	−	Ο(1)
+\item logarithmic	−	Ο(log n)
+\item linear	−	Ο(n)
+\item n log n	−	Ο(n log n)
+\item quadratic	−	Ο(n2)
+\item cubic	−	Ο(n3)
+\item polynomial	−	nΟ(1)
+\item exponential	−	2Ο(n)
+\end{itemize}
 \end{frame}
 
 %===================================================%
 \section{Section 3: Greedy Alogorithms}
+%==================================%
 \begin{frame}
+\frametitle{Greedy Algorithms}
+\large
 
 Image result for greedy algorithm
 A greedy algorithm is an algorithmic paradigm that follows the problem solving heuristic of making the locally optimal choice at each stage with the hope of finding a global optimum.
-
-%=======================================%
+\end{frame}
+%==================================%
+\begin{frame}
+\frametitle{Greedy Algorithms}
+\large
 An algorithm is designed to achieve optimum solution for given problem. In greedy algorithm approach, decisions are made from the given solution domain. As being greedy, the closest solution that seems to provide optimum solution is chosen.
 
 Greedy algorithms tries to find localized optimum solution which may eventually land in globally optimized solutions. But generally greedy algorithms do not provide globally optimized solutions.
@@ -379,7 +412,10 @@ For currency system, where we have coins of 1, 7, 10 value, counting coins for v
 Hence, we may conclude that greedy approach picks immediate optimized solution and may fail where global optimization is major concern.
 \end{frame}
 %==================================%
+%==================================%
 \begin{frame}
+\frametitle{Networking Algorithms}
+\large
 Examples
 Most networking algorithms uses greedy approach. Here is the list of few of them −
 
@@ -395,13 +431,17 @@ These and there are lots of similar problems which uses greedy approach to find 
 
 \end{frame}
 %===================================================%
-\section{Section 4 : divide and conquer approach}
+\section{Section 4 : Divide and Conquer approach}
+%==================================%
 \begin{frame}
+\frametitle{Divide and Conquer}
+\large
 n divide and conquer approach, the problem in hand, is divided into smaller sub-problems and then each problem is solved independently. When we keep on dividing the sub-problems into even smaller sub-problems, we may eventually reach at a stage where no more dividation is possible. Those "atomic" smallest possible sub-problem (fractions) are solved. The solution of all sub-problems is finally merged in order to obtain the solution of original problem.
 \end{frame}
 %==================================%
 \begin{frame}
-Divide and Conquer
+\frametitle{Divide and Conquer}
+\large
 Broadly, we can understand divide-and-conquer approach as three step process.
 
 Divide/Break
@@ -420,11 +460,12 @@ When the smaller sub-problems are solved, this stage recursively combines them u
 \begin{frame}
 This algorithmic approach works recursively and conquer and merge steps works so close that they appear as one.
 
-Examples
-The following computer algorithms are based on divide-and-conquer programming approach −
+
 \end{frame}
 %==================================%
 \begin{frame}
+Examples
+The following computer algorithms are based on divide-and-conquer programming approach −
 Merge Sort
 Quick Sort
 Binary Search
@@ -434,13 +475,17 @@ There are various ways available to solve any computer problem, but the mentione
 
 \end{frame}
 %===================================================%
-\section{Section 5 : dynamic Programming}
+\section{Section 5 : Dynamic Programming}
 \begin{frame}
+\frametitle{Dynamic Programming}
+\large
 
 Dynamic programming approach is similar to divide and conquer in breaking down the problem in smaller and yet smaller possible sub-problems. But unlike, divide and conquer, these sub-problems are not solved independently. Rather, results of these smaller sub-problems are remembered and used for similar or overlapping sub-problems.
 \end{frame}
 %==================================%
 \begin{frame}
+\frametitle{Dynamic Programming}
+\large
 Dynamic programming is used where we have problems which can be divided in similar sub-problems, so that their results can be re-used. Mostly, these algorithms are used for optimization. Before solving the in-hand sub-problem, dynamic algorithm will try to examine the results of previously solved sub-problems. The solutions of sub-problems are combined in order to achieve the best solution.
 
 So we can say that −
@@ -451,6 +496,8 @@ The optimum solution can be achieved by using optimum solution of smaller sub-pr
 \end{frame}
 %==================================%
 \begin{frame}
+\frametitle{Dynamic Programming}
+\large
 Dynamic algorithms use memoization.
 
 Comparison
@@ -460,6 +507,8 @@ In contrast to divide and conquer algorithms, where solutions are combined to ac
 \end{frame}
 %==================================%
 \begin{frame}
+\frametitle{Dynamic Programming}
+\large
 Example
 The following computer problems can be solved using dynamic programming approach −
 
@@ -475,20 +524,21 @@ Dynamic programming can be used in both top-down and bottom-up manner. And ofcou
 \section{Section 6: Search Algorithms}
 %===================================================%
 \begin{frame}
+\frametitle{Search Algorithms}
+\large
 Data Structure - Linear Search
-Advertisements
 
- 
- Previous Page Next Page  
 Linear search is a very simple search algorithm. In this type of search, a sequential search is made over all items one by one. Every items is checked and if a match founds then that particular item is returned otherwise search continues till the end of the data collection.
 \end{frame}
 
-%==================================%
-\begin{frame}
+%===================================================%
+\begin{frame}[fragilke]
+\frametitle{Search Algorithms}
+\large
 Linear Search Animation
 Algorithm
 Linear Search ( Array A, Value x)
-
+\begin{verbatim}
 Step 1: Set i to 1
 Step 2: if i > n then go to step 7
 Step 3: if A[i] = x then go to step 6
@@ -497,6 +547,7 @@ Step 5: Go to Step 2
 Step 6: Print Element x Found at index i and go to step 8
 Step 7: Print element not found
 Step 8: Exit
+\end{verbatim}
 \end{frame}
 
 %==================================%
@@ -530,11 +581,15 @@ Binary search is a fast search algorithm with run-time complexity of O(log n). T
 
 %==================================%
 \begin{frame}
+\frametitle{Binary Search}
+\large
 Binary search search a particular item by comparing the middle most item of the collection. If match occurs then index of item is returned. If middle item is greater than item then item is searched in sub-array to the right of the middle item other wise item is search in sub-array to the left of the middle item. This process continues on sub-array as well until the size of subarray reduces to zero.
 \end{frame}
 
 %==================================%
 \begin{frame}
+\frametitle{Binary Search}
+\large
 How binary search works?
 For a binary search to work, it is mandatory for the target array to be sorted. We shall learn the process of binary search with an pictorial example. The below given is our sorted array and assume that we need to search location of value 31 using binary search.
 
@@ -546,11 +601,15 @@ Here it is, 0 + (9 - 0 ) / 2 = 4 (integer value of 4.5). So 4 is the mid of arra
 \end{frame}
 %==================================%
 \begin{frame}
+\frametitle{Binary Search}
+\large
 Binary search
 Now we compare the value stored at location 4, with the value being searched i.e. 31. We find that value at location 4 is 27, which is not a match. Because value is greater than 27 and we have a sorted array so we also know that target value must be in upper portion of the array.
 \end{frame}
 %==================================%
 \begin{frame}
+\frametitle{Binary Search}
+\large
 Binary search
 We change our low to mid + 1 and find the new mid value again.
 
@@ -564,6 +623,8 @@ The value stored at location 7 is not a match, rather it is less that what we ar
 
 %==================================%
 \begin{frame}
+\frametitle{Binary Search}
+\large
 Binary search
 So we calculate the mid again. This time it is 5.
 
@@ -612,13 +673,12 @@ Binary search halves the searchable items and thus reduces the count of comparis
 \begin{frame}
 
 Data Structure - Binary Search Tree
-Advertisements
 
- 
- Previous Page Next Page  
 \end{frame}
 %======================================%
 \begin{frame}
+\frametitle{Binary Search}
+\large
 A binary search tree (BST) is a tree in which all nodes follows the below mentioned properties −
 
 \begin{itemize}
@@ -632,6 +692,8 @@ Thus, a binary search tree (BST) divides all its sub-trees into two segments; le
 %======================================%
 \begin{frame}
 \frametitle{Representation of a Binary Search Tree}
+\large
+
 BST is a collection of nodes arranged in a way where they maintain BST properties. Each node has key and associated value. While searching, the desired key is compared to the keys in BST and if found, the associated value is retrieved.
 
 An example of BST −
@@ -670,7 +732,7 @@ struct node *rightChild;
 \end{frame}
 %======================================%
 \begin{frame}
-Search Operation
+\noindent \textbf{Search Operation}
 Whenever an element is to be search. Start search from root node then if data is less than key value, search element in left subtree otherwise search element in right subtree. Follow the same algorithm for each node.
 \end{frame}
 %struct node* search(int data){
@@ -768,7 +830,8 @@ Here we see that the first tree is balanced and next two trees are not balanced 
 \end{frame}
 %======================================%
 \begin{frame}
-Unbalanced AVL Trees
+\frametitle{Unbalanced AVL Trees}
+\large
 In second tree, the left subtree of C has height 2 and right subtree has height 0, so the difference is 2. In third tree, the right subtree of A has height 2 and left is missing, so it is 0, and the difference is 2 again. AVL tree permits difference (balance factor) to be only 1.
 
 BalanceFactor = height(left-sutree) − height(right-sutree)
@@ -776,7 +839,9 @@ If the difference in the height of left and right sub-trees is more than 1, the 
 \end{frame}
 %======================================%
 \begin{frame}
-AVL Rotations
+\frametitle{AVL Rotations}
+\large
+
 To make itself balanced, an AVL tree may perform four kinds of rotations −
 
 Left rotation
@@ -787,6 +852,9 @@ First two rotations are single rotations and next two rotations are double rotat
 \end{frame}
 %======================================%
 \begin{frame}
+\frametitle{AVL Rotations}
+\large
+
 Left Rotation
 If a tree become unbalanced, when a node is inserted into the right subtree of right subtree, then we perform single left rotation −
 
@@ -795,6 +863,9 @@ In our example, node A has become unbalanced as a node is inserted in right subt
 \end{frame}
 %======================================%
 \begin{frame}
+\frametitle{AVL Rotations}
+\large
+
 Right Rotation
 AVL tree may become unbalanced if a node is inserted in the left subtree of left subtree. The tree then needs a right rotation.
 
@@ -806,6 +877,9 @@ Double rotations are slightly complex version of already explained versions of r
 \end{frame}
 %======================================%
 \begin{frame}
+\frametitle{AVL Rotations}
+\large
+
 State	Action
 Right Rotation	A node has been inserted into right subtree of left subtree. This makes C an unbalanced node. These scenarios cause AVL tree to perform left-right rotation.
 Left Rotation	We first perform left rotation on left subtree of C. This makes A, left subtree of B.
@@ -813,6 +887,9 @@ Left Rotation	Node C is still unbalanced but now, it is because of left-subtree 
 \end{frame}
 %======================================%
 \begin{frame}
+\frametitle{AVL Rotations}
+\large
+
 Right Rotation	We shall now right-rotate the tree making B new root node of this subtree. C now becomes right subtree of its own left subtree.
 Balanced Avl Tree	The tree is now balanced.
 Right-Left Rotation
@@ -820,6 +897,9 @@ Second type of double rotation is Right-Left Rotation. It is a combination of ri
 \end{frame}
 %======================================%
 \begin{frame}
+\frametitle{AVL Rotations}
+\large
+
 State	Action
 Left Subtree of Right Subtree	A node has been inserted into left subtree of right subtree. This makes A an unbalanced node, with balance factor 2.
 Subtree Right Rotation	First, we perform right rotation along C node, making C the right subtree of its own left subtree B. Now, B becomes right subtree of A.
@@ -829,5 +909,4 @@ Balanced AVL Tree	The tree is now balanced.
 \end{frame}
 %======================================%
 \end{document}
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
+
