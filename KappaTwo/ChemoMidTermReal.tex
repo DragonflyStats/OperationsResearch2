@@ -133,14 +133,41 @@ The required values are indicated by question marks.
 	\subsubsection*{Question 1 Part A (5 Marks)}
 	Numeric Transformations, such as logarithmic transformation, are often used in statistical analysis as an approach for dealing with non-normal data.
 	\begin{itemize}
-		%	\item[(i)] (1 Marks) Discuss the importance of numeric transformations, such as logarithmic transformation, in Statistics.
-		%	\item[(ii)] Describe the process of transformations
+		\item[(i)] (1 Marks) Discuss the importance of numeric transformations, such as logarithmic transformation, in Statistics.
+		\item[(ii)] Describe the process of transformations
 		\item[(i.)] (1 Mark) Describe the purpose of Tukey's Ladder (referencing direction and relative strength).
 		\item[(ii.)] (2 Marks) Give two examples of a transformation for various types of skewed data (i.e. an example for both types of skewness).
 		\item[(iii.)] (1 Mark) Discuss the limitations of numeric transformations.
 	\end{itemize}
-	\bigskip
 	
+
+\bigskip
+
+\subsubsection*{Part C - Robust Regression (7 Marks)}
+
+% \subsection*{Q9.Robust Regression}
+%Write a brief explanation of how robust regression differs from linear models computed using the \emph{Ordinary Least Squares method}, making reference to one particular weighting method only. Provide a description on how this weighting method works.
+
+
+In certain circumstances, Robust Regression may be used in preference to Ordinary Least Squares Regression. Answer the following questions relating to Robust Regression. 
+
+\begin{itemize}
+	\item[(i.)] (1 Mark) Describe what these circumstances might be.
+	\item[(ii.)] (1 Mark) State one difference between OLS and Robust regression techniques, in terms of computing regression equations.
+	\item[(iii.)] (2 Marks) Explain the process of Huber Weighting for Residuals, stating the algorithm used to compute weightings.
+	\item[(iv.)] (3 Marks) Suppose that Huber Weighting, with a tuning constanct of $k=13.45$, was applied to the observations 
+	tabulated below. What would be the outcome of the procedure for each case. 
+\end{itemize}
+\begin{center}
+	\begin{tabular}{|c|c|}
+		\hline
+		Observation & Residual \\ 
+		$i$  & $e_i$ \\ \hline
+		11 & -9.07 \\ \hline 
+		14 & 14.54 \\ \hline
+		18 & 22.91 \\ \hline
+	\end{tabular} 
+\end{center}	
 	\subsubsection*{Question 1 Part B (5 Marks)}
 	
 	The typing speeds for one group of 12 Engineering students were recorded both at the beginning of year 1 of their studies. The results (in words per minute) are given below:
@@ -201,10 +228,10 @@ The required values are indicated by question marks.
 \subsubsection*{Question 4 Part A (12 Marks)}
 The mercury level of several tests of sea-water from costal areas was determined by atomic-absorption spectrometry. The results obtained are as follows
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=1.1\linewidth]{image/regressionData}
-\end{figure}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=1.1\linewidth]{image/regressionData}
+%\end{figure}
 
 The analysis of the relationship between concentration and absorbance is obtained in R and presented below. 
 \begin{framed}

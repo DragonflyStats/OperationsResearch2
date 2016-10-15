@@ -33,8 +33,8 @@
 	
 	\begin{tabular}{ll}
 		MODULE CODE: MA4505 & SEMESTER: Autumn 2015 \\[1cm]
-		MODULE TITLE: Applied Statistics & DURATION OF EXAM: 2.5 hours  \\
-		\phantom{MODULE TITLE:} For Administration 1 & \\ [1cm]
+		MODULE TITLE: Chemometrics & DURATION OF EXAM: 2.5 hours  \\
+		 & \\ [1cm]
 		LECTURER: Mr. Kevin O'Brien & GRADING SCHEME: 100 marks \\
 		& \phantom{GRADING SCHEME:} \footnotesize {70\% of module grade} \\[1cm]
 EXTERNAL EXAMINER: Prof. J. King & \\
@@ -52,7 +52,7 @@ EXTERNAL EXAMINER: Prof. J. King & \\
 \bigskip
 %--------------------------------------------------------------------------------------- %
 
-\subsection*{Question 1. (25 marks) Inference Procedures and Distributional Testing}\label{sec:question-1.-(25-marks)-inference-procedures-and-distributional-testing}
+\subsection*{Question 1. (25 marks) Single Sample Inference Procedures and Distributional Testing}\label{sec:question-1.-(25-marks)-inference-procedures-and-distributional-testing}
 	
 %	\begin{framed}
 %		What is going here?
@@ -79,44 +79,7 @@ EXTERNAL EXAMINER: Prof. J. King & \\
 
 
 
-\begin{itemize}
-	%------------------------%
-	% A to D good
-	
-	
-	\item[(d)] (4 marks) After computing a confidence interval, the user believes the results are useless
-	because the interval is too wide. What would you advise the user to do to best
-	rectify this situation? Justify your answer with numerical example.
-	%-----------------------%
-	\item[(e)]  Compute the Sample Mean, denoted $\bar{x}$, and Sample Standard Deviation, denoted $s$, of the following data set. show your workings. 
-	\[\{16, 10, 10, 20, 17, 10, 18, 15\}\]
-	% Experimental Design
-	
-	
-	\item[(f)] (4 marks)What is the purpose of a post hoc test? 	
-	
-	\item[(g)] (4 marks) What is an ``$a \times b$" factorial experimental design?
-	
-	
-	\item[(i)] How would you fit a quadratic regression model to bivariate data and why?
-	
-	%-----------------------%
-	% Multiple Linear Regression
-	
-	%-----------------------%
-	% Residual Diagnostics
-	% MINE
-	\item[(g)] (4 marks) In the context of regression models, explain what is meant by Heteroscedascity and Homoescedascity.
-	
-	
-	%-----------------------%
-	% Non Parametric 1
-	\item[(i)] (4 marks)  Explain how the \emph{Akaike information criterion} would used to compare two models fitted for the same data.
-	%-----------------------%
-	% Non Parametric 2
-	\item[(j)] Explain why the adjusted $R^2$ value may differ in value from the corresponding multiple $R^2$ value for the same fitted model.
-	
-\end{itemize}
+
 
 \subsubsection*{Question 1 Part A (15 Marks)}
 % Clincal 
@@ -219,9 +182,23 @@ A test of a specific blood factor has been devised such that, for adults in West
 	\end{verbatim}
 \end{framed}
 %======================================================%
-\newpage
 \begin{framed}
-	\noindent \textbf{Block D} (3 Marks)
+	\textbf{Block D}
+	\begin{verbatim}
+	> wilcox.test(X,Y)
+	
+	Wilcoxon rank sum test with continuity correction
+	
+	data:  X and Y
+	W = 99, p-value = 0.8098
+	alternative hypothesis: true location shift is not equal to 0
+	
+	
+	
+	\end{verbatim}	
+\end{framed}
+\begin{framed}
+	\noindent \textbf{Block E} (3 Marks)
 	\begin{verbatim}
 	> t.test(X,Y,var.equal=TRUE)
 	
@@ -256,104 +233,97 @@ A test of a specific blood factor has been devised such that, for adults in West
 \end{framed}
 \newpage
 
-\begin{framed}
-	\textbf{Block E}
-	\begin{verbatim}
-	> wilcox.test(X,Y)
-	
-	Wilcoxon rank sum test with continuity correction
-	
-	data:  X and Y
-	W = 99, p-value = 0.8098
-	alternative hypothesis: true location shift is not equal to 0
-	
-	
-	
-	\end{verbatim}	
-\end{framed}
+
 %==========================================================%
-\subsubsection*{Question 1 Part A (5 Marks)}
-Numeric Transformations, such as logarithmic transformation, are often used in statistical analysis as an approach for dealing with non-normal data.
+\subsubsection*{Part A - One Way ANOVA (9 Marks )}
+Specimens of milk from dairies in three different districts are assayed for their concentrations of the radioactive isotope Strontium-90. 
+The results, in picocuries per litre, are as shown in the table below.
+
+{
+	\Large
+	\begin{center}
+		\begin{tabular}{|c|cccccc|c|c|}
+			\hline  
+			District & &&&&& & mean & variance \\  
+			&  &&&&&& $\bar{x}_i$ & $s^2_{i}$ \\  
+			\hline \hline
+			A	&	7.6	&	8.1	&	8.5	&	8.3	&	7.9	&	8.8
+			&	8.2	&	0.184	\\ \hline
+			B	&	8.7	&	10.2	&	11.4	&	10.9	&	7.2	&	9.2
+			&	9.6	&	2.404	\\ \hline
+			C	&	10.3	&	9.9	&	11.5	&	11.6	&	10.6	&	8.5
+			&	10.4	&	1.312	\\ \hline \hline
+			Overall & &&&&&&	9.4	&	2.022 \\ \hline	
+			
+		\end{tabular} 
+	\end{center}
+}
+\bigskip
 \begin{itemize}
-	%	\item[(i)] (1 Marks) Discuss the importance of numeric transformations, such as logarithmic transformation, in Statistics.
-	%	\item[(ii)] Describe the process of transformations
-	\item[(i.)] (1 Mark) Describe the purpose of Tukey's Ladder (referencing direction and relative strength).
-	\item[(ii.)] (2 Marks) Give two examples of a transformation for various types of skewed data (i.e. an example for both types of skewness).
-	\item[(iii.)] (1 Mark) Discuss the limitations of numeric transformations.
+	\item[(i)] (2 Marks) Showing your workings, compute the \textbf{Between Group Sum of Squares} (\textit{SSbetween}).
+	\item[(ii)] (2 Marks) Showing your workings, compute the \textbf{Within Group Sum of Squares}\\ (\textit{SSwithin}).
+	\item[(iii)] (2 Mark) Showing your workings, compute the \textbf{Total Group Sum of Squares} (\textit{SStotal}).
+	\item[(iv)] (1 Mark) Complete the \textbf{Degrees of Freedom} Column for the ANOVA table below.
+	\item[(iv)] (1 Mark) Complete the \textbf{Mean Square} Column for the ANOVA table below.
+	\item[(iv)] (1 Mark) Complete the \textbf{F} Column (i.e. the column for Test Statistic) for the ANOVA table below.
 \end{itemize}
 \bigskip
+{
+	\Large
+	\begin{center}
+		\begin{tabular}{|l||c|c|c|c|}
+			\hline \phantom{makespace} & DF & SS & MS & F \\ \hline
+			\hline Between & \phantom{makespa} &  &  &  \\ 
+			\hline Within &  &\phantom{makespace}  &  &  \\ \hline
+			\hline Total &  \phantom{makespace} &  &\phantom{makespace}  & \phantom{makespace} \\ 
+			\hline 
+		\end{tabular} 
+	\end{center}
+}
+%1.	Write out the ANOVA table. You are not required to add the ?Totals? Row. [4 Marks]
+%
+%2.	Carry out an analysis of variance of these data, conducting your significance test at the 5% level. [2 Marks]
 
-\subsubsection*{Question 1 Part B (5 Marks)}
+%=================================================================%
 
-The typing speeds for one group of 12 Engineering students were recorded both at the beginning of year 1 of their studies. The results (in words per minute) are given below:
-
-\begin{center}
-	\begin{tabular}{|c|c|c|c|c|c|}
-		\hline
-		% Subject& A& B& C& D& E &F &G &H \\ \hline
-		149  & 146 & 112 & 142 & 168& 153\\ \hline
-		137 & 161 & 156& 165&  170&  159
-		\\ \hline
-	\end{tabular}
-\end{center}
-Use the Dixon Q-test to determine if the lowest value (118) is an outlier. You may assume a significance level of 5\%.
-\begin{itemize}
-	\item[(i.)](1 Mark)	State the Null and Alternative Hypothesis for this test.
-	\item[(ii.)](2 Marks) Compute the test statistic
-	\item[(iii.)](1 Mark) State the appropriate critical value.
-	\item[(iv.)](1 Mark) What is your conclusion to this procedure.
-\end{itemize}
-\newpage
-\subsubsection*{Question 1 Part C (5 Marks)}
+\subsubsection*{Part C (5 Marks)}
 
 %\subsubsection*{Part A : Outliers}
 \begin{itemize}
 	\item[(i.)] (3 Marks) Provide a brief description for three tests from the family of Grubb's  Outliers Tests. Include in your description a statement of the null and alternative hypothesis for each test
 	\item[(ii.)] (2 Marks) Describe any required assumptions for tests, and the limitations of these tests.
+		\item[(i.)] (3 Marks) Provide a brief description for three tests from the family of Grubbs'  Outliers Tests. Include in your description a statement of the null and alternative hypothesis for each test, any required assumptions and the limitations of these tests.
+		\item[(ii.)] (3 Marks) Showing your working, use the Dixon Q Test to test the hypothesis that the lowest value of the following data set is an outlier.
+		\[ 11,22,23,24,25,26,29,34\]
 \end{itemize}
 
-\subsubsection*{Question 1 Part D (10 Marks)}
-% Normal %6 MARKS
-Assume that the diameter of a critical component is normally distributed with a mean of 250mm and a standard deviation of 15mm. You are required  to estimate the approximate probability of the following measurements occurring on an individual component.
-\begin{itemize}
-	\item[(i.)](3 Mark) Greater than 245mm.
-	\item[(ii.)](3 Marks) Less than 265mm.
-	\item [(iii.)](4 Marks) Between 245mm and 265mm.
-\end{itemize}
-\bigskip
-\noindent Use the normal tables to determine the probabilities for the above exercises. You are required to show all of your workings.
 
 
-%====================================================================== %
-\newpage
-\subsubsection*{Question 1 Part B (4 Marks)}
-Numeric Transformations, such as logarithmic transformation, are often used in statistical analysis as an approach for dealing with non-normal data.
-\begin{itemize}
-	\item[(i)] (1 Marks) Discuss the importance of numeric transformations, such as logarithmic transformation, in Statistics.
-	%	\item[(ii)] Describe the process of transformations
-	\item[(ii.)] (1 Marks) Describe the purpose of Tukey's Ladder (referencing direction and relative strength).
-	\item[(iii.)] (2 Marks) Give two examples of a transformation for various types of skewed data (i.e. an example for both types of skewness).
-	%	\item[(iii.)] (1 Marks) Discuss the limitations of numeric transformations.
-\end{itemize}
 
-\subsubsection*{Question 1 Part C (6 Marks)}
 
-%\subsubsection*{Part A : Outliers}
-\begin{itemize}
-	\item[(i.)] (3 Marks) Provide a brief description for three tests from the family of Grubbs'  Outliers Tests. Include in your description a statement of the null and alternative hypothesis for each test, any required assumptions and the limitations of these tests.
-	\item[(ii.)] (3 Marks) Showing your working, use the Dixon Q Test to test the hypothesis that the lowest value of the following data set is an outlier.
-	\[ 11,22,23,24,25,26,29,34\]
-\end{itemize}	
+
+
+
 
 
 \newpage
-
-
-
-
 \subsection*{Question 2. (25 marks) Regression Models }
-%--------------------------------------------------------------------------------------------------------%
-\subsubsection*{Question 2 Part A (8 Marks)}
+	% Multiple Linear Regression
+\subsubsection*{Part A - Short Questions (8 Marks)}	
+	\begin{itemize}
+		\item[(i)] (1 Mark) In the context of regression models, explain what is meant by Heteroscedascity and Homoescedascity.
+		
+		
+		%-----------------------%
+		% Non Parametric 1
+		\item[(ii)] (1 Mark)  Explain how the \emph{Akaike information criterion} would used to compare two models fitted for the same data.
+		%-----------------------%
+		% Non Parametric 2
+		\item[(iii)] (1 Mark) Explain why the adjusted $R^2$ value may differ in value from the corresponding multiple $R^2$ value for the same fitted model.
+		\item[(iv)] (1 Mark) Write a short note to compare and contrast the multiple R squared and asjusted R squared.
+		
+	\end{itemize}
+\subsubsection*{Part B - Linear Regression (8 Marks)}
 In an experiment to determine hydrolysable tannins in plants by absorption spectroscopy, the following results from ten samples were obtained and are tabulated below. A simple linear regression model, predicting absorbance values using concentration as the independent variable, was fitted to the data. The scatterplot is depicted below.
 %%Absorbance= c(0.084, 0.183, 0.326, 0.464, 0.643, 0.707, 0.717, 0.734 ,0.749 ,0.732) ;
 %%Concentration= c(0.123, 0.288, 0.562, 0.921, 1.420, 1.717, 1.921, 2.137 ,2.321, 2.467) ;
@@ -451,7 +421,7 @@ In an experiment to determine hydrolysable tannins in plants by absorption spect
 	\end{verbatim}
 \end{framed}
 
-\newpage
+
 \begin{framed}
 	\noindent \textbf{Model 3}
 	\begin{verbatim}
@@ -520,7 +490,7 @@ In an experiment to determine hydrolysable tannins in plants by absorption spect
 %\end{itemize}
 
 
-\subsubsection*{Question 2 Part B (7 Marks)}
+\subsubsection*{Part C - Robust Regression (7 Marks)}
 
 % \subsection*{Q9.Robust Regression}
 %Write a brief explanation of how robust regression differs from linear models computed using the \emph{Ordinary Least Squares method}, making reference to one particular weighting method only. Provide a description on how this weighting method works.
@@ -546,7 +516,7 @@ In certain circumstances, Robust Regression may be used in preference to Ordinar
 	\end{tabular} 
 \end{center}
 
-\subsubsection*{Question 2 Part C (10 Marks)}
+\subsubsection*{ Part C Influence (10 Marks)}
 %The following scatterplot
 %\begin{figure}[h!]
 %\centering
@@ -596,30 +566,6 @@ In certain circumstances, Robust Regression may be used in preference to Ordinar
 \end{itemize}
 
 
-%-------------------------------End  of Question 2B%
-
-
-
-
-
-
-\newpage
-
-
-
-
-
-
-%\item[(b)]
-
-
-%---------------------%
-
-
-
-%\item[(c)] (6 marks)
-% 
-
 
 
 
@@ -643,18 +589,8 @@ In certain circumstances, Robust Regression may be used in preference to Ordinar
 %\end{itemize}
 %
 
-%
-%
-%%\end{document}
-%--------------------------------------------------------%
 
-% Definitions
-% One Way ANOVA
-% Checking Assumptions
-
-
-
-\subsubsection*{Question 4 Part A (12 Marks)}
+\subsubsection*{Question 3 Part D (12 Marks)}
 The mercury level of several tests of sea-water from costal areas was determined by atomic-absorption spectrometry. The results obtained are as follows
 \begin{center}
 	\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|} \hline
@@ -689,13 +625,13 @@ The analysis of the relationship between concentration and absorbance is obtaine
 	F-statistic: 1.537e+04 on 1 and 9 DF,  p-value: 7.337e-16 
 	
 	confint(model)
-	2.5 %     97.5 %
+	                 2.5 %     97.5 %
 	(Intercept) 0.24025851 0.34646876
 	x           0.04830054 0.05009582
 	
 	\end{verbatim}
 \end{framed}
-\newpage
+
 \begin{itemize}
 	\item[(i)] (2 marks)
 	Determine and interpret the slope and the intercept of the regression line.
@@ -713,56 +649,11 @@ The analysis of the relationship between concentration and absorbance is obtaine
 
 %=====================================================
 
-%Write a short note to compare and contrast the multiple R squared and asjusted R squared.
-%%% - Overfitting
 
-%====================================================================== %
-\newpage
 
-\subsubsection*{Question 4 Part B (12 Marks)}
-
-%\subsubsection*{Model Selection}
-Given the AIC for each candidate model, use \textbf{\textit{Backward Selection}} to determine the optimal model for predicting values of $y$ with predictor variables
-$x_1$, $x_2$,$x_3$ and $x_4$.
-
-Suppose we have 5 predictor variables.
-Use \textbf{Forward Selection} and \textbf{Backward Selection} to choose the optimal set of predictor variables, based on the AIC measure.
-
-{
-	\large
-	\begin{center}
-		\begin{tabular}{||c|c||c|c||}
-			\hline
-			Variables & AIC & Variables & AIC \\ \hline \hline
-			$\emptyset$	&	200	&	x1, x2, x3	&	74	\\ \hline
-			\phantom{makemakespace}
-			&	\phantom{makespace}
-			&	x1, x2, x4	&	75	\\ \hline
-			x1	&	150	&	x1, x2, x5	&	79	\\ \hline
-			x2	&	145	&	x1, x3, x4	&	72	\\ \hline
-			x3	&	135	&	x1, x3, x5	&	85	\\ \hline
-			x4	&	136	&	x1, x4, x5	&	95	\\ \hline
-			x5	&	139	&	x2, x3, x4	&	83	\\ \hline
-			&		&	x2, x3, x5	&	82	\\ \hline
-			x1, x2	&	97	&	x2, x4, x5	&	78	\\ \hline
-			x1, x3	&	81	&	x3, x4, x5	&	85	\\ \hline
-			x1, x4	&	94	&	\phantom{makemakespace}
-			&	\phantom{makespace}
-			\\ \hline
-			x1, x5	&	88	&	x1, x2, x3, x4	&	93	\\ \hline
-			x2, x3	&	87	&	x1, x2, x3, x5	&	120	\\ \hline
-			x2, x4	&	108	&	x1, x2, x4, x5	&	104	\\ \hline
-			x2, x5	&	87	&	x1, x3, x4, x5	&	101	\\ \hline
-			x3, x4	&	105	&	x2, x3, x4, x5	&	89	\\ \hline
-			x3, x5	&	82	&		&		\\ \hline
-			x4, x5	&	86	&	x1, x2, x3, x4, x5	&	100	\\ \hline
-		\end{tabular} 
-	\end{center}
-}
 %================================================= %
-\newpage
-%\subsubsection*{Regression ANOVA}
-\subsubsection*{Question 3 Part B (6 Marks)}
+
+\subsubsection*{Part B Regression ANOVA (6 Marks)}
 Suppose we have a regression model, described by the following equation
 \[ \hat{y} = 28.81 + 6.45x_1 + 7.82 x_2\]
 We are given the following pieces of information.
@@ -784,103 +675,36 @@ The required values are indicated by question marks.
 \end{center}
 
 
-\newpage
+
 %======================================================
+\subsection*{Question 3. (25 marks) Experimental Design }
 
-
-\large\subsection*{Question 3. (25 marks) Experimental Design }
-
-1. What is the purpose of a post hoc test?
-2. What are the key components that need to be identified when designing an
-experiment?
-3. What is a completely randomised design?
-4. What is a randomised block design?
-5. What is an ``a x b" factorial experimental design?
-6. What is the difference between a between-treatments estimate and a withintreatments
-estimate?
-7. What distinguishes a factorial experiment from a completely randomised experiment or a randomised block experiment?
-
-
-\subsubsection*{Question 1 - One Way ANOVA (9 Marks )}
-Specimens of milk from dairies in three different districts are assayed for their concentrations of the radioactive isotope Strontium-90. 
-The results, in picocuries per litre, are as shown in the table below.
-
-{
-	\Large
-	\begin{center}
-		\begin{tabular}{|c|cccccc|c|c|}
-			\hline  
-			District & &&&&& & mean & variance \\  
-			&  &&&&&& $\bar{x}_i$ & $s^2_{i}$ \\  
-			\hline \hline
-			A	&	7.6	&	8.1	&	8.5	&	8.3	&	7.9	&	8.8
-			&	8.2	&	0.184	\\ \hline
-			B	&	8.7	&	10.2	&	11.4	&	10.9	&	7.2	&	9.2
-			&	9.6	&	2.404	\\ \hline
-			C	&	10.3	&	9.9	&	11.5	&	11.6	&	10.6	&	8.5
-			&	10.4	&	1.312	\\ \hline \hline
-			Overall & &&&&&&	9.4	&	2.022 \\ \hline	
-			
-		\end{tabular} 
-	\end{center}
-}
-\bigskip
 \begin{itemize}
-	\item[(i)] (2 Marks) Showing your workings, compute the \textbf{Between Group Sum of Squares} (\textit{SSbetween}).
-	\item[(ii)] (2 Marks) Showing your workings, compute the \textbf{Within Group Sum of Squares}\\ (\textit{SSwithin}).
-	\item[(iii)] (2 Mark) Showing your workings, compute the \textbf{Total Group Sum of Squares} (\textit{SStotal}).
-	\item[(iv)] (1 Mark)[$\ast$] Complete the \textbf{Degrees of Freedom} Column for the ANOVA table below.
-	\item[(iv)] (1 Mark)[$\ast$] Complete the \textbf{Mean Square} Column for the ANOVA table below.
-	\item[(iv)] (1 Mark)[$\ast$] Complete the \textbf{F} Column (i.e. the column for Test Statistic) for the ANOVA table below.
-\end{itemize}
-\bigskip
-{
-	\LARGE
-	\begin{center}
-		\begin{tabular}{|l||c|c|c|c|}
-			\hline \phantom{makespace} & DF & SS & MS & F \\ \hline
-			\hline Between & \phantom{makespa} &  &  &  \\ 
-			\hline Within &  &\phantom{makespace}  &  &  \\ \hline
-			\hline Total &  \phantom{makespace} &  &\phantom{makespace}  & \phantom{makespace} \\ 
-			\hline 
-		\end{tabular} 
-	\end{center}
-}
-%1.	Write out the ANOVA table. You are not required to add the ?Totals? Row. [4 Marks]
-%
-%2.	Carry out an analysis of variance of these data, conducting your significance test at the 5% level. [2 Marks]
-
-%=================================================================%
-\subsubsection{One Way ANOVA}
-% - Source : Quality Exam	
-Question 3
-(a) A Carbon Fibre manufacturing company is investigating the tensile strength of a
-new carbon fibre that will be used to make high-performance bicycle frames. Tensile
-Strength is usually affected by the percentage of a polymer material used in the fibre.
+%-----------------------%
+	\item[(f)] (4 marks) What is the purpose of a post hoc test?
+	\item[(f)] (4 marks) What are the key components that need to be identified when designing an
+experiment?
+	\item[(f)] (4 marks) What is a completely randomised design?
+	\item[(f)] (4 marks) What is a randomised block design?
+	\item[(f)] (4 marks) What is an ``a x b" factorial experimental design?
+	\item[(f)] (4 marks)  What is the difference between a between-treatments estimate and a withintreatments
+estimate?
+	\item[(f)] (4 marks) What distinguishes a factorial experiment from a completely randomised experiment or a randomised block experiment?
+	
+	
+	
+	\item[(f)] (4 marks) What is the purpose of a post hoc test? 	
+	
+	\item[(g)] (4 marks) What is an ``$a \times b$" factorial experimental design?
+	
+	
+	\item[(f)] (4 marks) How would you fit a quadratic regression model to bivariate data and why?
+\end{itemize}	
 
 
-A development engineer conducts a completely randomised experiment with 5 levels
-of the polymer content and replicates the experiment 5 times. The data are shown in
-the following table, where A;B;C;D;E represent 6\%; 8\%; 10\%; 12\% and 14\%
-respectively. Higher scores indicate higher tensile strength.
-\begin{verbatim}
-Tensile Strength @Polymer Content%
-@A% @B% @C% @D% @E%
-7 12 14 19 7
-7 17 19 25 10
-15 12 19 22 11
-11 18 18 19 15
-9 8 18 23 11
-\end{verbatim}
-
-The data was entered into Minitab and the Minitab printout is given along with post
-hoc test on the next page. Based on the results given in the printout, is there evidence
-to support the claim that the polymer material affects the mean tensile strength? Write
-a short report explaining your statistical conclusions.
 
 
-%=============================================================%
-\newpage
+
 \subsubsection*{Question 2 - Two Way ANOVA (6 Marks )}
 \noindent Suppose you want to determine whether the brand of cleaning product used and the temperature affects the amount of dirt removed from your machinery. 
 
@@ -889,7 +713,7 @@ a short report explaining your statistical conclusions.
 
 \noindent You buy two different brand of detergent (``\textit{Super}" and ``\textit{Best}") and choose three different temperature levels (``\textit{Cold}?, ``\textit{Warm}", and ``\textit{Hot}"). There are four measurements per treatment group.
 {
-	\Large
+	\large
 	\begin{center}
 		\begin{tabular}{|c||c|c|c|}
 			\hline
@@ -906,7 +730,7 @@ a short report explaining your statistical conclusions.
 \end{itemize}
 %---------------------------------------------------%
 {
-	\Large
+	\large
 	\begin{center}
 		\begin{tabular}{|c|c|c|c|c|}\hline
 			Source & DF & SS & MS & F \\ \hline
@@ -919,9 +743,7 @@ a short report explaining your statistical conclusions.
 	\end{center}
 }
 
-	\subsubsection*{Question 3 Part A (14 Marks)}
-	%
-	%\subsection*{Water Nitrate (One Way ANOVA MA4605)}
+\subsubsection*{Water Nitrate (One Way ANOVA MA4605)}
 	Four investigators, A, B, C and D, performed six determination of nitrate in water using the same procedure. The results in $\mu$M were:
 	
 	% Investigator 1 Investigator 2 Investigator 3
@@ -1002,7 +824,7 @@ a short report explaining your statistical conclusions.
 		\end{tabular}
 	\end{center} 
 	%===================================================================================================== %
-	\newpage
+
 	%\subsubsection*{Question 4 Part B (10 Marks)}
 	%
 	%
@@ -1046,8 +868,9 @@ a short report explaining your statistical conclusions.
 	
 	% End of Question
 	\newpage
-	\large{
-		\subsubsection*{Question 3 Part B (4 Marks)}
+	\normalsize{
+
+		\subsubsection*{Question 3 Part B (4 Marks) - check ANOVA Assumptions}
 		The \texttt{R} code and graphical procedures, below and on the following page, are relevant to checking whether the underlying assumptions are met for an ANOVA model.
 		\begin{itemize}
 			\item[(i.)] (2 marks) State two testable assumptions required for ANOVA procedures? (You may refer to the code output below.)
@@ -1095,7 +918,7 @@ a short report explaining your statistical conclusions.
 	}
 	\newpage
 	
-	\subsubsection*{Question 3 Part C (7 Marks)}
+	\subsubsection*{Question 3 Part C (7 Marks) Two Way ANOVA No Replicates}
 	\noindent A supermarket buys a particular product from five suppliers (V,W,X,Y and Z), and conducts regular tasting tests by three expert panels.
 	%are carried out as the product is sold in their food halls. 
 	Various characteristics are scored and an analysis of the totals of these scores is made. 
@@ -1141,8 +964,6 @@ a short report explaining your statistical conclusions.
 	\end{center} 
 	
 	
-	\newpage
-	
 	
 	
 	
@@ -1155,34 +976,10 @@ a short report explaining your statistical conclusions.
 
 \subsubsection*{One-Way ANOVA F-test}
 
-\noindent \textbf{Exercises}
-For the Table above, replace the questions marks with the correct values in each of the following columns. (The number of marks for each column is indicated here:)
-\begin{itemize}
-	\item[(i)] (2 Marks) Degrees of freedom 
-	\item[(ii)](2 Mark) Sums of Squares column
-	\item[(iii)](1 Mark)[$\ast$] Mean Square Values
-	\item[(iv)](1 Mark)[$\ast$] F-Values
-\end{itemize}
-\textit{(You may use the blank table on the next page)}
-\newpage
 
-{
-	\LARGE
-	\begin{center}
-		\begin{center}
-			\begin{tabular}{|c|c|c|c|c|}\hline
-				Source & DF & SS & MS & F \\ \hline
-				A  & \phantom{makespace}  & \phantom{makespace} & \phantom{makespace} & \phantom{makespace} \\ \hline
-				B  &\phantom{makespace} & \phantom{makespace}  & \phantom{makespace}& \phantom{makespace} \\ \hline
-				A:B  & \phantom{makespace}& \phantom{makespace} & \phantom{makespace} & \phantom{makespace} \\ \hline
-				Resid & \phantom{makespace}& \phantom{makespace} & \phantom{makespace} & \\ \hline \hline
-				Total & \phantom{makespace}&\phantom{makespace}  & \phantom{spa} & \\  \hline
-			\end{tabular} 
-		\end{center}
-	\end{center}
-}
 
-	\section*{Question 2 - Two Way ANOVA (6 Marks )}
+
+	\section*{Question 2 - Two Way ANOVA with Replicates(6 Marks )}
 	\noindent Suppose you want to determine whether the brand of cleaning product used and the temperature affects the amount of dirt removed from your machinery. 
 	
 	\noindent You are also interested in determining if there is an interaction between the two variables.
@@ -1205,73 +1002,37 @@ For the Table above, replace the questions marks with the correct values in each
 		\item Temperature is Factor B.
 		\item The variance of the response variable is 12.2011.
 	\end{itemize}
-	%---------------------------------------------------%
-	{
-		\Large
-		\begin{center}
-			\begin{tabular}{|c|c|c|c|c|}\hline
-				Source & DF & SS & MS & F \\ \hline
-				A  & \phantom{spa}? \phantom{spa}  & 22.04 & \phantom{spa}? \phantom{spa} & \phantom{spa}? \phantom{spa} \\ \hline
-				B  &\phantom{spa}? \phantom{spa} & \phantom{spa}? \phantom{spa}  & 102.37 & \phantom{spa}? \phantom{spa} \\ \hline
-				A:B  & \phantom{spa}? \phantom{spa}& 16.08 & \phantom{spa}? \phantom{spa} & \phantom{spa}? \phantom{spa} \\ \hline
-				Resid & \phantom{spa}? \phantom{spa}& \phantom{spa}? \phantom{spa} & \phantom{spa}? \phantom{spa} & \\ \hline \hline
-				Total & \phantom{spa}? \phantom{spa}&\phantom{spa}? \phantom{spa}  & \phantom{spa} & \\  \hline
-			\end{tabular} 
-		\end{center}
-	}
-	\subsection*{Exercises}
-	For the Table above, replace the questions marks with the correct values in each of the following columns. (The number of marks for each column is indicated here:)
-	\begin{itemize}
-		\item[(i)] (2 Marks) Degrees of freedom 
-		\item[(ii)](2 Mark) Sums of Squares column
-		\item[(iii)](1 Mark)[$\ast$] Mean Square Values
-		\item[(iv)](1 Mark)[$\ast$] F-Values
-	\end{itemize}
-	\textit{(You may use the blank table on the next page)}
-
-
-		\begin{center}
-			\begin{center}
-				\begin{tabular}{|c|c|c|c|c|}\hline
-					Source & DF & SS & MS & F \\ \hline
-					A  & \phantom{makespace}  & \phantom{makespace} & \phantom{makespace} & \phantom{makespace} \\ \hline
-					B  &\phantom{makespace} & \phantom{makespace}  & \phantom{makespace}& \phantom{makespace} \\ \hline
-					A:B  & \phantom{makespace}& \phantom{makespace} & \phantom{makespace} & \phantom{makespace} \\ \hline
-					Resid & \phantom{makespace}& \phantom{makespace} & \phantom{makespace} & \\ \hline \hline
-					Total & \phantom{makespace}&\phantom{makespace}  & \phantom{spa} & \\  \hline
-				\end{tabular} 
-			\end{center}
-		\end{center}
-
-\subsubsection*{Question 2 Part A (13 Marks)}
-
-A market research survey was carried out to assess preferences for three brands of chocolate bar, A, B, and C. 
-The study group was categorised by gender to determine any difference in preferences.
+\noindent \textbf{Exercises}
+For the Table above, replace the questions marks with the correct values in each of the following columns. (The number of marks for each column is indicated here:)
+\begin{itemize}
+	\item[(i)] (2 Marks) Degrees of freedom 
+	\item[(ii)](2 Mark) Sums of Squares column
+	\item[(iii)](1 Mark) Mean Square Values
+	\item[(iv)](1 Mark)F-Values
+\end{itemize}
 
 
 {
 	\large
 	\begin{center}
-		\begin{tabular}{|c|c|c|c|c|}
-			\hline
-			& X & Y & Z &  Total\\ \hline
-			Children  & 50 & 70 & 80 & 200 \\ \hline
-			Teenagers  & 90 & 50 & 20 &  160\\ \hline
-			Adults  & 140 & 120 & 100 & 360\\ \hline
-		\end{tabular} 
+		\begin{center}
+			\begin{tabular}{|c|c|c|c|c|}\hline
+				Source & DF & SS & MS & F \\ \hline
+				A  & \phantom{makespace}  & \phantom{makespace} & \phantom{makespace} & \phantom{makespace} \\ \hline
+				B  &\phantom{makespace} & \phantom{makespace}  & \phantom{makespace}& \phantom{makespace} \\ \hline
+				A:B  & \phantom{makespace}& \phantom{makespace} & \phantom{makespace} & \phantom{makespace} \\ \hline
+				Resid & \phantom{makespace}& \phantom{makespace} & \phantom{makespace} & \\ \hline \hline
+				Total & \phantom{makespace}&\phantom{makespace}  & \phantom{spa} & \\  \hline
+			\end{tabular} 
+		\end{center}
 	\end{center}
 }
-\begin{itemize}
-	\item[(i.)](2 Mark) Formally state the null and alternative hypotheses.
-	\item[(ii.)] (4 Marks) Compute the cell values expected under the null hypothesis. 
-	\item[(iii.)](4 Marks) Compute the test statistic.
-	\item[(iv.)](2 Mark) State the appropriate critical value for this hypothesis test.
-	\item[(v.)](3 Mark) Discuss your conclusion to this test, supporting your statement with reference to appropriate values.
-\end{itemize}
-\newpage
-\subsubsection*{Question 2 Part B (6 Marks)}
+
+
+\subsubsection*{Question 3 Part C (7 Marks)}
 Six analysts each made seven determinations of the paracetamol content of the same batch of tablets.
-The results are shown below. There are 42 determinations in total. The mean determination for each analysts is also tabulated. \\
+The results are shown below. There are 42 determinations in total. 
+%The mean determination for each analysts is also tabulated. \\
 
 
 %Analyst= structure(c(1L, 2L, 3L, 4L, 5L, 6L, 1L, 2L, 3L, 4L, 5L, 6L, 1L,
@@ -1300,6 +1061,83 @@ The results are shown below. There are 42 determinations in total. The mean dete
 \end{center}
 \bigskip
 The following \texttt{R} output has been produced as a result of analysis of these data:
+
+%Experiment=data.frame(Determinations, Analyst)
+%Model=aov(Determinations~Analyst)
+%summary(Model)
+\begin{framed}
+	\begin{verbatim}
+	Analysis of Variance Table
+	
+	Df   Sum Sq   Mean Sq   F value    Pr(>F)
+	Analyst        5   0.8611   0.17222     4.236   0.00394 **
+	Residuals     36   1.4635   0.04065
+	---
+	Signif. codes:  0 *** 0.001 ** 0.01 * 0.05 . 0.1   1
+	\end{verbatim}
+\end{framed}
+
+%\subsubsection*{Vegetables (ONE WAY ANOVA 4505)}
+%
+%(c) The following data give the recovery of bromide from spiked samples of vegetable matter, measured using a gas-liquid chromatographic method. The same amount of bromide was added to each specimen. 
+%
+%The units for all measurements are  mg g-1
+%
+%\begin{center}
+%	\begin{tabular}{|c|c|c|c|}
+%		Tomato: & $\{777 790 759 790 770 758 764\}$ & 774 & 142.6667
+%		\\ \hline
+%		
+%		Cucumber: & $\{782 773 778 765 789 797 782\}$ & 781 &  106\\ \hline
+%		
+%		Asparagus : & $\{786 783 781 785 789 797 782 \}$& 785 & \\ \hline
+%	\end{tabular} 
+%\end{center}
+
+
+%-------------------------------------------------------------------------------
+%y<-c(777, 789, 769, 790, 770, 759, 764, 782, 774, 778, 765, 789, 
+%797, 782, 785, 783, 782, 785, 787, 791, 782)
+%
+%
+%
+%T<-y[1:7];C<-y[8:14];A<-y[15:21];
+%mean(T);mean(C);mean(A);
+%
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+
+%
+%
+%\begin{itemize}
+%	\item[(i)](3 Marks) Compute the Between Groups Sum of Squares, \textit{Show your workings}
+%	\item[(ii)](3 Marks) Compute the Within Groups Sum of Squares, \textit{Show your workings}
+%	\item[(iii)](2 Marks) Compute the Total Sum of Squares,\textit{ show your workings}
+%	\item[(iv)] (2 Marks) Degrees of Fredom columns
+%	\item[(v)] (1 Marks) Mean Square
+%	\item[(vi)] (1 Marks) F test Statistics
+%\end{itemize}
+%\begin{tabular}{|c|c|c|c|c|c|}
+%	\hline Source & DF & SS & MS & F & p-value \\ 
+%	\hline Between &  &  &  &  &  \\ 
+%	\hline Within &  &  &  &  &  \\ 
+%	\hline Total &  &  &  &  &  \\ 
+%	\hline 
+%\end{tabular} 
+%\begin{framed}
+%	\begin{verbatim}
+%	> bartlett.test(y~group)
+%	
+%	Bartlett test of homogeneity of variances
+%	
+%	data:  y by group
+%	Bartlett's K-squared = 7.9063, df = 2, p-value = 0.01919
+%	
+%	\end{verbatim}
+%\end{framed}
+
+%====================================================================== %
+
 
 %Experiment=data.frame(Determinations, Analyst)
 %Model=aov(Determinations~Analyst)
@@ -1375,36 +1213,6 @@ The \texttt{R} code and graphical procedures, below and on the following page, a
 	\includegraphics[scale=0.55]{images/ExamQ5resid}
 \end{center}%
 	%====================================================================== %
-	\newpage
-%\subsubsection*{Vegetables (ONE WAY ANOVA 4505)}
-%
-%(c) The following data give the recovery of bromide from spiked samples of vegetable matter, measured using a gas-liquid chromatographic method. The same amount of bromide was added to each specimen. 
-%
-%The units for all measurements are  mg g-1
-%
-%\begin{center}
-%	\begin{tabular}{|c|c|c|c|}
-%		Tomato: & $\{777 790 759 790 770 758 764\}$ & 774 & 142.6667
-%		\\ \hline
-%		
-%		Cucumber: & $\{782 773 778 765 789 797 782\}$ & 781 &  106\\ \hline
-%		
-%		Asparagus : & $\{786 783 781 785 789 797 782 \}$& 785 & \\ \hline
-%	\end{tabular} 
-%\end{center}
-
-
-%-------------------------------------------------------------------------------
-%y<-c(777, 789, 769, 790, 770, 759, 764, 782, 774, 778, 765, 789, 
-%797, 782, 785, 783, 782, 785, 787, 791, 782)
-%
-%
-%
-%T<-y[1:7];C<-y[8:14];A<-y[15:21];
-%mean(T);mean(C);mean(A);
-%
-%-------------------------------------------------------------------------------
-%-------------------------------------------------------------------------------
 
 %
 %
@@ -1437,58 +1245,7 @@ The \texttt{R} code and graphical procedures, below and on the following page, a
 
 %====================================================================== %
 \newpage
-	\subsubsection*{Question 1 - One Way ANOVA (9 Marks )}
-	Specimens of milk from dairies in three different districts are assayed for their concentrations of the radioactive isotope Strontium-90. 
-	The results, in picocuries per litre, are as shown in the table below.
-	
-	{
-		\Large
-		\begin{center}
-			\begin{tabular}{|c|cccccc|c|c|}
-				\hline  
-				District & &&&&& & mean & variance \\  
-				&  &&&&&& $\bar{x}_i$ & $s^2_{i}$ \\  
-				\hline \hline
-				A	&	7.6	&	8.1	&	8.5	&	8.3	&	7.9	&	8.8
-				&	8.2	&	0.184	\\ \hline
-				B	&	8.7	&	10.2	&	11.4	&	10.9	&	7.2	&	9.2
-				&	9.6	&	2.404	\\ \hline
-				C	&	10.3	&	9.9	&	11.5	&	11.6	&	10.6	&	8.5
-				&	10.4	&	1.312	\\ \hline \hline
-				Overall & &&&&&&	9.4	&	2.022 \\ \hline	
-				
-			\end{tabular} 
-		\end{center}
-	}
-	\bigskip
-	\begin{itemize}
-		\item[(i)] (2 Marks) Showing your workings, compute the \textbf{Between Group Sum of Squares} (\textit{SSbetween}).
-		\item[(ii)] (2 Marks) Showing your workings, compute the \textbf{Within Group Sum of Squares}\\ (\textit{SSwithin}).
-		\item[(iii)] (2 Mark) Showing your workings, compute the \textbf{Total Group Sum of Squares} (\textit{SStotal}).
-		\item[(iv)] (1 Mark)[$\ast$] Complete the \textbf{Degrees of Freedom} Column for the ANOVA table below.
-		\item[(iv)] (1 Mark)[$\ast$] Complete the \textbf{Mean Square} Column for the ANOVA table below.
-		\item[(iv)] (1 Mark)[$\ast$] Complete the \textbf{F} Column (i.e. the column for Test Statistic) for the ANOVA table below.
-	\end{itemize}
-	\bigskip
-	{
-		\LARGE
-		\begin{center}
-			\begin{tabular}{|l||c|c|c|c|}
-				\hline \phantom{makespace} & DF & SS & MS & F \\ \hline
-				\hline Between & \phantom{makespa} &  &  &  \\ 
-				\hline Within &  &\phantom{makespace}  &  &  \\ \hline
-				\hline Total &  \phantom{makespace} &  &\phantom{makespace}  & \phantom{makespace} \\ 
-				\hline 
-			\end{tabular} 
-		\end{center}
-	}
-	%1.	Write out the ANOVA table. You are not required to add the “Totals” Row. [4 Marks]
-	%
-	%2.	Carry out an analysis of variance of these data, conducting your significance test at the 5% level. [2 Marks]
-	
-	\newpage
-	(Blank)
-	\newpage
+
 \subsection*{Question 3. Two Way ANOVA Procedures (25 marks) }
 \subsubsection*{Question 3 Part A (6 Marks)}
 %%\subsubsection*{Supermarket (TWO WAY ANOVA - MA4505)}
@@ -1516,7 +1273,7 @@ Taster a b c d
 
 
 \begin{itemize}
-	\item[(i.)] In the context of the above example, distinguish between the treatment and the blocking variables involved. Give reasons.
+	\item[(a)] In the context of the above example, distinguish between the treatment and the blocking variables involved. Give reasons.
 	
 %	[5 marks]
 	
@@ -1537,35 +1294,9 @@ Taster a b c d
 %	[5 marks]
 	
 \end{itemize}
-%====================================================================%
-\newpage
-\subsubsection*{Question 3 Part B (6 Marks)}
 
-\begin{center}
-	\texttt{
-		\begin{tabular}{|cc|c|c|c|c|c|}
-			\hline
-			% after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-			&&		&		&		&		&		\\
-			Response: Y        	&&	Df  	&	Sum Sq 	&	Mean Sq 	&	F value    	&	$Pr(>F)$    	\\
-			&&	\phantom{make}	&		&		&		&		\\\hline \hline
-			&&		&	\phantom{make}	&		&		&		\\
-			Analyst 	&&	\textbf{?}	&	\textbf{?}	&	\textbf{?}	&	\textbf{?}	&	0.00394 **	\\
-			&&		&		&		&		&		\\ \hline
-			&&		&		&		&		&		\\
-			Residuals	&&	\textbf{?}	&	\textbf{?}	&	0.04065	&	&		\\
-			&&		&		&		&		&		\\ \hline
-			&&		&		&		&		&		\\
-			Total	&&	\textbf{?}	&	2.3246	&		&		&		\\
-			&&		&		&		&		&		\\ \hline
-		\end{tabular}
-	}
-\end{center}
-\begin{itemize}
-	\item[(i.)] (6 Marks) Complete the ANOVA table in your answer sheet, replacing the "?" entries with the correct values.\textit{\\ (You are not required to carry out a hypothesis test.)}
-	%	\item[ii.] (2 marks) What hypothesis is being considered by this procedure.
-	
-\end{itemize}
+
+
 \subsubsection*{Battery - Partial Completion ANOVA (MA4605)}
 
 An engineer is designing a battery for use in a device that will be subjected to some extreme variations in temperature. 
@@ -1583,18 +1314,18 @@ The following partial ANOVA table resulted:
 Analysis of Variance for Battery Life Data
 %----------------------------------------------
 \begin{center}
-\begin{tabular}{|c|c|c|c|}\hline
-	Source of & Sum of & Degrees of & Mean \\
+\begin{tabular}{|l|c|c|c|}\hline
+	Source of & Sum of &\phantom{mak} Degrees of \phantom{mak}& Mean \\
 	
 	Variation & Squares & Freedom  & Square\\
 	
-	Material types & 2&  10,683.72 &  5,341.86 \\
+	Material types & 2&  10,683.72 & \phantom{mak} 5,341.86\phantom{mak} \\
 	
 	Temperature & 2& 39,118.72 & 19,559.36\\
 	
 	Interaction & 4& 9,613.78 & 2,403.44\\
 	
-	Error & 27& 18,230.75 & 675.21\\
+	Error &\phantom{mak} 27\phantom{mak}& 18,230.75 & 675.21\\
 	
 	Total &35&77,646.97 & \\\hline
 \end{tabular} 
@@ -1608,156 +1339,11 @@ Analysis of Variance for Battery Life Data
 
 
 
-\newpage
-\subsubsection*{Question 3 Part C (7 Marks)}
-Six analysts each made seven determinations of the paracetamol content of the same batch of tablets.
-The results are shown below. There are 42 determinations in total. 
-%The mean determination for each analysts is also tabulated. \\
 
 
-%Analyst= structure(c(1L, 2L, 3L, 4L, 5L, 6L, 1L, 2L, 3L, 4L, 5L, 6L, 1L,
-%2L, 3L, 4L, 5L, 6L, 1L, 2L, 3L, 4L, 5L, 6L, 1L, 2L, 3L, 4L, 5L,
-%6L, 1L, 2L, 3L, 4L, 5L, 6L, 1L, 2L, 3L, 4L, 5L, 6L), .Label = c("A",
-%"B", "C", "D", "E", "F"), class = "factor")
-
-%Determinations= c(84.32, 84.24, 84.29, 84.14, 84.5, 84.7, 84.61, 84.13, 84.28,
-%84.48, 83.91, 84.36, 84.64, 84, 84.4, 84.27, 84.11, 84.61, 84.62,
-%84.02, 84.63, 84.22, 83.99, 84.15, 84.51, 84.25, 84.4, 84.22,
-%83.88, 84.17, 84.63, 84.41, 84.68, 84.02, 84.49, 84.11, 84.51,
-%84.3, 84.36, 84.33, 84.06, 83.81)
-
-\begin{center}
-	\begin{tabular}{|c|ccccccc|}
-		\hline
-		Analyst	& Content		&		&		&		&		&		&		 \\ \hline
-		A	&	84.32	&	84.61	&	84.64	&	84.62	&	84.51	&	84.63	&	84.51	 \\
-		B	&	84.24	&	84.13	&	84.00	&	84.02	&	84.25	&	84.41	&	84.30	 \\
-		C	&	84.29	&	84.28	&	84.40	&	84.63	&	84.40	&	84.68	&	84.36	 \\
-		D	&	84.14	&	84.48	&	84.27	&	84.22	&	84.22	&	84.02	&	84.33	 \\
-		E	&	84.50	&	83.91	&	84.11	&	83.99	&	83.88	&	84.49	&	84.06	 \\
-		F	&	84.70	&	84.36	&	84.61	&	84.15	&	84.17	&	84.11	&	83.81	 \\
-		\hline
-	\end{tabular}
-\end{center}
-\bigskip
-The following \texttt{R} output has been produced as a result of analysis of these data:
-
-%Experiment=data.frame(Determinations, Analyst)
-%Model=aov(Determinations~Analyst)
-%summary(Model)
-\begin{framed}
-	\begin{verbatim}
-	Analysis of Variance Table
-	
-	Df   Sum Sq   Mean Sq   F value    Pr(>F)
-	Analyst        5   0.8611   0.17222     4.236   0.00394 **
-	Residuals     36   1.4635   0.04065
-	---
-	Signif. codes:  0 *** 0.001 ** 0.01 * 0.05 . 0.1   1
-	\end{verbatim}
-\end{framed}
-The \texttt{R} code and graphical procedures, below and on the following page, are relevant to checking whether the underlying assumptions are met for this ANOVA model.
-\begin{itemize}
-	\item[(i.)] (3 Marks) What are the assumptions underlying ANOVA?
-	\item[(ii.)] (4 Marks)  Assess the validity of these assumptions for the this ANOVA model.
-\end{itemize}
-\begin{framed}
-	\begin{verbatim}
-	Shapiro-Wilk normality test
-	
-	data:  Residuals
-	W = 0.9719, p-value = 0.3819
-	\end{verbatim}
-\end{framed}
-\begin{framed}
-	\begin{verbatim}
-	Bartlett test of homogeneity of variances
-	
-	data:  Experiment
-	Bartlett's K-squared = 105.9585, df = 1, p-value < 2.2e-16
-	\end{verbatim}
-\end{framed}
-\begin{center}
-	\includegraphics[scale=0.59]{images/ExamQ5boxplot}
-\end{center}
-\newpage
-%qqnorm(resid(Model),pch=18,col="red",font.lab=2,font.axis=2)
-%qqline(resid(Model))
-\begin{center}
-	\includegraphics[scale=0.55]{images/ExamQ5qqplot}
-\end{center}
-\begin{center}
-	\includegraphics[scale=0.55]{images/ExamQ5resid}
-\end{center}%
-%====================================================================== %
-\newpage
-%\subsubsection*{Vegetables (ONE WAY ANOVA 4505)}
-%
-%(c) The following data give the recovery of bromide from spiked samples of vegetable matter, measured using a gas-liquid chromatographic method. The same amount of bromide was added to each specimen. 
-%
-%The units for all measurements are  mg g-1
-%
-%\begin{center}
-%	\begin{tabular}{|c|c|c|c|}
-%		Tomato: & $\{777 790 759 790 770 758 764\}$ & 774 & 142.6667
-%		\\ \hline
-%		
-%		Cucumber: & $\{782 773 778 765 789 797 782\}$ & 781 &  106\\ \hline
-%		
-%		Asparagus : & $\{786 783 781 785 789 797 782 \}$& 785 & \\ \hline
-%	\end{tabular} 
-%\end{center}
+\subsubsection*{Question 4. (25 marks) Factorial Design }
 
 
-%-------------------------------------------------------------------------------
-%y<-c(777, 789, 769, 790, 770, 759, 764, 782, 774, 778, 765, 789, 
-%797, 782, 785, 783, 782, 785, 787, 791, 782)
-%
-%
-%
-%T<-y[1:7];C<-y[8:14];A<-y[15:21];
-%mean(T);mean(C);mean(A);
-%
-%-------------------------------------------------------------------------------
-%-------------------------------------------------------------------------------
-
-%
-%
-%\begin{itemize}
-%	\item[(i)](3 Marks) Compute the Between Groups Sum of Squares, \textit{Show your workings}
-%	\item[(ii)](3 Marks) Compute the Within Groups Sum of Squares, \textit{Show your workings}
-%	\item[(iii)](2 Marks) Compute the Total Sum of Squares,\textit{ show your workings}
-%	\item[(iv)] (2 Marks) Degrees of Fredom columns
-%	\item[(v)] (1 Marks) Mean Square
-%	\item[(vi)] (1 Marks) F test Statistics
-%\end{itemize}
-%\begin{tabular}{|c|c|c|c|c|c|}
-%	\hline Source & DF & SS & MS & F & p-value \\ 
-%	\hline Between &  &  &  &  &  \\ 
-%	\hline Within &  &  &  &  &  \\ 
-%	\hline Total &  &  &  &  &  \\ 
-%	\hline 
-%\end{tabular} 
-%\begin{framed}
-%	\begin{verbatim}
-%	> bartlett.test(y~group)
-%	
-%	Bartlett test of homogeneity of variances
-%	
-%	data:  y by group
-%	Bartlett's K-squared = 7.9063, df = 2, p-value = 0.01919
-%	
-%	\end{verbatim}
-%\end{framed}
-
-%====================================================================== %
-\newpage
-
-
-\subsection*{Question 4. (25 marks) Experimental Design }
-
-
-\subsubsection*{Question 4 Part A (25 Marks)}
 
 In an investigation into the extraction of nitrate-nitrogen from air dried soil, three quantitative variables were investigated at two levels. These were the amount of oxidised activated charcoal (A) added to the extracting solution to remove organic interferences, the strength of CaSO4 extracting solution (C), and the time the soil was shaken with the solution (T). The aim of the investigation was to optimise the extraction procedure. The levels of the variables are given here:
 \begin{center}
@@ -1801,17 +1387,6 @@ In an investigation into the extraction of nitrate-nitrogen from air dried soil,
 
 
 
-
-
-
-
-
-
-
-
-\newpage
-
-
 \begin{itemize}
 	\item[(i.)] (7 Marks) Calculate the contrasts.
 	\item[(ii.)] (3 Marks) Calculate the effects.
@@ -1836,18 +1411,13 @@ In an investigation into the extraction of nitrate-nitrogen from air dried soil,
 	\end{tabular} 
 \end{center}
 
-%-----------------------------------------------------------------%
-\large
-
-
-\subsection*{Two Way ANOVA}
-\[MS_A = c \times S^2_r\]
-\[MS_B = r \times S^2_c\]
+\newpage
 
 
 
 
 \section*{Question 5. (25 marks) Statistical Process Control }
+
 
 \subsubsection*{Question 5 Part A (6 Marks)}
 A normally distributed quality characteristic is monitored through the use of control charts. These charts have the following parameters. All charts are in control.
@@ -1915,33 +1485,8 @@ An automobile assembly plant concerned about quality improvement measured sets o
 %process.capability(obj, spec.limits=c(597,603))
 
 
-\subsubsection*{Question 5 Part C (12 Marks)}
-% \subsection*{Question 47 - Nelson Rules for Control Charts}
-The \textbf{Nelson Rules} are a set of eight decision rules for detecting ``out-of-control" or non-random conditions on control charts. These rules are applied to a control chart on which the magnitude of some variable is plotted against time. The rules are based on the mean value and the standard deviation of the samples.\\
 
-\begin{itemize}
-	\item[(i)] ($4 \times 3$ Marks) Discuss any four of these rules, and how they would be used to detect ``out of control" processes. Support your answer with sketch.
-\end{itemize}
-
-\bigskip 
-\begin{framed}
-	\noindent \textit{In your answer, you may make reference to the following properties of the Normal Distribution. Consider the random variable $X$ distributed as
-		\[X \sim \mathcal{N}(\mu,\sigma^2)\]
-		where $\mu$ is the mean and $\sigma^2$ is the variance of an random variable $X$.}
-	\begin{itemize}
-		\item $\Pr( \mu - 1\sigma \leq X \leq \mu + 1\sigma ) = 0.6827$
-		\item $\Pr( \mu - 2\sigma \leq X \leq \mu + 2\sigma ) = 0.9545$
-		\item $\Pr( \mu - 3\sigma \leq X \leq \mu + 3\sigma )= 0.9973$
-		
-	\end{itemize}
-\end{framed}
-\newpage
-
-
-
-\subsection*{Question 5. Statistical Process Control (25 marks) }
-
-\subsubsection*{Question 5 Part A (12 Marks)}
+\subsection*{Question 5 Part A (12 Marks)}
 % \subsection*{Question 47 - Nelson Rules for Control Charts}
 The \textbf{Nelson Rules} are a set of eight decision rules for detecting ``out-of-control" or non-random conditions on control charts. These rules are applied to a control chart on which the magnitude of some variable is plotted against time. The rules are based on the mean value and the standard deviation of the samples.\\
 
@@ -1963,97 +1508,13 @@ The \textbf{Nelson Rules} are a set of eight decision rules for detecting ``out-
 \end{framed}
 \newpage
 
-\subsubsection*{Question 5 Part B (6 Marks)}
-A normally distributed quality characteristic is monitored through the use of control charts. These charts have the following parameters. All charts are in control.
-\begin{center}
-	\begin{tabular}{|c|c|c|c|}
-		\hline  & LCL & Centre Line & UCL \\
-		\hline $\bar{X}$-Chart & 1995 & 2000 & 2005 \\
-		\hline $R$-Chart & 0 & 21 & 44.394 \\ \hline
-	\end{tabular}
-\end{center}
 
-\begin{itemize}
-	\item[(i.)] (2 Marks) What sample size is being used for this analysis?
-	\item[(ii.)] (2 Marks) Estimate the mean of the process standard deviations $\bar{s}$.
-	\item[(iii.)] (2 Marks) Compute the control limits for the process standard deviation chart (i.e. the s-chart).
-\end{itemize}
-
-
-\subsubsection*{Question 5 Part C (7 Marks)}
-An automobile assembly plant concerned about quality improvement measured sets of five camshafts on twenty occasions throughout the day. The specifications for the process state that the design specification limits at 600$\pm$3mm.
-
-
-\begin{itemize}
-	\item[(i.)] (4 Marks) Determine the \emph{Process Capability Indices} $C_p$ and $C_{pk}$, commenting on the respective values. Use the \texttt{R} code output on the following page.
-	\item[(ii.)] (2 Mark)  Explain why there would be a discrepancy between $C_p$ and $C_{pk}$. Illustrate your answer with sketches.
-	\item[(iii.)] (1 Mark) Comment on the graphical output of the \emph{Process Capability Analysis}, also presented on the next page.
-\end{itemize}
-
-
-
-\newpage
-\begin{framed}
-	\begin{verbatim}
-	Process Capability Analysis
-	
-	Call:
-	process.capability(object = obj,  
-	spec.limits = c(597, 603))
-	Number of obs = 100          Target = 600
-	Center = 599.548         LSL = 597
-	StdDev = 0.5846948       USL = 603
-	
-	Capability indices:
-	Value   2.5%  97.5%
-	Cp    ...
-	Cp_l  ...
-	Cp_u  ...
-	Cp_k  ...
-	Cpm   1.353  1.134  1.572
-	Exp<LSL 0%   Obs<LSL 0%
-	\end{verbatim}
-\end{framed}
-
-
-
-\begin{center}
-	\includegraphics[scale=0.55]{images/ExamQ4hist}
-\end{center}
-\newpage
-%
-%Lengths = Values
-%
-%obj <- qcc(Lengths, type="xbar")
-%
-%process.capability(obj, spec.limits=c(597,603))
 
 \section*{Formulas and Tables}
 
 \subsection*{Critical Values for Dixon Q Test}
-{
-	\Large
-	\begin{center}
-		\begin{tabular}{|c|c|c|c|}
-			\hline  N  & $\alpha=0.10$  & $\alpha=0.05$  & $\alpha=0.01$  \\ \hline
-			3  & 0.941 & 0.970 & 0.994 \\ \hline
-			4  & 0.765 & 0.829 & 0.926 \\ \hline
-			5  & 0.642 & 0.710  & 0.821 \\ \hline
-			6  & 0.560 & 0.625 & 0.740 \\ \hline
-			7  & 0.507 & 0.568 & 0.680  \\ \hline
-			8  & 0.468 & 0.526 & 0.634 \\ \hline
-			9  & 0.437 & 0.493 & 0.598 \\ \hline
-			10 & 0.412 & 0.466 & 0.568 \\ \hline
-			11 & 0.392 & 0.444 & 0.542 \\ \hline
-			12 & 0.376 & 0.426 & 0.522 \\ \hline
-			13 & 0.361 & 0.410 & 0.503 \\ \hline
-			14 & 0.349 & 0.396 & 0.488 \\ \hline
-			15 & 0.338 & 0.384 & 0.475 \\ \hline
-			16 & 0.329 & 0.374 & 0.463 \\ \hline
-		\end{tabular} 
-	\end{center}
-}
-	\subsection*{Critical Values for Dixon Q Test}
+
+
 	{
 		\Large
 		\begin{center}
@@ -2084,13 +1545,7 @@ An automobile assembly plant concerned about quality improvement measured sets o
 
 \[MS_B = r \times S^2_c\]
 \end{multicols}
-\subsection*{Control Limits for Control Charts}
 
-\[ \bar{\bar{x}} \pm 3\frac{\bar{s}}{c_4\sqrt{n}}\]
-
-\[ \bar{s} \pm 3\frac{c_5\bar{s}}{c_4}\]
-
-\[\left[ \bar{R}D_3, \bar{R}D_4\right]\]
 
 \subsection*{Control Limits for Control Charts}
 
@@ -2122,18 +1577,7 @@ An automobile assembly plant concerned about quality improvement measured sets o
 \[\mbox{Sums of Squares} =  \frac{\mbox{(Contrast)}^2}{8n}\]
 
 %------------------------------------------------------------------------ %
-\Large{
-\subsection*{Process Capability Indices}
-\[ \hat{C}_p = \frac{\mbox{USL} - \mbox{LSL}}{6s}\]
-
-\[ \hat{C}_{pk} = \mbox{min} \left[\frac{\mbox{USL} - \bar{x}}{3s},\frac{\bar{x} - \mbox{LSL}}{3s} \right] \]
-
-\[ \hat{C}_{pm} = \frac{\mbox{USL} - \mbox{LSL}}{6\sqrt{s^2+(\bar{x}-T)^2}}\]
-\bigskip
-%\subsection*{2^3 Design: Main Effect}
-%
-%\[X= \frac{1}{4n} \left[ x + xy + xz + xyz - (1) - y - z - yz \right]\]
-%\bigskip
+\normalsize{
 \subsection*{Process Capability Indices}
 \begin{multicols}{2}
 \[ \hat{C}_p = \frac{\mbox{USL} - \mbox{LSL}}{6s}\]
@@ -2190,40 +1634,6 @@ Chi Square 12 Marks
 
 
 
-
-%========================================================%
-
-	\subsection*{Factors for Control Charts}
-	\begin{tabular}{|c|c|c|c|c|c|c|}
-		\hline
-		Sample Size (n) 	&	c4 	&	c5 	&	d2 	&	d3 	&	D3 	&	D4	\\	\hline
-		2	&	0.7979	&	0.6028	&	1.128	&	0.853	&	0	&	3.267	\\	
-		3	&	0.8862	&	0.4633	&	1.693	&	0.888	&	0	&	2.574	\\	
-		4	&	0.9213	&	0.3889	&	2.059	&	0.88	&	0	&	2.282	\\	
-		5	&	0.9400	&	0.3412	&	2.326	&	0.864	&	0	&	2.114	\\	
-		6	&	0.9515	&	0.3076	&	2.534	&	0.848	&	0	&	2.004	\\	
-		7	&	0.9594	&	0.282	&	2.704	&	0.833	&	0.076	&	1.924	\\	
-		8	&	0.9650	&	0.2622	&	2.847	&	0.82	&	0.136	&	1.864	\\	
-		9	&	0.9693	&	0.2459	&	2.970	&	0.808	&	0.184	&	1.816	\\	
-		10	&	0.9727	&	0.2321	&	3.078	&	0.797	&	0.223	&	1.777	\\	
-		11	&	0.9754	&	0.2204	&	3.173	&	0.787	&	0.256	&	1.744	\\	
-		12	&	0.9776	&	0.2105	&	3.258	&	0.778	&	0.283	&	1.717	\\	
-		13	&	0.9794	&	0.2019	&	3.336	&	0.770	&	0.307	&	1.693	\\	
-		14	&	0.9810	&	0.1940	&	3.407	&	0.763	&	0.328	&	1.672	\\	
-		15	&	0.9823	&	0.1873	&	3.472	&	0.756	&	0.347	&	1.653	\\	
-		16	&	0.9835	&	0.1809	&	3.532	&	0.750	&	0.363	&	1.637	\\
-		17	&	0.9845	&	0.1754	&	3.588	&	0.744	&	0.378	&	1.622	\\
-		18	&	0.9854	&	0.1703	&	3.64	&	0.739	&	0.391	&	1.608	\\
-		19	&	0.9862	&	0.1656	&	3.689	&	0.734	&	0.403	&	1.597	\\
-		20	&	0.9869	&	0.1613	&	3.735	&	0.729	&	0.415	&	1.585	\\
-		21	&	0.9876	&	0.1570	&	3.778	&	0.724	&	0.425	&	1.575	\\
-		22	&	0.9882	&	0.1532	&	3.819	&	0.720	&	0.434	&	1.566	\\
-		23	&	0.9887	&	0.1499	&	3.858	&	0.716	&	0.443	&	1.557	\\
-		24	&	0.9892	&	0.1466	&	3.895	&	0.712	&	0.451	&	1.548	\\
-		25	&	0.9896	&	0.1438	&	3.931	&	0.708	&	0.459	&	1.541	\\
-		\hline
-	\end{tabular}
-} % End Large Font
 \end{document}
 
 \newpage
