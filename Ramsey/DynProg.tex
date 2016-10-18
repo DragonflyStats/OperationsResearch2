@@ -14,7 +14,9 @@ through and the distances between ”neighbouring” towns (it is
 assumed that there is only one obvious path between such towns).
 You could then calculate the lengths of all the possible routes and
 choose the shortest one. However, this is not an efficient method.
-1 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+1 \end{frame}  
+\begin{frame} 
+	\frametitle{Integer Programming}     
 The Intuition of DP
 The idea behind DP is to build up the optimal solution in stages.
 This can be done inductively or recursively.
@@ -176,7 +178,10 @@ Let cj,k be the distance between ”neighbouring” towns j and k (if
 j and k are not neighbours, then we may define cj,k = ∞).
 In general, cj,k is the cost of the action which changes the state
 from j to k in one stage.
-8 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+%%- 8 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 The Optimality/Bellman Equation
 Since we are minimising costs, the optimality (Bellman) equation is
 di+1(k) = min
@@ -187,18 +192,26 @@ When calculating the shortest subroute to k, we take the minimum
 length route over the set of possible paths that come into k from
 the previous town visited (the set of possible j), assuming that the
 shortest possible subroute to j had been used).
-9 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+9 \end{frame}  
+\begin{frame} 
+	\frametitle{Integer Programming}     
 The Optimality/Bellman Equation
 We should highlight the path coming into k which attains this
 minimum distance. Once the calculation of the length of the
 shortest route is complete. The optimal route can be traced
 recursively as a continuous sequence of highlighted paths from the
 finishing state to the initial state.
+\end{frame}  
+\begin{frame} 
+	\frametitle{Dynamic Programming} 
 The minimum cost (length of the shortest route) is found by
 minimising the costs of arriving at one of the finishing states
 mins∈Sn dn(s). Here K is the only possible finishing state, thus the
 minimum cost is simply dn(K).
-10 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+10 
+\end{frame}  
+\begin{frame} 
+\frametitle{Dynamic Programming}     
 The Inductive Calculations
 The appropriate calculations are as follows: These calculations can
 be done on the graph. We should also highlight the paths for which
@@ -207,13 +220,19 @@ At Stage 1, we travel to one of B, C and D. There is only one
 path to each, so the lengths of the shortest routes at Stage 1 are:
 d1(B) = 80, d1(C) = 100, d1(D) = 90. These three paths should
 be highlighted.
+\end{frame}  
+\begin{frame} 
+	\frametitle{Dynamic Programming} 
 At Stage 2, we can travel to E, F or G. There are 2 possible paths
 to E, through B and through C. Hence,
 d2(E)=min{d1(B) + cB,E , d1(C) + cC,E }
 =min{80 + 70, 100 + 60} = 150. (2)
 We highlight the path from B to E, since this minimises the
 distance to E
-11 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+11 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Inductive Calculation - ctd.
 There is only 1 possible path to F, through C. Hence,
 d2(F) = d1(C) + cC,F = 100 + 90 = 190.
@@ -222,7 +241,11 @@ There are 2 possible paths to G, through C and through D. Hence,
 d2(G)=min{d1(C) + cC,G , d1(D) + cD,G }
 =min{100 + 90, 90 + 80} = 170.
 We highlight the path from D to G.
-12 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+12 
+\end{frame}  
+\begin{frame} 
+	
+	\frametitle{Integer Programming}     
 Inductive Calculations- ctd.
 At Stage 3, we can travel to H, I or J. There is only one path into
 H, from E. Thus,
@@ -233,7 +256,10 @@ d3(I)=min{d2(E) + cE,I
 , d2(F) + cF,I }
 =min{150 + 80, 190 + 70} = 230. (3)
 We highlight the path from E to I.
-13 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+13 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Inductive Calculations- ctd.
 There are 2 paths into J, from F and from G, we have
 d3(J)=min{d2(F) + cF,J , d2(G) + cG,J }
@@ -452,13 +478,19 @@ H
 0
 J
 K
-26 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+26 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Formulation
 The probability of not being stuck in a traffic jam is the product of
 the probabilities along the chosen route.
 In order to define the problem as a problem of dynamic
 programming, the rewards gained at each stage are defined to be
 the logarithms of the probabilities given above.
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}  
 The optimal probability will be calculated by recursion. Let Ri(j)
 be the logarithm of the maximum probability of not being caught
 in a traffic jam when starting from Town j at Stage i. We have
@@ -467,7 +499,9 @@ j∈Si
 {Ri(j) + ln pj,k },
 where pj,k is the probability of not being caught in a traffic jam
 between Towns j and k.
-27 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+27 
+\end{frame}  
+\begin{frame} \frametitle{Integer Programming}     
 Calculation
 We have R3(H) = ln(0.9) ≈ −0.10536,
 R3(I) = ln(0.8) ≈ −0.22314, R3(J) = ln(1) = 0.
@@ -498,7 +532,10 @@ R1(C)=max{R2(E) + ln pC,E , R2(F) + ln pC,F , R2(G) + ln pC,G }
 ≈max{−0.35667 − 0.51083, −0.51083 − 0.10536,
 −0.22314 − 0.10536} = −0.32850 (8)
 We highlight the path from C to G.
-30 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+30 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
 Calculation-ctd.
 From D we can only go to G. Hence,
 R1(D) = R2(G) + ln pD,G ≈ −0.22314 − 0.22314 = −0.44629.
@@ -540,4 +577,5 @@ distance between j and k (this is the total distance of the route).
 Other constraints are required to ensure that the route used is
 valid, e.g. xA,B + xA,C + xA,D ≥ 1, i.e. one of the paths from
 Limerick must be used.
-34 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+34 \end{frame}  
+\end{document}

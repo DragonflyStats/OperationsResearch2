@@ -1,0 +1,749 @@
+
+29 
+\end{frame}  
+%=========================================================%
+\begin{frame}
+\frametitle{Integer Programming}     
+1.3 Mixed Integer/Linear Programming problems (IP/LP
+problems)
+In such problems some, but not all, of the variables are constrained
+to be integers. The branch and bound algorithm can easily be
+adapted to such problems.
+Suppose (x1, x2, . . . , xk ) are constrained to be integers and
+(xk+1, xk+2 . . . , xn) are not. It is assumed that the problem is a
+maximisation problem.
+30 \end{frame}  
+\begin{frame} 
+	\frametitle{Integer Programming}     
+Mixed Integer/Linear Programming problems (IP/LP
+problems)
+At the first step of the algortithm, we solve the corresponding LP
+problem in which none of the variables are constrained to be
+integers.
+The optimal value for this problem is an upper bound for the
+optimal value in the IP/LP problem. If the values of (x1, x2, . . . xk )
+are integers, then we have found the optimal solution.
+Otherwise, we can split the initial LP problem into two problems as
+before. If xi = c ∈/ Z, 1 ≤ i ≤ k at the optimal solution of this
+problem, then the first LP problem is obtained by adding the
+constraint xi ≤ bcc and the second LP problem is obtained by
+adding the constraint xi ≥ dce.
+%End of Slide 31 
+\end{frame}  
+%=============================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The bounding procedure}
+The bounding procedure is as for pure IP problems with the
+following change:
+1. If the components of the solution of one of the
+”branch” LP problems that are supposed to be
+integers are integers, then this gives a lower bound
+on the optimal value. This branch does not need to
+investigated any further.
+
+\end{frame}  
+%=========================================================%
+\begin{frame}[fragile] 
+\frametitle{Integer Programming}     
+
+Solve the mixed LP/IP problem.
+\begin{verbatim}
+max z = 4x1 + 5x2
+subject to
+x1 + x2 ≤ 5
+6x1 + 10x2 ≤ 45,
+where x1, x2 are non-negative and x2 is an integer.
+\end{verbatim}
+
+%% End of Slide 33 
+\end{frame}  
+%=========================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+Solution
+\begin{itemize}
+	\item As before the first step is to solve the LP problem obtained by
+	ignoring the constraint that x2 is an integer. The solution of this
+	problem (as shown above) is (1.25, 3.75) and the optimal value is
+	23.75.
+	\item It should be noted that the optimal value in this problem is not
+	necessarily an integer and hence we cannot immediately improve
+	this upper bound as in the pure IP problem with integer
+	coefficients.
+\end{itemize}
+
+%% End of Slide 34 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Solution
+We now split the initial linear programming problem into 2
+problems. Since x1 does not have to be an integer, the two LP
+problems are obtained as follows:
+\begin{enumerate}
+	\item The first problem is obtained by adding the
+	constraint x2 ≤ 3 to the initial LP problem.
+	\item The second problem is obtained by adding the
+	constraint x2 ≥ 4 to the initial LP problem.
+\end{enumerate}
+
+35 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Graphical solution
+The problems obtained are illustrated below:
+0
+5
+5 7.5
+◦
+❅
+❅
+❅
+❅
+❅
+❅
+❅
+❅
+❅
+❅
+❜❜❜❜❜❜❜❜❜❜❜❜❜❜❜
+F1
+F2
+%% End of Sldie 36 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Solution
+The apexes of F1 are (0,4), (0,4.5), ( 5
+6
+, 4) and the corresponding
+values of the objective function are 20, 22.5, 23 1
+3
+.
+Since x2 is an integer at the final solution, this gives us a lower
+bound on the optimal value of the mixed IP/LP problem. We do
+not have to split this LP problem into two.
+The apexes of F2 are (0,0), (0,3), (2,3) and (5,0). The
+corresponding values of the objective function are 0, 15, 23, 20. It
+follows that the solution of this mixed IP/LP problem is ( 5
+6
+, 4) and
+the optimal value 23 1
+3
+.
+37 
+\end{frame}  
+
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{1.4 The Travelling Salesperson Problem (TSP)}
+The problem is to find the shortest tour which visits all of n cities
+and finishes in the starting city.
+Without loss of generality, we can assume that the initial city is
+labelled 1.
+Suppose the distance between city i and j is di,j
+. For convenience,
+define di,i = ∞.
+Let xi,j = 1 if a tour goes to city j after visiting city i, otherwise
+xi,j = 0.
+38 \end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The Travelling Salesperson Problem}\\
+The mathematical formulation of the TSP is as follows: Minimize
+z =
+Xn
+i=1
+Xn
+j=1
+di,jxi,j
+,
+such that
+\begin{verbatim}
+Xn
+j=1
+xi,j = 1, i = 1, 2, . . . , n
+Xn
+i=1
+xi,j = 1, j = 1, 2, . . . , n
+xi,j ≥ 0 xi,j
+is an integer
+\end{verbatim}
+% End of Slid e39 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The Travelling Salesperson Problem}\\
+\begin{itemize}
+	\item The first constraint states that exactly one city must be visited
+	immediately after city i.
+	\item The second constraint states that exactly one city must be visited
+	immediately before city j.
+	\item It follows that the TSP is an integer programming problem.
+	\item It should be noted that in the natural interpretation of this
+	problem di,j = dj,i
+	. However, the algorithms considered below can
+	be used to solved more general interpretations of the TSP.
+	\item The distances di,j are normally given in a matrix where di,j
+	is the
+	value in row i and column j.
+\end{itemize}
+
+%% End of Slide 40 
+\end{frame}  
+%=====================================================================================%
+\begin{frame}
+ \frametitle{Integer Programming}     
+
+\noindent\textbf{The Subtour Reversal Heuristic for Finding Good
+Solutions of the TSP problem}\\ 
+The algorithm works as follows:
+\begin{itemize}
+	\item 1. An initial tour is found by at each step travelling
+	from the present city to the nearest city that has not
+	yet been visited. When all the cities have been
+	visited, then we return to city 1.
+	\item We then see whether a shorter tour can be found by
+	reversing the order of two cities in the tour, then by
+	reversing the order of three cities (based on the
+	shortest tour found so far) and so on until the order
+	of n − 1 cities is reversed.
+\end{itemize}
+
+This algorithm will find a good solution, but not necessarily the
+optimal solution.
+41 
+\end{frame}  
+%=====================================================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Example 1.3}\\
+Consider the following 5-city TSP problem given by the distance
+matrix
+D =
+
+
+∞ 12 22 15 21
+12 ∞ 8 11 13
+22 8 ∞ 16 19
+15 11 16 ∞ 19
+21 13 19 19 ∞
+
+
+42 \end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Example 1.3}\\
+First we find an initial tour. Starting from city 1, we go to city 2
+(the closest). Distance 12
+From city 2, we can go to any city except city 1. City 3 is the
+closest. Distance 8
+From city 3, we can go to city 4 or 5. City 4 is the closest.
+Distance 16
+From city 4, we must go to city 5. Distance 19.
+Finally, we return to city 1. Distance 21.
+%% End of Slide 43 
+\end{frame}  
+%===================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent\textbf{Example 1.3}\\
+Hence, the initial tour is 1-2-3-4-5-1.
+The length of this tour is 12+8+16+19+21=76.
+We now consider reversing any two cities in the tour.
+It should be noted that city 1 should not be moved, since the
+resulting sequence does not define a tour.
+%% End of Slide 44 
+\end{frame}  
+%====================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Example 1.3}\\
+Hence, we consider the following reversals
+Old Tour New Tour Length
+1-2-3-4-5-1 1-3-2-4-5-1 22+8+11+19+21=81
+1-2-3-4-5-1 1-2-4-3-5-1 12+11+16+19+21=79
+1-2-3-4-5-1 1-2-3-5-4-1 12+8+19+19+21=79
+None of these tours is better than the initial tour.
+%% End of Slide 45 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{Example 1.3}\\
+Next we consider the reversal of three cities in a tour in the best
+tour found so far (the initial tour).
+Old Tour New Tour Length
+1-2-3-4-5-1 1-4-3-2-5-1 15+16+8+13+21=73
+1-2-3-4-5-1 1-2-5-4-3-1 12+13+19+16+22=82
+Hence, the best tour found so far is 1-4-3-2-5-1. Length 73.
+46 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+\noindent \textbf{Example 1.3}\\
+Finally, we consider the reversal of four cities in this new tour.
+Old Tour New Tour Length
+1-4-3-2-5-1 1-5-2-3-4-1 21+13+8+16+15=73
+Hence, we have found two tours (1-4-3-2-5-1 and 1-5-2-3-4-1)
+which are of the same length.
+It should be noted that if the distance matrix is symmetric, then
+reversing n − 1 cities in a tour results in a tour of unchanged
+length as the tour obtained is a pure reversal of the original tour.
+47 \end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+1.4.2 The Branch and Bound Method for Solving the TSP
+This method finds the optimal tour by solving an appropriate
+sequence of assignment problems.
+This approach uses the fact that every tour can be interpreted as
+an assignment by assuming that individual i is assigned to task j
+where j is the city which comes immediately after city i in the tour.
+The cost of assigning individual i to task j is defined to be di,j
+.
+Since di,i = ∞, individual i will not be assigned to task i.
+The tour 1-4-3-2-5-1 above can be interpreted as the following
+assignment: Individual 1 does task 4, individual 4 does task 3,
+individual 3 does task 2, individual 2 does task 5 and individual 5
+does task 1.
+48 
+\end{frame}  
+%=====================================================================================%
+\begin{frame}
+\frametitle{Integer Programming}     
+1.4.2 The Branch and Bound Algorithm for Solving the
+TSP
+However, not every assignment can be interpreted as a tour. For
+example, if individual 1 does task 3, individual 3 does task 4 and
+individual 4 does task 1, then we have obtained a cycle which does
+not visit all the cities (this assignment corresponds to the cycle
+1-3-4-1).
+In this case, individual 2 would be assigned to task 5 and individual
+5 would be assigned to task 2 (corresponding to the cycle 2-5-2).
+It can be shown that every assignment that cannot be interpreted
+as a tour includes two or more cycles.
+%% END OF SLIDE 49 
+\end{frame}  
+%=====================================================================================%
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{
+The Branch and Bound Algorithm for Solving the TSP}
+The algorithm is as follows:
+1. Since this is a cost minimisation problem, the value
+of the solution to an assignment problem is a lower
+bound on the optimal value of the TSP. A simple
+upper bound is given by the length of the initial tour
+using the subtour reversal heuristic.
+2. Solve the assignment problem corresponding to the
+distance matrix D. If the assignment corresponds to
+a tour, then this is the optimal tour.
+3. If the assignment does not correspond to a tour, then
+it contains at least two cycles. We split the present
+assignment problem into a set of new assignment
+problems, each obtained by setting one of the
+distances in a chosen (normally the shortest) cycle to
+be ∞.
+%% END OF SLIDE 50 
+\end{frame}  
+%=====================================================================================%
+\begin{frame}
+\frametitle{Integer Programming}     
+The Branch and Bound Algorithm for Solving the TSP
+4. These problems can be solved in the same way.
+5. If the solution of an assignment problem does not
+correspond to a tour, we can split it (if it seems
+possible that a better solution than the best found so
+far can be found) into a set of new assignment
+problems as above.
+6. If the solution of an assignment problem corresponds
+to a tour, then we do not need to split this problem
+and a we obtain an upper bound on the minimum
+cost.
+51 
+\end{frame}  
+%=====================================================================================%
+\begin{frame}
+\frametitle{Integer Programming}     
+Example 1.4
+Solve the TSP problem given by the matrix
+D =
+
+
+∞ 10 3 6 9
+5 ∞ 5 4 2
+4 9 ∞ 7 8
+7 1 3 ∞ 4
+3 2 6 5 ∞
+
+
+52 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 1.4
+We can find an initial upper bound on the minimum distance by
+using the shortest distance heuristic.
+From 1 we go to 3 (the nearest city). Distance 3. From 3 we go to
+4. Distance 7.
+From 4 we go to 2. Distance 1. From 2 we must go to 5. Distance
+2.
+From 5 we return to 1. Distance 3. The total distance is 16.
+53 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 1.4
+We now solve the corresponding assignment problem, call this A1.
+First we subtract the minimum value in a row from the other row
+values. This gives us the matrix
+
+
+∞ 7 0 3 6
+3 ∞ 3 2 0
+0 5 ∞ 3 4
+6 0 2 ∞ 3
+1 0 4 3 ∞
+
+
+54 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 1.4
+Next we subtract the minimum value in a column from the other
+column values. This gives us the matrix
+
+
+∞ 7 0 1 6
+3 ∞ 3 0 0
+0 5 ∞ 1 4
+6 0 2 ∞ 3
+1 0 4 1 ∞
+
+
+The sum of the numbers subtracted gives us a lower bound on the
+cost of the optimal assignment (3+2+4+1+2+2=14).
+55 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.4
+\begin{itemize}
+	\item It is not possible to choose 5 zeroes (5 is the number of cities) such
+	that there is one zero in each row and one zero in each column.
+	\item In this case, we highlight rows and columns such that all zeroes are
+	highlighted.
+	\item The minimum value of all the non-highlighted columns is
+	subtracted from the non-highlighted elements.
+	\item This value is added to the elements at the intersection of the
+	highlighted rows and columns.
+\end{itemize}
+
+56 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.4
+Highlighting the appropriate rows and columns in red (those
+doubly highlighted are in blue) leads to
+
+
+∞ 7 0 1 6
+3 ∞ 3 0 0
+0 5 ∞ 1 4
+6 0 2 ∞ 3
+1 0 4 1 ∞
+
+
+The minimum value of the non-highlighted (black) elements (1) is
+subtracted from the black elements.
+This element is added to the blue elements and the lower bound on
+the optimal cost (which is now 14+1=15).
+57 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 1.4
+This gives
+
+
+∞ 8 0 1 6
+4 ∞ 3 0 0
+0 5 ∞ 0 3
+6 0 1 ∞ 2
+1 0 3 0 ∞
+
+
+There is a unique set of fives zeroes such that there is one zero in
+each row and one in each column (marked in green).
+The optimal assignment is 1 → 3, 2 → 5, 3 → 1, 4 → 2, 5 → 4.
+The optimal cost is 15.
+58 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 1.4
+This assignment contains two cycles 1 → 3 → 1 and
+2 → 5 → 4 → 2.
+We obtain one new assignment problem, A2, by setting d1,3 = ∞
+(the distance of one of the transitions in the shortest cycle).
+The other assignment problem, A3, is obtained by setting
+d3,1 = ∞.
+59
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.4
+The matrix corresponding to A2 is given by
+D =
+
+
+∞ 10 ∞ 6 9
+5 ∞ 5 4 2
+4 9 ∞ 7 8
+7 1 3 ∞ 4
+3 2 6 5 ∞
+
+
+The solution to this assignment problem (the calculations are
+analogous to those made above and are thus omitted) is 1 → 4,
+2 → 5, 3 → 1, 4 → 3, 5 → 2 and the cost of this assignment is 17.
+60 \end{frame}  
+\begin{frame} \frametitle{Integer Programming}     
+Example 1.4
+This assignment contains two cycles 1 → 4 → 3 → 1 and
+2 → 5 → 2.
+Hence, we could define two new assignment problems to solve.
+One by setting d2,5 = ∞ and one by setting d5,2 = ∞.
+However, the cost of this assignment is 17 (i.e. already more than
+the solution found using the shortest distance heuristic). Hence,
+we do not need to investigate this branch any more.
+61 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 1.4
+The matrix corresponding to A3 is given by
+D =
+
+
+∞ 10 3 6 9
+5 ∞ 5 4 2
+∞ 9 ∞ 7 8
+7 1 3 ∞ 4
+3 2 6 5 ∞
+
+
+The solution to this assignment problem (details omitted) is 1 → 3,
+2 → 5, 3 → 4, 4 → 2, 5 → 1 and the cost of this assignment is 16.
+62 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.4
+\begin{itemize}
+\item This solution corresponds to the tour 1 → 3 → 4 → 2 → 5 → 1
+and so this branch does not need to be investigated any further.
+\item Since it is impossible to find a better solution in the other branch,
+we have found the optimal solution.
+\item It should be noted that this is the solution found by the shortest
+route heuristic. However, while the branch and bound algorithm
+will always find an optimal solution, the shortest route and subtour
+reversal heuristics are not guaranteed to do so.
+\end{itemize}
+%% 63 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.4
+The solution can be illustrated using a branch and bound tree as
+shown below:
+Figure: Summary of the branch and bound process for Example 1.4
+64 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+1.5 The Knapsack Problem
+The problem is to load a rucksack in such a way as to maximize
+the value of the objects in the rucksack while not exceeding the
+maximum weight.
+Suppose there are n types of object and ki objects of type i are
+available.
+The weight of objects of type i is wi
+.
+The value of objects of type i is vi
+.
+65 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+The Knapsack Problem
+Let xi be the number of objects of type i packed into the rucksack.
+Let W be the maximum weight that can be carried.
+In mathematical terms, we wish to maximise
+z =
+Xn
+i=1
+xi vi
+subject to
+Xn
+i=1
+wi ≤ W ; xi ∈ {0, 1, 2, . . . , ki}, 1 ≤ i ≤ n.
+66 \end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+\noindent \textbf{The Knapsack Problem}\\
+\begin{itemize}
+	\item It can thus be seen that the knapsack problem is an integer
+	programming problem.
+	\item The standard branch and bound technique can be used to find the
+	solution of this problem.
+	\item In this case, the form of the problem means that the associated
+	linear programming problems are easy to solve. 
+\end{itemize}
+
+67 
+\end{frame}  
+\begin{frame} 
+	\frametitle{Integer Programming}     
+The Knapsack Problem
+Intuitively, if we could pack fractions of objects (i.e. turn the
+problem into an LP problem), it would be optimal to start by
+packing objects with the highest value to weight ratio and continue
+until the rucksack is full.
+If the solution found in this way involves packing an integer
+number of objects of each type, then this is the optimal solution to
+the IP problem.
+68
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+The Knapsack Problem
+Otherwise, only a fraction of the final object is packed.
+Suppose this object is of type i and xi = c. As in the general IP
+problem, we can split the original LP problem into two different
+problems. To obtain the first, we add the constraint xi ≤ bcc and
+to obtain the second, we add the constraint xi ≥ dce.
+These LP problems can be solved in the same way as the initial LP
+problem.
+Upper and lower bounds on the optimal value to the IP problem
+are found in the same way as for general IP problems.
+69 \end{frame}  
+\begin{frame} \frametitle{Integer Programming}     
+Example 1.5
+A lorry can carry 4 tonnes. Three types of object can be loaded.
+Their values and weights (in tonnes) are given in the table below.
+Item i vi wi
+1 31 2
+2 47 3
+3 14 1
+Find the load which maximises the value of the objects in the lorry.
+70 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 1.5
+In mathematical terms, the problem to be solved is to maximise
+z = 31x1 + 47x2 + 14x3
+subject to
+2x1 + 3x2 + x3 ≤ 4.
+Note that the maximum number of objects of type i that can be
+packed is bW /wi c.
+Hence, x1 ∈ {0, 1, 2}, x2 ∈ {0, 1} and x3 ∈ {0, 1, 2, 3, 4}.
+71 \end{frame}  \begin{frame} \frametitle{Integer Programming}     
+Example 1.5
+We first solve the linear programming problem obtained by
+allowing the xi to be non-negative reals.
+In order to do this, we calculate the value to weight ratios for each
+of the types of object. We have
+r1 =
+v1
+w1
+= 15.5; r2 =
+v2
+w2
+= 15.667; r3 =
+v3
+w3
+= 14
+To find the optimal solution to the LP, we first load an object of
+type 2 (the maximum number of such objects possible).
+One tonne is still available, so we load half an object of type 1 (has
+the 2nd highest value to weight ratio and weighs 2 tonnes).
+%% Slide 72 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.5
+Hence, the optimal solution to the initial LP problem is x1 = 0.5,
+x2 = 1 and x3 = 0.
+\begin{itemize}
+	\item The value of this solution is 0.5 × 31 + 1 × 47 = 62.5.
+	This is an upper bound on the optimal value in the knapsack
+	problem.
+	\item Since the coefficients in the objective function are integers, the
+	optimal value must be an integer. Hence, this upper bound can be
+	immediately tightened to 62.
+\end{itemize}
+
+%% Slide 73 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.5
+We now split this LP problem into two LP problems.
+The first is obtained by adding the constraint x1 ≤ b0.5c. It follows
+that given this constraint, we must have x1 = 0.
+The second LP problem is obtained by adding the constraint
+x1 ≥ d0.5e, i.e. x1 ≥ 1.
+%% Slide 74 
+\end{frame}  
+\begin{frame}[fragile] 
+\frametitle{Integer Programming}     
+\textbf{Example 1.5}
+The first of these LP problems is to maximise
+\begin{verbatim}
+
+z = 47x2 + 14x3
+subject to
+3x2 + x3 ≤ 4.
+\end{verbatim}
+This is solved as before. Since objects of type 2 have a higher
+value to weight ratio, we first pack an object of type 2 (the
+maximum number).
+A load of one tonne is left, hence we can pack an object of type 3.
+75 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.5
+\begin{itemize}
+	\item It follows that the optimal solution to this LP problem is
+	x1 = 0, x2 = 1, x3 = 1 and the value is 1 × 47 + 1 × 14 = 61.
+	\item Since the values of the decision variables are integers. This is a
+	lower bound on the optimal value.
+\end{itemize}
+
+76 
+\end{frame} 
+%===================================% 
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.5
+We now solve the second LP problem. It should be noted that the
+interpretation of the problem allows us to update the constraints of
+the LP problem to be solved, which often allows us to find the
+optimal solution more quickly.
+In physical terms, the constraint x1 ≥ 1 means that we should first
+load an object of type 2 (giving a reward of 31).
+We then consider what other objects we can load.
+The residual load available is 2 tonnes. It follows that no objects of
+type 2 can be loaded, up to one object of type 1 and up to 2
+objects of type 2.
+77 
+\end{frame} 
+%======================================================% 
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.5
+This LP problem is thus to maximise
+z = 31 + x
+0
+1 + 14x3
+subject to
+2x
+0
+1 + x3 ≤ 2,
+where x
+0
+1
+is the additional number of type 1 objects packed (above
+1).
+78 
+\end{frame}  
+\begin{frame} 
+\frametitle{Integer Programming}     
+Example 1.5
+Since objects of type 1 have a higher value to weight ratio than
+objects of type 3, we first load another type 1 object.
+There is no residual load left. It follows that the optimal solution
+to this problem is to load just 2 objects of type 1.
+The value of this solution is 2 × 31 = 62.
+Since this is a feasible solution which achieves the upper bound on
+the objective function, this is the optimal solution.
+79 \end{frame}  
+\begin{frame} \frametitle{Integer Programming}     
+Example 1.5
+The solution can be illustrated using a branch and bound tree as
+shown below:
+Figure: Summary of the branch and bound process for Example 1.5
+80 \end{frame}  \begin{frame} \frametitle{Integer Programming}     

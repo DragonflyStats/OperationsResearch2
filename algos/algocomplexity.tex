@@ -2,6 +2,7 @@
 \documentclass{beamer}
 
 \usepackage{amsmath}
+\usepackage{graphicx}
 \usepackage{subfiles}
 \begin{document}
 
@@ -11,7 +12,13 @@
 \section{Section 1 : Algorithms}
 %==================================%
 \begin{frame}
-Algorithm is a step by step procedure, which defines a set of instructions to be executed in certain order to get the desired output. Algorithms are generally created independent of underlying languages, i.e. an algorithm can be implemented in more than one programming language.
+\frametitle{Algorithms}
+\large
+	\begin{itemize}
+		\item Algorithm is a step by step procedure, which defines a set of instructions to be executed in certain order to get the desired output.
+		\item Algorithms are generally created independent of underlying languages, i.e. an algorithm can be implemented in more than one programming language.
+		 
+	\end{itemize}
 
 \end{frame}
 %==================================%
@@ -137,19 +144,22 @@ The complexity of an algorithm f(n) gives the running time and / or storage spac
 \end{frame}
 %=====================================%
 \begin{frame}
-A variable part is a space required by variables, whose size depends on the size of the problem. For example dynamic memory allocation, recursion stack space etc.
+	\begin{itemize}
+\item A variable part is a space required by variables, whose size depends on the size of the problem. For example dynamic memory allocation, recursion stack space etc.
 
-Space complexity S(P) of any algorithm P is S(P) = C + SP(I) Where C is the fixed part and S(I) is the variable part of the algorithm which depends on instance characteristic I. Following is a simple example that tries to explain the concept −
+\item Space complexity S(P) of any algorithm P is S(P) = C + SP(I) Where C is the fixed part and S(I) is the variable part of the algorithm which depends on instance characteristic I. Following is a simple example that tries to explain the concept −
+\end{itemize}
 \end{frame}
 %=====================================%
 \begin{frame}[fragile]
 	\begin{verbatim}
 Algorithm: SUM(A, B)
 Step 1 -  START
-Step 2 -  C $\leftarrow A + B + 10$
+Step 2 -  C <- A + B + 10
 Step 3 -  Stop
 \end{verbatim}
-Here we have three variables A, B and C and one constant. Hence S(P) = 1+3. Now space depends on data types of given variables and constant types and it will be multiplied accordingly.
+Here we have three variables A, B and C and one constant. 
+Hence S(P) = 1+3. Now space depends on data types of given variables and constant types and it will be multiplied accordingly.
 \end{frame}
 %=====================================%
 \begin{frame}
@@ -180,7 +190,12 @@ The Power Set is the set of all possible subsets of a set. If there are $n$ elem
 
 \begin{frame}
 \frametitle{Combinatorial explosion}
-The main disadvantage of the brute-force method is that, for many real-world problems, the number of natural candidates is prohibitively large. For instance, if we look for the divisors of a number as described above, the number of candidates tested will be the given number n. So if n has sixteen decimal digits, say, the search will require executing at least 1015 computer instructions, which will take several days on a typical PC. If n is a random 64-bit natural number, which has about 19 decimal digits on the average, the search will take about 10 years. This steep growth in the number of candidates, as the size of the data increases, occurs in all sorts of problems. 
+\begin{itemize}
+	\item The main disadvantage of the brute-force method is that, for many real-world problems, the number of natural candidates is prohibitively large. For instance, if we look for the divisors of a number as described above, the number of candidates tested will be the given number n. 
+	\item So if n has sixteen decimal digits, say, the search will require executing at least 1015 computer instructions, which will take several days on a typical PC. If n is a random 64-bit natural number, which has about 19 decimal digits on the average, the search will take about 10 years.
+	\item  This steep growth in the number of candidates, as the size of the data increases, occurs in all sorts of problems. 
+\end{itemize}
+
 \end{frame}
 
 
@@ -245,7 +260,7 @@ Usually, time required by an algorithm falls under three types −
 \end{frame}
 %===================================================%
 \begin{frame}
-Asymptotic Notations
+\frametitle{Asymptotic Notations}
 Following are commonly used asymptotic notations used in calculating running time complexity of an algorithm.
 
 \begin{itemize}
@@ -346,7 +361,7 @@ In typical usage, the formal definition of O notation is not used directly; rath
 \item For example, let f(x) = 6x4 − 2x3 + 5, and suppose we wish to simplify this function, using O notation, to describe its growth rate as x approaches infinity. 
 \item This function is the sum of three terms: $6x^4$, $−2x^3$, and 5. Of these three terms, the one with the highest growth rate is the one with the largest exponent as a function of x, namely $6x^4$. 
 \item Now one may apply the second rule: 6x4 is a product of 6 and x4 in which the first factor does not depend on x. Omitting this factor results in the simplified form x4. 
-\item Thus, we say that f(x) is a "big-oh" of (x4). Mathematically, we can write f(x) = O(x4). 
+\item Thus, we say that f(x) is a "big-oh" of ($x^4$). Mathematically, we can write f(x) = O(x4). 
 \end{itemize}
 \end{frame}
 %==================================================%
@@ -453,12 +468,14 @@ This problem is to count to a desired value by chosing least possible coins and 
 \end{frame}
 %==================================%
 \begin{frame}
+\begin{itemize}
+\item Though, it seems to be working fine, for this count we need to pick only 4 coins. But if we slightly change the problem then the same approach may not be able to produce the same optimum result.
 
-Though, it seems to be working fine, for this count we need to pick only 4 coins. But if we slightly change the problem then the same approach may not be able to produce the same optimum result.
+\item For currency system, where we have coins of 1, 7, 10 value, counting coins for value 18 will be absolutely optimum but for count like 15, it may use more coins then necessary. For example − greedy approach will use 10 + 1 + 1 + 1 + 1 + 1 total 6 coins. Where the same problem could be solved by using only 3 coins (7 + 7 + 1)
 
-For currency system, where we have coins of 1, 7, 10 value, counting coins for value 18 will be absolutely optimum but for count like 15, it may use more coins then necessary. For example − greedy approach will use 10 + 1 + 1 + 1 + 1 + 1 total 6 coins. Where the same problem could be solved by using only 3 coins (7 + 7 + 1)
+\item Hence, we may conclude that greedy approach picks immediate optimized solution and may fail where global optimization is major concern.
+\end{itemize}
 
-Hence, we may conclude that greedy approach picks immediate optimized solution and may fail where global optimization is major concern.
 \end{frame}
 %==================================%
 %==================================%
@@ -529,62 +546,11 @@ These and there are lots of similar problems which uses greedy approach to find 
 	– Least Discrepancy Search
 	\begin{itemize}
 		\item Follow DFS with heuristic branching direction selection.
-		Investigate leaves in order of increasing discrepancy wrt that
+		\item Investigate leaves in order of increasing discrepancy wrt that
 		heuristic.
 		\item Memory requirements are within limits.
 		\item Often finds good solutions early in the search.
 	\end{itemize}
-\end{frame}
-%===================================================%
-\section{Section 4 : Divide and Conquer approach}
-%==================================%
-\begin{frame}
-\frametitle{Divide and Conquer}
-\large
-\begin{itemize}
-\item n divide and conquer approach, the problem in hand, is divided into smaller sub-problems and then each problem is solved independently. When we keep on dividing the sub-problems into even smaller sub-problems, we may eventually reach at a stage where no more dividation is possible. 
-\item Those "atomic" smallest possible sub-problem (fractions) are solved. The solution of all sub-problems is finally merged in order to obtain the solution of original problem.
-\end{itemize}
-\end{frame}
-%==================================%
-\begin{frame}
-\frametitle{Divide and Conquer}
-\large
-Broadly, we can understand divide-and-conquer approach as three step process.
-\begin{description}
-	\item[Divide/Break] This step involves breaking the problem into smaller sub-problems. Sub-problems should represent as a part of original problem. This step generally takes recursive approach to divide the problem until no sub-problem is further dividable. \\ At this stage, sub-problems become atomic in nature but still represents some part of actual problem.
-\end{description}
-
-
-\end{frame}
-
-%==================================%
-\begin{frame}
-\begin{description}
-	\item[Conquer/Solve]
-This step receives lot of smaller sub-problem to be solved. Generally at this level, problems are considered 'solved' on their own.
-
-	\item[Merge/Combine]
-When the smaller sub-problems are solved, this stage recursively combines them until they formulate solution of the original problem.
-\end{description}
-\end{frame}
-%==================================%
-\begin{frame}
-This algorithmic approach works recursively and conquer and merge steps works so close that they appear as one.
-
-
-\end{frame}
-%==================================%
-\begin{frame}
-Examples
-The following computer algorithms are based on divide-and-conquer programming approach −
-Merge Sort
-Quick Sort
-Binary Search
-Strassen's Matrix Multiplication
-Closest pair (points)
-There are various ways available to solve any computer problem, but the mentioned are a good example of divide and conquer approach.
-
 \end{frame}
 %===================================================%
 
@@ -638,191 +604,6 @@ end procedure
 
 \end{frame}
 %==================================%
-\section{Binary Search}
-\begin{frame}
-%========================================================================%
-Data Structure - Binary Search
-%- http://www.tutorialspoint.com/data_structures_algorithms/binary_search_tree.htm
-
-Binary search is a fast search algorithm with run-time complexity of O(log n). This search algorithm works on the principle of divide and conquer. For this algorithm to work properly the data collection should be in sorted form.
-\end{frame}
-
-%==================================%
-\begin{frame}
-\frametitle{Binary Search}
-\large
-Binary search search a particular item by comparing the middle most item of the collection. If match occurs then index of item is returned. If middle item is greater than item then item is searched in sub-array to the right of the middle item other wise item is search in sub-array to the left of the middle item. This process continues on sub-array as well until the size of subarray reduces to zero.
-\end{frame}
-
-%==================================%
-\begin{frame}
-\frametitle{Binary Search}
-\large
-How binary search works?
-For a binary search to work, it is mandatory for the target array to be sorted. We shall learn the process of binary search with an pictorial example. The below given is our sorted array and assume that we need to search location of value 31 using binary search.
-
-Binary search
-First, we shall determine the half of the array by using this formula −
-
-mid = low + (high - low) / 2
-Here it is, 0 + (9 - 0 ) / 2 = 4 (integer value of 4.5). So 4 is the mid of array.
-\end{frame}
-%==================================%
-\begin{frame}
-\frametitle{Binary Search}
-\large
-Binary search
-Now we compare the value stored at location 4, with the value being searched i.e. 31. We find that value at location 4 is 27, which is not a match. Because value is greater than 27 and we have a sorted array so we also know that target value must be in upper portion of the array.
-\end{frame}
-%==================================%
-\begin{frame}
-\frametitle{Binary Search}
-\large
-Binary search
-We change our low to mid + 1 and find the new mid value again.
-
-low = mid + 1
-mid = low + (high - low) / 2
-Our new mid is 7 now. We compare the value stored at location 7 with our target value 31.
-
-Binary search
-The value stored at location 7 is not a match, rather it is less that what we are looking for. So the value must be in lower part from this location.
-\end{frame}
-
-%==================================%
-\begin{frame}
-\frametitle{Binary Search}
-\large
-Binary search
-So we calculate the mid again. This time it is 5.
-
-Binary search
-We compare the value stored ad location 5 with our target value. We find that it is a match.
-
-Binary search
-We conclude that the target value 31 is stored at location 5.
-
-Binary search halves the searchable items and thus reduces the count of comparisons to be made to very less numbers.
-\end{frame}
-%==================================%
-%\begin{frame}
-%Pseudocode
-%The pseudocode of binary search algorithm should look like this −
-%
-%Procedure binary_search
-%   A ← sorted array
-%   n ← size of array
-%   x ← value ot be searched
-%
-%   Set lowerBound = 1
-%   Set upperBound = n 
-%
-%   while x not found
-%   
-%      if upperBound < lowerBound 
-%         EXIT: x does not exists.
-%   
-%      set midPoint = lowerBound + ( upperBound - lowerBound ) / 2
-%      
-%      if A[midPoint] < x
-%         set lowerBound = midPoint + 1
-%         
-%      if A[midPoint] > x
-%         set upperBound = midPoint - 1 
-%
-%      if A[midPoint] = x 
-%         EXIT: x found at location midPoint
-%
-%   end while
-%   
-%end procedure
-%\end{frame}
-%==================================%
-\begin{frame}
-
-Data Structure - Binary Search Tree
-
-\end{frame}
-%======================================%
-\begin{frame}
-\frametitle{Binary Search}
-\large
-A binary search tree (BST) is a tree in which all nodes follows the below mentioned properties −
-
-\begin{itemize}
-\item The left sub-tree of a node has key less than or equal to its parent node's key.
-\item The right sub-tree of a node has key greater than or equal to its parent node's key.
-\end{itemize}
-Thus, a binary search tree (BST) divides all its sub-trees into two segments; left sub-tree and right sub-tree and can be defined as −
-
-\[left_subtree (keys)  \leq  node (key)  \leq  right_subtree (keys)\]
-\end{frame}
-%======================================%
-\begin{frame}
-\frametitle{Representation of a Binary Search Tree}
-\large
-
-BST is a collection of nodes arranged in a way where they maintain BST properties. Each node has key and associated value. While searching, the desired key is compared to the keys in BST and if found, the associated value is retrieved.
-
-An example of BST −
-\end{frame}
-%======================================%
-\begin{frame}
-Binary Search Tree
-We observe that the root node key (27) has all less-valued keys on the left sub-tree and higher valued keys on the right sub-tree.
-\end{frame}
-%======================================%
-\begin{frame}
-Basic Operations
-Following are basic primary operations of a tree which are following.
-
-Search − search an element in a tree.
-
-Insert − insert an element in a tree.
-
-Preorder Traversal − traverse a tree in a preorder manner.
-
-Inorder Traversal − traverse a tree in an inorder manner.
-
-Postorder Traversal − traverse a tree in a postorder manner.
-\end{frame}
-%======================================%
-%======================================%
-\begin{frame}[fragile]
-Node
-Define a node having some data, references to its left and right child nodes.
-\begin{verbatim}
-struct node {
-int data;   
-struct node *leftChild;
-struct node *rightChild;
-};
-\end{verbatim}
-\end{frame}
-%======================================%
-\begin{frame}
-
-%-https://www.cs.cmu.edu/~avrim/451f09/lectures/lect1001.pdf
-%-http://www.avatar.se/molbioinfo2001/dynprog/dynamic.html
-%-https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity
-%-http://web.mit.edu/16.070/www/lecture/big_o.pdf
-
-%=========================================================================%
-\frametitle{Dynamic Programmings}
-\begin{itemize}
-	\item Dynamic Programming (also known as \textbf{dynamic optimization}) is a method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions.
-	
-\item Dynamic Programming is a powerful technique that allows one to solve many different types of
-	problems in time O($n^2$) or O($n^3$) for which a naive approach would take exponential time. 
-	
-\item Dynamic Programmingis a general approach to solving problems, much like “divide-and-conquer” is a general
-	method, except that unlike divide-and-conquer, the subproblems will typically overlap.
-\end{itemize}
-
-\end{frame}
-%======================================%
-
-%=========================================================================%
 
 \section{O Notation}
 

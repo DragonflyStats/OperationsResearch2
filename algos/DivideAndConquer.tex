@@ -1,0 +1,56 @@
+\documentclass[algocomplexity.tex]{subfiles}
+\begin{document}
+
+\section{Section 4 : Divide and Conquer approach}
+%==================================%
+\begin{frame}
+	\frametitle{Divide and Conquer}
+	\large
+	\begin{itemize}
+		\item n divide and conquer approach, the problem in hand, is divided into smaller sub-problems and then each problem is solved independently. 
+		\item When we keep on dividing the sub-problems into even smaller sub-problems, we may eventually reach at a stage where no more dividation is possible. 
+		\item Those "atomic" smallest possible sub-problem (fractions) are solved. The solution of all sub-problems is finally merged in order to obtain the solution of original problem.
+	\end{itemize}
+\end{frame}
+%==================================%
+\begin{frame}
+	\frametitle{Divide and Conquer}
+	\large
+	Broadly, we can understand divide-and-conquer approach as three step process.
+	\begin{description}
+		\item[Divide/Break] This step involves breaking the problem into smaller sub-problems. Sub-problems should represent as a part of original problem. This step generally takes recursive approach to divide the problem until no sub-problem is further dividable. \\ At this stage, sub-problems become atomic in nature but still represents some part of actual problem.
+	\end{description}
+	
+	
+\end{frame}
+
+%==================================%
+\begin{frame}
+	\begin{description}
+		\item[Conquer/Solve]
+		This step receives lot of smaller sub-problem to be solved. Generally at this level, problems are considered 'solved' on their own.
+		
+		\item[Merge/Combine]
+		When the smaller sub-problems are solved, this stage recursively combines them until they formulate solution of the original problem.
+	\end{description}
+\end{frame}
+%==================================%
+\begin{frame}
+	This algorithmic approach works recursively and conquer and merge steps works so close that they appear as one.
+	
+	
+\end{frame}
+%==================================%
+\begin{frame}
+	Examples
+	The following computer algorithms are based on divide-and-conquer programming approach −
+	Merge Sort
+	Quick Sort
+	Binary Search
+	Strassen's Matrix Multiplication
+	Closest pair (points)
+	There are various ways available to solve any computer problem, but the mentioned are a good example of divide and conquer approach.
+	
+\end{frame}
+%===================================================%
+\end{document}
