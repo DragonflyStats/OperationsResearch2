@@ -1,0 +1,7 @@
+maximize p = 7x + 3y subject to
+2y<=63
+2x + 6y <= 205
+2x + 2y <= 109
+4x + y <= 180
+x <= 43
+
