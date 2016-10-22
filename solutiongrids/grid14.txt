@@ -1,0 +1,77 @@
+maximize p = 3x + 7y subject to
+2x - y <= 40
+2x + 3y <= 90
+y <= 25
+
+Vertex        Lines Through Vertex    Value of Objective
+(26.25,12.5)  2x-y = 40; 2x+3y = 90   166.25
+(20,0)        2x-y = 40; y = 0        60
+(7.5,25)      2x+3y = 90; y = 25      197.5 Maximum
+(0,25)        y = 25; x = 0           175
+(0,0)         x = 0; y = 0            0
+
+----------------------------------------------------------
+
+Node 1A
+
+maximize p = 3x + 7y subject to
+2x - y <= 40
+2x + 3y <= 90
+y <= 25
+x <= 7
+
+
+Vertex  Lines Through Vertex   Value of Objective
+(7,25)  y = 25; x = 7          196 Maximum
+(0,25)  y = 25; x = 0          175
+(7,0)   x = 7; y = 0           21
+(0,0)   x = 0; y = 0           0
+
+----------------------------------------------------------
+
+Node 1B
+
+maximize p = 3x + 7y subject to
+2x - y <= 40
+2x + 3y <= 90
+y <= 25
+x >= 8
+
+Vertex         Lines Through Vertex    Value of Objective
+(26.25,12.5)   2x-y = 40; 2x+3y = 90   166.25
+(20,0)         2x-y = 40; y = 0        60
+(8,24.666667)  2x+3y = 90; x = 8       196.666667 Maximum
+(8,0)          x = 8; y = 0            24
+
+-----------------------------------------------------------
+
+
+
+Node 2C
+
+maximize p = 3x + 7y subject to
+2x - y <= 40
+2x + 3y <= 90
+y <= 24
+x >= 8
+
+Vertex        Lines Through Vertex    Value of Objective
+(26.25,12.5)  2x-y = 40; 2x+3y = 90   166.25
+(20,0)        2x-y = 40; y = 0        60
+(9,24)        2x+3y = 90; y = 24      195 Maximum
+(8,24)        y = 24; x = 8           192
+(8,0)         x = 8; y = 0            24
+
+-----------------------------------------------------------
+
+
+Node 2D
+
+maximize p = 3x + 7y subject to
+2x - y <= 40
+2x + 3y <= 90
+y <= 25
+y >= 25
+x >= 8
+
+***Empty Feasible Region -- No Optimal Solution***
