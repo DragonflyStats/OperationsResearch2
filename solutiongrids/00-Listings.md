@@ -9,10 +9,10 @@
  - grid 09
  - grid 10 - Introductory Example, Level 1 Solution
  - grid 11
- - grid 12
+ - grid 12 - Very Good Example, but Goes Very Deep (Past 6 Levels)
  - grid 13
  - grid 14 - Level 2 Solution, Use as Short Worked Example
  - grid 15
  - grid 16
- - grid 17
- - grid 18 - Very good , Solution at 4th Level
+ - grid 17 - Level 3 Solution, Very Good Example
+ - grid 18 - Level 4 Solution, Very Good Example
