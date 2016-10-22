@@ -1,0 +1,218 @@
+Very Good Example, but Goes Very Deep (Past 6 Levels)
+===========================================================================
+Node 0
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 50
+
+Vertex                 Lines Through Vertex        Value of Objective
+(41.538462,13.076923)  8x+9y = 450; 6x+10y = 380   436.923077
+(50,5.555556)          8x+9y = 450; x = 50         444.444444 Maximum
+(5,35)                 6x+10y = 380; y = 35        320
+(0,35)                 y = 35; x = 0               280
+(50,0)                 x = 50; y = 0               400
+(0,0)                  x = 0; y = 0                0
+
+===========================================================================
+Node 1A
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 50
+y <= 5
+
+Vertex  Lines Through Vertex   Value of Objective
+(50,5)  x = 50; y = 5          440 Maximum
+(50,0)  x = 50; y = 0          400
+(0,5)   y = 5; x = 0           40
+(0,0)   x = 0; y = 0           0
+
+
+===========================================================================
+Node 1B
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 50
+y >= 6
+
+Vertex                 Lines Through Vertex        Value of Objective
+(41.538462,13.076923)  8x+9y = 450; 6x+10y = 380   436.923077
+(49.5,6)               8x+9y = 450; y = 6          444 Maximum
+(5,35)                 6x+10y = 380; y = 35        320
+(0,35)                 y = 35; x = 0               280
+(0,6)                  y = 6; x = 0                48
+
+===========================================================================
+
+Node 2C
+
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 49
+y >= 6
+
+Vertex                 Lines Through Vertex        Value of Objective
+(41.538462,13.076923)  8x+9y = 450; 6x+10y = 380   436.923077
+(49,6.444444)          8x+9y = 450; x = 49         443.555556 Maximum
+(5,35)                 6x+10y = 380; y = 35        320
+(0,35)                 y = 35; x = 0               280
+(49,6)                 x = 49; y = 6               440
+(0,6)                  y = 6; x = 0                48
+
+
+
+===========================================================================
+
+Node 2D
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 50
+y >= 6
+x >= 50
+
+***Empty Feasible Region -- No Optimal Solution***
+
+===========================================================================
+
+Node 3E (From 2C)
+
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 49
+y >= 6
+y <= 6
+
+Vertex  Lines Through Vertex   Value of Objective
+(49,6)  x = 49; y = 6          440 Maximum
+(0,6)   y = 6; x = 0           48
+
+
+===========================================================================
+
+Node 3F (From 2C)
+
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 49
+y >= 7
+
+Vertex                 Lines Through Vertex        Value of Objective
+(41.538462,13.076923)  8x+9y = 450; 6x+10y = 380   436.923077
+(48.375,7)             8x+9y = 450; y = 7          443 Maximum
+(5,35)                 6x+10y = 380; y = 35        320
+(0,35)                 y = 35; x = 0               280
+(0,7)                  y = 7; x = 0                56
+
+
+===========================================================================
+
+Node 4L (from 3F)
+
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 48
+y >= 7
+
+Vertex                 Lines Through Vertex        Value of Objective
+(41.538462,13.076923)  8x+9y = 450; 6x+10y = 380   436.923077
+(48,7.333333)          8x+9y = 450; x = 48         442.666667 Maximum
+(5,35)                 6x+10y = 380; y = 35        320
+(0,35)                 y = 35; x = 0               280
+(48,7)                 x = 48; y = 7               440
+(0,7)                  y = 7; x = 0                56
+
+
+============================================================================
+
+Node 4R (from 3F)
+
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 49
+x >= 49
+y >= 7
+
+***Empty Feasible Region -- No Optimal Solution***
+
+===========================================================================
+
+Node 5L (from 4L)
+
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 48
+y >= 7
+y <= 7
+
+Vertex  Lines Through Vertex   Value of Objective
+(48,7)  x = 48; y = 7          440 Maximum
+(0,7)   y = 7; x = 0           56
+
+===========================================================================
+
+Node 5R (from 4L)
+
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 48
+y >= 8
+
+Vertex                 Lines Through Vertex        Value of Objective
+(41.538462,13.076923)  8x+9y = 450; 6x+10y = 380   436.923077
+(47.25,8)              8x+9y = 450; y = 8          442 Maximum
+(5,35)                 6x+10y = 380; y = 35        320
+(0,35)                 y = 35; x = 0               280
+(0,8)                  y = 8; x = 0                64
+
+=================================================================================
+Node 6L (from 5L)
+
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 47
+y >= 8
+
+Vertex                 Lines Through Vertex        Value of Objective
+(41.538462,13.076923)  8x+9y = 450; 6x+10y = 380   436.923077
+(47,8.222222)          8x+9y = 450; x = 47         441.777778 Maximum
+(5,35)                 6x+10y = 380; y = 35        320
+(0,35)                 y = 35; x = 0               280
+(47,8)                 x = 47; y = 8               440
+(0,8)                  y = 8; x = 0                64
+
+===========================================================================
+
+Node 6R (from 5R)
+
+maximize p = 8x + 8y subject to
+8x + 9y <=  450
+6x + 10y <= 380
+y <= 35
+x <= 48
+x >= 48
+y >= 8
+
+***Empty Feasible Region -- No Optimal Solution***
