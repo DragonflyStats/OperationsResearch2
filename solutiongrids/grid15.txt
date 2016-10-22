@@ -1,0 +1,28 @@
+Node 0
+
+maximize p = 3x + 8y subject to
+2x - y <= 40
+2x + 3y <= 90
+y <= 25
+
+
+
+------------------------------------------
+Node 1A
+
+maximize p = 3x + 8y subject to
+2x - y <= 40
+2x + 3y <= 90
+y <= 25
+y <= 7
+
+
+
+------------------------------------------
+Node 1B
+
+maximize p = 3x + 8y subject to
+2x - y <= 40
+2x + 3y <= 90
+y <= 25
+y >= 8
