@@ -1,5 +1,4 @@
-Not Checked out
-
+Level 1 Solution
 ===============================================================
 Node 0
 maximize p = 3x + y subject to
@@ -9,6 +8,14 @@ y <= 15
 x <= 22
 
 --------------------------------------------
+
+Vertex         Lines Through Vertex   Value of Objective
+(22,4)         2x-y = 40; x = 22      70
+(20,0)         2x-y = 40; y = 0       60
+(9.5,15)       2x+3y = 64; y = 15     43.5
+(22,6.666667)  2x+3y = 64; x = 22     72.666667 Maximum
+(0,15)         y = 15; x = 0          15
+(0,0)          x = 0; y = 0           0
 
 
 
@@ -30,7 +37,7 @@ Vertex  Lines Through Vertex   Value of Objective
 (0,0)   x = 0; y = 0           0
 
 
---------------------------------------------
+===============================================================
 
 Node 1B
 
@@ -47,35 +54,4 @@ Vertex    Lines Through Vertex   Value of Objective
 (0,15)    y = 15; x = 0          15
 (0,7)     y = 7; x = 0           7
 
---------------------------------------------
-
-Node 2C
-
-maximize p = 3x + y subject to
-2x - y <= 40
-2x + 3y <= 64
-y <= 15
-x <= 21
-y >= 7
-
-Vertex         Lines Through Vertex   Value of Objective
-(9.5,15)       2x+3y = 64; y = 15     43.5
-(21,7.333333)  2x+3y = 64; x = 21     70.333333 Maximum
-(0,15)         y = 15; x = 0          15
-(21,7)         x = 21; y = 7          70
-(0,7)          y = 7; x = 0           7
-
---------------------------------------------
-
-Node 2D
-
-maximize p = 3x + y subject to
-2x - y <= 40
-2x + 3y <= 64
-y <= 15
-x <= 22
-x >= 22
-y >= 7
-
-***Empty Feasible Region -- No Optimal Solution***
 
