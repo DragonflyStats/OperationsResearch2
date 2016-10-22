@@ -1,0 +1,116 @@
+maximize p = 4x + 5y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+
+Vertex         Lines Through Vertex   Value of Objective
+(22,4)         2x-y = 40; x = 22      108
+(20,0)         2x-y = 40; y = 0       80
+(9.5,15)       2x+3y = 64; y = 15     113
+(22,6.666667)  2x+3y = 64; x = 22     121.333333 Maximum
+(0,15)         y = 15; x = 0          75
+(0,0)          x = 0; y = 0           0
+
+--------------------------------------------
+
+Node 1A
+
+maximize p = 4x + 5y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+y <=6
+
+Vertex  Lines Through Vertex   Value of Objective
+(22,4)  2x-y = 40; x = 22      108
+(20,0)  2x-y = 40; y = 0       80
+(22,6)  x = 22; y = 6          118 Maximum
+(0,6)   y = 6; x = 0           30
+(0,0)   x = 0; y = 0           0
+
+--------------------------------------------
+
+Node 1B 
+
+maximize p = 4x + 5y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+y >= 7
+
+Vertex    Lines Through Vertex   Value of Objective
+(9.5,15)  2x+3y = 64; y = 15     113
+(21.5,7)  2x+3y = 64; y = 7      121 Maximum
+(0,15)    y = 15; x = 0          75
+(0,7)     y = 7; x = 0           35
+
+--------------------------------------------
+
+Node 2C
+
+maximize p = 4x + 5y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 21
+y >= 7
+
+Vertex         Lines Through Vertex   Value of Objective
+(9.5,15)       2x+3y = 64; y = 15     113
+(21,7.333333)  2x+3y = 64; x = 21     120.666667 Maximum
+(0,15)         y = 15; x = 0          75
+(21,7)         x = 21; y = 7          119
+(0,7)          y = 7; x = 0           35
+
+
+--------------------------------------------
+
+Node 2D
+
+maximize p = 4x + 5y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+x >= 22
+y >= 7
+
+***Empty Feasible Region -- No Optimal Solution***
+
+--------------------------------------------
+
+Node 3E
+
+maximize p = 4x + 5y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 21
+y >= 7
+y <= 7
+
+Vertex  Lines Through Vertex   Value of Objective
+(21,7)  x = 21; y = 7          119 Maximum
+(0,7)   y = 7; x = 0           35
+
+--------------------------------------------
+
+Node 3F
+
+maximize p = 4x + 5y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 21
+y >= 8
+
+Vertex    Lines Through Vertex   Value of Objective
+(9.5,15)  2x+3y = 64; y = 15     113
+(20,8)    2x+3y = 64; y = 8      120 Maximum
+(0,15)    y = 15; x = 0          75
+(0,8)     y = 8; x = 0           40
+
+--------------------------------------------
