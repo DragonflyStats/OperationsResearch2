@@ -1,4 +1,7 @@
- - grid 05
+ - grid 02 - Node 1A is optimal and dominates 1B immediately
+ - grid 03
+ - grid 04
+ - grid 05 - OK Example - Optimal Solution Found at Node 0
  - grid 06
  - grid 07
  - grid 08
