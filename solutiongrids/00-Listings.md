@@ -6,7 +6,7 @@
  - grid 07
  - grid 08
  - grid 09
- - grid 10
+ - grid 10 - Introductory Example, Level 1 Solution
  - grid 11
  - grid 12
  - grid 13
