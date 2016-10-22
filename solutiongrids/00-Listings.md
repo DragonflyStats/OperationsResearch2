@@ -4,7 +4,7 @@
  - grid 05 - OK Example - Optimal Solution Found at Node 0
  - grid 06
  - grid 07
- - grid 08
+ - grid 08 - Level 2 Solution, Use as Short Worked Example 
  - grid 09
  - grid 10 - Introductory Example, Level 1 Solution
  - grid 11
