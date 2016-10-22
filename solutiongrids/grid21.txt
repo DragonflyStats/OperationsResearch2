@@ -1,0 +1,7 @@
+Level 1 Solution
+
+maximize p = 7x + 4y subject to
+2x - 5y <= 80
+2x + 4y <= 190
+y <= 37
+x <= 60
