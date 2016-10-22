@@ -1,0 +1,244 @@
+Very good
+4 levels
+======================================================
+Node 0
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+x <= 60
+
+
+Vertex                 Lines Through Vertex        Value of Objective
+(50.882353,15.882353)  8x+9y = 550; 6x+11y = 480   232.058824 Maximum
+(60,7.777778)          8x+9y = 550; x = 60         218.888889
+(6.666667,40)          6x+11y = 480; y = 40        220
+(0,40)                 y = 40; x = 0               200
+(60,0)                 x = 60; y = 0               180
+(0,0)                  x = 0; y = 0                0
+
+=======================================================
+Node 1A
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+x <= 50
+
+Vertex          Lines Through Vertex   Value of Objective
+(6.666667,40)   6x+11y = 480; y = 40   220
+(50,16.363636)  6x+11y = 480; x = 50   231.818182 Maximum
+(0,40)          y = 40; x = 0          200
+(50,0)          x = 50; y = 0          150
+(0,0)           x = 0; y = 0           0
+
+
+=======================================================
+
+Node 1B
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+x >= 51
+x <= 60
+
+
+Vertex          Lines Through Vertex   Value of Objective
+(51,15.777778)  8x+9y = 550; x = 51    231.888889 Maximum
+(60,7.777778)   8x+9y = 550; x = 60    218.888889
+(51,0)          x = 51; y = 0          153
+(60,0)          x = 60; y = 0          180
+
+========================================================
+
+Node 2A
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 16
+x <= 50
+
+Vertex   Lines Through Vertex   Value of Objective
+(50,16)  y = 16; x = 50         230 Maximum
+(0,16)   y = 16; x = 0          80
+(50,0)   x = 50; y = 0          150
+(0,0)    x = 0; y = 0           0
+
+========================================================
+
+Node 2B
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+y >= 17
+x <= 50
+
+Vertex          Lines Through Vertex   Value of Objective
+(6.666667,40)   6x+11y = 480; y = 40   220
+(48.833333,17)  6x+11y = 480; y = 17   231.5 Maximum
+(0,40)          y = 40; x = 0          200
+(0,17)          y = 17; x = 0          85
+
+=======================================================
+Node 2C
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+x >= 51
+x <= 60
+y <= 15
+
+Vertex         Lines Through Vertex   Value of Objective
+(60,7.777778)  8x+9y = 550; x = 60    218.888889
+(51.875,15)    8x+9y = 550; y = 15    230.625 Maximum
+(51,15)        x = 51; y = 15         228
+(51,0)         x = 51; y = 0          153
+(60,0)         x = 60; y = 0          180
+
+=======================================================
+
+Node 2D
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+x >= 51
+x <= 60
+y >= 16
+
+***Empty Feasible Region -- No Optimal Solution***
+=======================================================
+Node 3C
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+y >= 17
+x <= 48
+
+Vertex          Lines Through Vertex   Value of Objective
+(6.666667,40)   6x+11y = 480; y = 40   220
+(48,17.454545)  6x+11y = 480; x = 48   231.272727 Maximum
+(0,40)          y = 40; x = 0          200
+(48,17)         y = 17; x = 48         229
+(0,17)          y = 17; x = 0          85
+
+
+=======================================================
+Node 3D
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y >= 17
+x <= 50
+x >= 49
+
+***Empty Feasible Region -- No Optimal Solution***
+
+=======================================================
+
+Node 3E
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+x >= 51
+x <= 51
+y <= 15
+
+Vertex   Lines Through Vertex   Value of Objective
+(51,15)  x = 51; y = 15         228 Maximum
+(51,0)   x = 51; y = 0          153
+
+========================================================
+Node 3F
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+x >= 52
+x <= 60
+y <= 15
+
+Vertex          Lines Through Vertex   Value of Objective
+(52,14.888889)  8x+9y = 550; x = 52    230.444444 Maximum
+(60,7.777778)   8x+9y = 550; x = 60    218.888889
+(52,0)          x = 52; y = 0          156
+(60,0)          x = 60; y = 0          180
+
+=======================================================
+Node 4XL From 3C
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 17
+y >= 17
+x <= 48
+
+Vertex   Lines Through Vertex   Value of Objective
+(48,17)  y = 17; x = 48         229 Maximum
+(0,17)   y = 17; x = 0          85
+
+========================================================
+Node 4XR from 3C
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+y >= 18
+x <= 48
+
+Vertex         Lines Through Vertex   Value of Objective
+(6.666667,40)  6x+11y = 480; y = 40   220
+(47,18)        6x+11y = 480; y = 18   231 Maximum
+(0,40)         y = 40; x = 0          200
+(0,18)         y = 18; x = 0          90
+
+
+========================================================
+Node 4YL
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+x >= 52
+x <= 60
+y <= 14
+
+Vertex         Lines Through Vertex   Value of Objective
+(60,7.777778)  8x+9y = 550; x = 60    218.888889
+(53,14)        8x+9y = 550; y = 14    229 Maximum
+(52,14)        x = 52; y = 14         226
+(52,0)         x = 52; y = 0          156
+(60,0)         x = 60; y = 0          180
+
+========================================================
+Node 4YR
+
+maximize p = 3x + 5y subject to
+8x + 9y <=  550
+6x + 11y <= 480
+y <= 40
+x >= 52
+x <= 60
+y <= 15
+y >= 15
+
+***Empty Feasible Region -- No Optimal Solution***
