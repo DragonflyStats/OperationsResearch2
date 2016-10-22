@@ -1,3 +1,6 @@
+Good Early Example
+=============================================================
+Node 0
 maximize p = 3x + 7y subject to
 2x - y <= 40
 2x + 3y <= 90
