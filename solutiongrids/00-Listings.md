@@ -1,9 +1,10 @@
+ - grid 01 - Level 2 Solution Good Early Example
  - grid 02 - Node 1A is optimal and dominates 1B immediately
- - grid 03
+ - grid 03 - Very Good - Goes to 4 Levels
  - grid 04 - Level 2 Solution - Good For Short Worked Example
  - grid 05 - OK Example - Optimal Solution Found at Node 0
- - grid 06
- - grid 07
+ - grid 06 - 2nd Level Solution
+ - grid 07 - 4th Level Solution
  - grid 08 - Level 2 Solution, Use as Short Worked Example 
  - grid 09
  - grid 10 - Introductory Example, Level 1 Solution
