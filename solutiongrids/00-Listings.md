@@ -1,4 +1,6 @@
-
+ - grid 05
+ - grid 06
+ - grid 07
  - grid 08
  - grid 09
  - grid 10
@@ -9,4 +11,4 @@
  - grid 15
  - grid 16
  - grid 17
- - grid 18
+ - grid 18 - Very good , Solution at 4th Level
