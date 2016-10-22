@@ -1,0 +1,81 @@
+maximize p = 3x + 6y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+
+
+Vertex         Lines Through Vertex   Value of Objective
+(22,4)         2x-y = 40; x = 22      90
+(20,0)         2x-y = 40; y = 0       60
+(9.5,15)       2x+3y = 64; y = 15     118.5 Maximum
+(22,6.666667)  2x+3y = 64; x = 22     106
+(0,15)         y = 15; x = 0          90
+(0,0)          x = 0; y = 0           0
+
+
+-----------------------------------------------------
+Node 1A 
+
+maximize p = 3x + 6y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+x <= 9
+
+Vertex  Lines Through Vertex   Value of Objective
+(9,15)  y = 15; x = 9          117 Maximum
+(0,15)  y = 15; x = 0          90
+(9,0)   x = 9; y = 0           27
+(0,0)   x = 0; y = 0           0
+
+-----------------------------------------------------
+Node 1B
+
+maximize p = 3x + 6y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+x >= 10
+
+Vertex          Lines Through Vertex   Value of Objective
+(22,4)          2x-y = 40; x = 22      90
+(20,0)          2x-y = 40; y = 0       60
+(22,6.666667)   2x+3y = 64; x = 22     106
+(10,14.666667)  2x+3y = 64; x = 10     118 Maximum
+(10,0)          x = 10; y = 0          30
+
+----------------------------------------------------
+
+Node 2C
+
+maximize p = 3x + 6y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 14
+x <= 22
+x >= 10
+
+Vertex         Lines Through Vertex   Value of Objective
+(22,4)         2x-y = 40; x = 22      90
+(20,0)         2x-y = 40; y = 0       60
+(11,14)        2x+3y = 64; y = 14     117 Maximum
+(22,6.666667)  2x+3y = 64; x = 22     106
+(10,14)        y = 14; x = 10         114
+(10,0)         x = 10; y = 0          30
+
+----------------------------------------------------
+
+Node 2D
+
+maximize p = 3x + 6y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+y >= 15
+x <= 22
+x >= 10
+
+***Empty Feasible Region -- No Optimal Solution***
