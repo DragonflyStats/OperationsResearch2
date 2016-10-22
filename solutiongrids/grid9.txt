@@ -1,0 +1,76 @@
+1) Try with = 3x+y
+
+
+maximize p = 3x + y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+
+--------------------------------------------
+Node 1A
+
+maximize p = 3x + y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+y <= 6 
+
+Vertex  Lines Through Vertex   Value of Objective
+(22,4)  2x-y = 40; x = 22      70
+(20,0)  2x-y = 40; y = 0       60
+(22,6)  x = 22; y = 6          72 Maximum
+(0,6)   y = 6; x = 0           6
+(0,0)   x = 0; y = 0           0
+
+
+--------------------------------------------
+
+Node 1B
+
+maximize p = 3x + y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+y >= 7
+
+Vertex    Lines Through Vertex   Value of Objective
+(9.5,15)  2x+3y = 64; y = 15     43.5
+(21.5,7)  2x+3y = 64; y = 7      71.5 Maximum
+(0,15)    y = 15; x = 0          15
+(0,7)     y = 7; x = 0           7
+
+--------------------------------------------
+
+Node 2C
+
+maximize p = 3x + y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 21
+y >= 7
+
+Vertex         Lines Through Vertex   Value of Objective
+(9.5,15)       2x+3y = 64; y = 15     43.5
+(21,7.333333)  2x+3y = 64; x = 21     70.333333 Maximum
+(0,15)         y = 15; x = 0          15
+(21,7)         x = 21; y = 7          70
+(0,7)          y = 7; x = 0           7
+
+--------------------------------------------
+
+Node 2D
+
+maximize p = 3x + y subject to
+2x - y <= 40
+2x + 3y <= 64
+y <= 15
+x <= 22
+x >= 22
+y >= 7
+
+***Empty Feasible Region -- No Optimal Solution***
+
