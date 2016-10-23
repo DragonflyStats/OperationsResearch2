@@ -1,0 +1,6 @@
+2 Level solution at least
+=============================================
+maximize p = x+y subject to
+50x + 24y <= 2400
+30x + 33y <= 2100
+y >= 5
