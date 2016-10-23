@@ -1,3 +1,4 @@
+Use to discuss dominance
 -------------------------------------------------------------------------
 Node 0
 maximize p = 5x + 2y subject to
