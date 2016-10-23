@@ -1,0 +1,7 @@
+Level 2 Solution
+==================================
+maximize p = 3x + 5y subject to
+4x - 5y <= 180
+2x + 3y <= 120
+2y <= 53
+2x <= 99
