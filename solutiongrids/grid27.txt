@@ -1,0 +1,6 @@
+should go deep
+============================================
+Node 0
+maximize p = 9x+7y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
