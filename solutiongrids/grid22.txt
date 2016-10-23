@@ -1,0 +1,6 @@
+Very Promising for In-class 
+
+maximize p = 3x + 5y subject to
+2x - 4y <= 65
+2x + 3y <= 79
+2y <= 29
