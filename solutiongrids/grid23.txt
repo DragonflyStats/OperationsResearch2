@@ -1,4 +1,4 @@
-Level 2 Solution
+Level 2 Solution (also 2x+7y)
 ==================================
 maximize p = 3x + 5y subject to
 4x - 5y <= 180
