@@ -1,0 +1,257 @@
+Level 6 Solution
+
+===========================================
+Node 0
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+
+Vertex      Lines Through Vertex       Value of Objective
+(27,4)      2x-y = 50; x = 27          240
+(25,0)      2x-y = 50; y = 0           200
+(12,30)     5x+4y = 180; 5x+7y = 270   276
+(27,11.25)  5x+4y = 180; x = 27        283.5 Maximum
+(3.6,36)    5x+7y = 270; y = 36        244.8
+(0,36)      y = 36; x = 0              216
+(0,0)       x = 0; y = 0               0
+
+=========================================
+Node 1A
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <= 27
+y <= 11
+
+Vertex   Lines Through Vertex   Value of Objective
+(27,4)   2x-y = 50; x = 27      240
+(25,0)   2x-y = 50; y = 0       200
+(27,11)  x = 27; y = 11         282 Maximum
+(0,11)   y = 11; x = 0          66
+(0,0)    x = 0; y = 0           0
+
+=========================================
+Node 1B
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+
+Vertex     Lines Through Vertex       Value of Objective
+(12,30)    5x+4y = 180; 5x+7y = 270   276
+(26.4,12)  5x+4y = 180; y = 12        283.2 Maximum
+(3.6,36)   5x+7y = 270; y = 36        244.8
+(0,36)     y = 36; x = 0              216
+(0,12)     y = 12; x = 0              72
+
+=========================================
+Node 2C
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x<=26
+
+Vertex     Lines Through Vertex       Value of Objective
+(12,30)    5x+4y = 180; 5x+7y = 270   276
+(26,12.5)  5x+4y = 180; x = 26        283 Maximum
+(3.6,36)   5x+7y = 270; y = 36        244.8
+(0,36)     y = 36; x = 0              216
+(26,12)    y = 12; x = 26             280
+(0,12)     y = 12; x = 0              72
+
+=========================================
+Node 2D
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x >= 27
+
+
+***Empty Feasible Region -- No Optimal Solution***
+
+============================================
+Node 3E
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x <= 26
+y <= 12
+
+
+Vertex   Lines Through Vertex   Value of Objective
+(26,12)  y = 12; x = 26         280 Maximum
+(0,12)   y = 12; x = 0          72
+
+============================================
+Node 3F
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x <= 26
+y >= 13
+
+
+
+Vertex     Lines Through Vertex       Value of Objective
+(12,30)    5x+4y = 180; 5x+7y = 270   276
+(25.6,13)  5x+4y = 180; y = 13        282.8 Maximum
+(3.6,36)   5x+7y = 270; y = 36        244.8
+(0,36)     y = 36; x = 0              216
+(0,13)     y = 13; x = 0              78
+
+================================================
+Node 4L
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x <= 26
+y >= 13
+x <= 25
+
+Vertex      Lines Through Vertex       Value of Objective
+(12,30)     5x+4y = 180; 5x+7y = 270   276
+(25,13.75)  5x+4y = 180; x = 25        282.5 Maximum
+(3.6,36)    5x+7y = 270; y = 36        244.8
+(0,36)      y = 36; x = 0              216
+(25,13)     y = 13; x = 25             278
+(0,13)      y = 13; x = 0              78
+
+
+================================================
+Node 4R
+
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x <= 26
+y >= 13
+x >= 26
+
+***Empty Feasible Region -- No Optimal Solution***
+=================================================
+Node 5L
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x <= 26
+y >= 13
+x <= 25
+x <= 13
+
+Vertex      Lines Through Vertex       Value of Objective
+(12,30)     5x+4y = 180; 5x+7y = 270   276
+(13,28.75)  5x+4y = 180; x = 13        276.5 Maximum
+(3.6,36)    5x+7y = 270; y = 36        244.8
+(0,36)      y = 36; x = 0              216
+(13,13)     y = 13; x = 13             182
+(0,13)      y = 13; x = 0              78
+
+=================================================
+Node 5R
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x <= 26
+y >= 13
+x <= 25
+y >= 14
+
+Vertex     Lines Through Vertex       Value of Objective
+(12,30)    5x+4y = 180; 5x+7y = 270   276
+(24.8,14)  5x+4y = 180; y = 14        282.4 Maximum
+(3.6,36)   5x+7y = 270; y = 36        244.8
+(0,36)     y = 36; x = 0              216
+(0,14)     y = 14; x = 0              84
+
+=====================================================
+Node 6L
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x <= 26
+y >= 13
+x <= 25
+y >= 14
+x <=24
+
+Vertex    Lines Through Vertex       Value of Objective
+(12,30)   5x+4y = 180; 5x+7y = 270   276
+(24,15)   5x+4y = 180; x = 24        282 Maximum
+(3.6,36)  5x+7y = 270; y = 36        244.8
+(0,36)    y = 36; x = 0              216
+(24,14)   y = 14; x = 24             276
+(0,14)    y = 14; x = 0              84
+
+=====================================================
+Node 6R
+
+maximize p = 8x + 6y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 270
+y <= 36
+x <=27
+y >= 12
+x <= 26
+y >= 13
+x <= 25
+y >= 14
+x >=25
+
+***Empty Feasible Region -- No Optimal Solution***
