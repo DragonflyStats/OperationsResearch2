@@ -1,0 +1,6 @@
+Level 1 Solution
+=====================================
+maximize p = 4x + 4y subject to
+2x - y <= 27
+2x + 3y <= 63
+x <= 16
