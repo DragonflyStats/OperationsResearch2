@@ -1,0 +1,114 @@
+maximize p = 10x + 6y subject to
+2x - y <= 50
+5x + 4y <= 185
+5x + 3y <= 175
+y <= 35
+x <= 27
+
+
+============================================================
+Node 1A
+maximize p = 10x + 6y subject to
+2x - y <= 50
+5x + 4y <= 185
+5x + 3y <= 175
+y <= 35
+x <= 27
+y <=12
+
+Vertex   Lines Through Vertex   Value of Objective
+(27,4)   2x-y = 50; x = 27      294
+(25,0)   2x-y = 50; y = 0       250
+(27,12)  x = 27; y = 12         342 Maximum
+(0,12)   y = 12; x = 0          72
+(0,0)    x = 0; y = 0           0
+
+
+============================================================
+Node 1B
+
+
+maximize p = 10x + 6y subject to
+2x - y <= 50
+5x + 4y <= 185
+5x + 3y <= 175
+y <= 35
+x <= 27
+y >= 13
+
+Vertex     Lines Through Vertex   Value of Objective
+(9,35)     5x+4y = 185; y = 35    300
+(26.6,13)  5x+4y = 185; y = 13    344 Maximum
+(0,35)     y = 35; x = 0          210
+(0,13)     y = 13; x = 0          78
+
+============================================================
+Node 2C
+
+
+maximize p = 10x + 6y subject to
+2x - y <= 50
+5x + 4y <= 185
+5x + 3y <= 175
+y <= 35
+x <= 27
+y >= 13
+x <= 26
+
+Vertex      Lines Through Vertex   Value of Objective
+(9,35)      5x+4y = 185; y = 35    300
+(26,13.75)  5x+4y = 185; x = 26    342.5 Maximum
+(0,35)      y = 35; x = 0          210
+(26,13)     y = 13; x = 26         338
+(0,13)      y = 13; x = 0          78
+
+
+============================================================
+Node 2D
+
+
+maximize p = 10x + 6y subject to
+2x - y <= 50
+5x + 4y <= 185
+5x + 3y <= 175
+y <= 35
+x <= 27
+y >= 13
+x >= 27
+***Empty Feasible Region -- No Optimal Solution***
+============================================================
+Node 3E
+
+maximize p = 10x + 6y subject to
+2x - y <= 50
+5x + 4y <= 185
+5x + 3y <= 175
+y <= 35
+x <= 27
+y >= 13
+x <= 26
+y <= 13
+
+Vertex   Lines Through Vertex   Value of Objective
+(26,13)  y = 13; x = 26         338 Maximum
+(0,13)   y = 13; x = 0          78
+
+=============================================================
+
+Node 3F
+
+maximize p = 10x + 6y subject to
+2x - y <= 50
+5x + 4y <= 185
+5x + 3y <= 175
+y <= 35
+x <= 27
+y >= 13
+x <= 26
+y >= 14
+
+Vertex     Lines Through Vertex   Value of Objective
+(9,35)     5x+4y = 185; y = 35    300
+(25.8,14)  5x+4y = 185; y = 14    342 Maximum
+(0,35)     y = 35; x = 0          210
+(0,14)     y = 14; x = 0          84
