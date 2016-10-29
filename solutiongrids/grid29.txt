@@ -1,0 +1,87 @@
+maximize p = 5x + 4y subject to
+x+y <= 5
+10x + 6y<= 45
+
+Vertex       Lines Through Vertex   Value of Objective
+(3.75,1.25)  x+y = 5; 10x+6y = 45   23.75 Maximum
+(0,5)        x+y = 5; x = 0         20
+(4.5,0)      10x+6y = 45; y = 0     22.5
+(0,0)        x = 0; y = 0           0
+
+========================================================
+Node 1A
+maximize p = 5x + 4y subject to
+x+y <= 5
+10x + 6y<= 45
+x <= 3
+
+Vertex Lines Through Vertex   Value of Objective
+(3,2)  x+y = 5; x = 3         23 Maximum
+(0,5)  x+y = 5; x = 0         20
+(3,0)  x = 3; y = 0           15
+(0,0)  x = 0; y = 0           0
+
+
+
+========================================================
+Node 1B
+maximize p = 5x + 4y subject to
+x+y <= 5
+10x + 6y<= 45
+x >= 4
+
+Vertex        Lines Through Vertex   Value of Objective
+(4,0.833333)  10x+6y = 45; x = 4     23.333333 Maximum
+(4.5,0)       10x+6y = 45; y = 0     22.5
+(4,0)         x = 4; y = 0           20
+
+========================================================
+Node 2C
+maximize p = 5x + 4y subject to
+x+y <= 5
+10x + 6y<= 45
+x >= 4
+y <= 0
+
+Vertex   Lines Through Vertex   Value of Objective
+(4.5,0)  10x+6y = 45; y = 0     22.5 Maximum
+(4,0)    x = 4; y = 0           20
+
+========================================================
+Node 2D
+maximize p = 5x + 4y subject to
+x+y <= 5
+10x + 6y<= 45
+x >= 4
+y >= 1
+
+***Empty Feasible Region -- No Optimal Solution***
+
+========================================================
+
+
+maximize p = 5x + 4y subject to
+x+y <= 5
+10x + 6y<= 45
+x >= 4
+y <= 0
+x <= 4  
+
+Vertex Lines Through Vertex   Value of Objective
+(4,0)  x = 4; y = 0           20 Maximum
+
+========================================================
+maximize p = 5x + 4y subject to
+x+y <= 5
+10x + 6y<= 45
+x >= 4
+y <= 0
+x >= 5
+
+***Empty Feasible Region -- No Optimal Solution***
+
+
+
+
+
+
