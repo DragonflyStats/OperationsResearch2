@@ -1,5 +1,160 @@
-Level 3 Solution
-===========================================
+Node 0
+
 maximize p = 2x+y subject to
 31x + 14y <= 2600
 27x + 33y <= 2800
+
+Vertex                 Lines Through Vertex             Value of Objective
+(72.248062,25.736434)  31x+14y = 2600; 27x+33y = 2800   170.232558 Maximum
+(83.870968,0)          31x+14y = 2600; y = 0            167.741935
+(0,84.848485)          27x+33y = 2800; x = 0            84.848485
+(0,0)                  x = 0; y = 0                     0
+
+=====================================================================
+Node 1A
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y <= 25
+
+Vertex          Lines Through Vertex     Value of Objective
+(72.580645,25)  31x+14y = 2600; y = 25   170.16129 Maximum
+(83.870968,0)   31x+14y = 2600; y = 0    167.741935
+(0,25)          y = 25; x = 0            25
+(0,0)           x = 0; y = 0             0
+
+=====================================================================
+Node 1B
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y >= 26
+
+Vertex          Lines Through Vertex     Value of Objective
+(71.925926,26)  27x+33y = 2800; y = 26   169.851852 Maximum
+(0,84.848485)   27x+33y = 2800; x = 0    84.848485
+(0,26)          y = 26; x = 0            26
+
+====================================================================
+Node 2A
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y <= 25
+x <= 72
+
+Vertex   Lines Through Vertex   Value of Objective
+(72,25)  y = 25; x = 72         169 Maximum
+(0,25)   y = 25; x = 0          25
+(72,0)   x = 72; y = 0          144
+(0,0)    x = 0; y = 0           0
+
+====================================================================
+Node 2B
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y <= 25
+x >= 73
+
+Vertex          Lines Through Vertex     Value of Objective
+(73,24.071429)  31x+14y = 2600; x = 73   170.071429 Maximum
+(83.870968,0)   31x+14y = 2600; y = 0    167.741935
+(73,0)          x = 73; y = 0            146
+
+
+===================================================================
+
+Node 2C
+
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y >= 26
+x <= 71
+
+Vertex          Lines Through Vertex     Value of Objective
+(71,26.757576)  27x+33y = 2800; x = 71   168.757576 Maximum
+(0,84.848485)   27x+33y = 2800; x = 0    84.848485
+(71,26)         y = 26; x = 71           168
+(0,26)          y = 26; x = 0            26
+
+
+===================================================================
+
+Node 2D
+
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y >= 26
+x >= 72
+
+***Empty Feasible Region -- No Optimal Solution***
+
+====================================================================
+Node 3C
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y <= 25
+x >= 73
+y <= 24
+
+Vertex          Lines Through Vertex     Value of Objective
+(73.032258,24)  31x+14y = 2600; y = 24   170.064516 Maximum
+(83.870968,0)   31x+14y = 2600; y = 0    167.741935
+(73,24)         x = 73; y = 24           170
+(73,0)          x = 73; y = 0            146
+
+====================================================================
+Node 3D
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y <= 25
+x >= 73
+y >= 25
+
+***Empty Feasible Region -- No Optimal Solution***
+==================================================================
+Node 4xL (from Node 3C)
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y <= 25
+x >= 73
+y <= 24
+x <= 73
+
+Vertex   Lines Through Vertex   Value of Objective
+(73,24)  x = 73; y = 24         170 Maximum
+(73,0)   x = 73; y = 0          146
+
+==================================================================
+Node 4xR (from Node 3C)
+
+maximize p = 2x+y subject to
+31x + 14y <= 2600
+27x + 33y <= 2800
+y <= 25
+x >= 73
+y <= 24
+x >= 74
+
+Vertex          Lines Through Vertex     Value of Objective
+(74,21.857143)  31x+14y = 2600; x = 74   169.857143 Maximum
+(83.870968,0)   31x+14y = 2600; y = 0    167.741935
+(74,0)          x = 74; y = 0            148
+
+=================================================================
+
