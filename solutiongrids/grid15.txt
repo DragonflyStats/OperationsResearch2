@@ -1,5 +1,5 @@
 Level 2 Solution
-
+=================================================================
 Node 0
 maximize p = 3x + 8y subject to
 2x - y <= 40
@@ -15,7 +15,7 @@ Vertex        Lines Through Vertex    Value of Objective
 (0,0)         x = 0; y = 0            0
 
 
-------------------------------------------
+=================================================================
 Node 1A
 
 maximize p = 3x + 8y subject to
@@ -31,7 +31,7 @@ Vertex  Lines Through Vertex   Value of Objective
 (0,0)   x = 0; y = 0           0
 
 
-------------------------------------------
+=================================================================
 Node 1B
 
 maximize p = 3x + 8y subject to
@@ -45,7 +45,10 @@ Vertex         Lines Through Vertex    Value of Objective
 (20,0)         2x-y = 40; y = 0        60
 (8,24.666667)  2x+3y = 90; x = 8       221.333333 Maximum
 (8,0)          x = 8; y = 0            24
-------------------------------------------
+=================================================================
+Branch on Node 1B
+Right Side Subtree
+=================================================================
 Node 2C
 
 maximize p = 3x + 8y subject to
@@ -62,7 +65,7 @@ Vertex        Lines Through Vertex    Value of Objective
 (8,0)         x = 8; y = 0            24
 
 
-------------------------------------------
+=================================================================
 Node 2D
 
 maximize p = 3x + 8y subject to
@@ -74,6 +77,6 @@ x >= 8
 
 ***Empty Feasible Region -- No Optimal Solution***
 
-
+=================================================================
 
 
