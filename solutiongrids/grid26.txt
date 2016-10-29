@@ -1,7 +1,273 @@
-Very Good - Probably 4 Levels
-===========================================================================
+
+
 Node 0
 ----------------------------------------
 maximize p = 6x+5y subject to
 25x + 14y <= 1600
 20x + 18y <= 1700
+
+
+Vertex                 Lines Through Vertex             Value of Objective
+(29.411765,61.764706)  25x+14y = 1600; 20x+18y = 1700   485.294118 Maximum
+(64,0)                 25x+14y = 1600; y = 0            384
+(0,94.444444)          20x+18y = 1700; x = 0            472.222222
+(0,0)                  x = 0; y = 0                     0
+
+==================================================================
+
+Node 1A
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+
+Vertex          Lines Through Vertex     Value of Objective
+(29,62.222222)  20x+18y = 1700; x = 29   485.111111 Maximum
+(0,94.444444)   20x+18y = 1700; x = 0    472.222222
+(29,0)          x = 29; y = 0            174
+(0,0)           x = 0; y = 0             0
+
+
+==================================================================
+
+Node 1B
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x >= 30
+
+Vertex          Lines Through Vertex     Value of Objective
+(30,60.714286)  25x+14y = 1600; x = 30   483.571429 Maximum
+(64,0)          25x+14y = 1600; y = 0    384
+(30,0)          x = 30; y = 0            180
+
+
+==================================================================
+
+Node 2A
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y <= 62
+
+Vertex   Lines Through Vertex   Value of Objective
+(29,62)  x = 29; y = 62         484 Maximum
+(29,0)   x = 29; y = 0          174
+(0,62)   y = 62; x = 0          310
+(0,0)    x = 0; y = 0           0
+
+
+==================================================================
+
+Node 2B
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+
+Vertex         Lines Through Vertex     Value of Objective
+(28.3,63)      20x+18y = 1700; y = 63   484.8 Maximum
+(0,94.444444)  20x+18y = 1700; x = 0    472.222222
+(0,63)         y = 63; x = 0            315
+
+=================================================================
+
+Node 2C
+
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x >= 30
+y <= 60
+
+Vertex     Lines Through Vertex     Value of Objective
+(30.4,60)  25x+14y = 1600; y = 60   482.4 Maximum
+(64,0)     25x+14y = 1600; y = 0    384
+(30,60)    x = 30; y = 60           480
+(30,0)     x = 30; y = 0            180
+
+===============================================================
+
+Node 2D
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x >= 30
+y >= 61
+
+
+***Empty Feasible Region -- No Optimal Solution***
+
+==============================================================
+Node 3C
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x <= 28
+
+Vertex          Lines Through Vertex     Value of Objective
+(28,63.333333)  20x+18y = 1700; x = 28   484.666667 Maximum
+(0,94.444444)   20x+18y = 1700; x = 0    472.222222
+(28,63)         y = 63; x = 28           483
+(0,63)          y = 63; x = 0            315
+
+============================================================
+
+Node 3D
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x >= 29
+
+***Empty Feasible Region -- No Optimal Solution***
+===========================================================
+Node 4L
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x <= 28
+y <= 63
+
+Vertex   Lines Through Vertex   Value of Objective
+(28,63)  y = 63; x = 28         483 Maximum
+(0,63)   y = 63; x = 0          315
+
+===========================================================
+Node 4R
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x <= 28
+y >= 64
+
+Vertex         Lines Through Vertex     Value of Objective
+(27.4,64)      20x+18y = 1700; y = 64   484.4 Maximum
+(0,94.444444)  20x+18y = 1700; x = 0    472.222222
+(0,64)         y = 64; x = 0            320
+
+===========================================================
+Node 5L
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x <= 28
+y >= 64
+x <= 27
+
+Vertex          Lines Through Vertex     Value of Objective
+(27,64.444444)  20x+18y = 1700; x = 27   484.222222 Maximum
+(0,94.444444)   20x+18y = 1700; x = 0    472.222222
+(27,64)         y = 64; x = 27           482
+(0,64)          y = 64; x = 0            320
+
+==========================================================
+Node 5R
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x <= 28
+y >= 64
+x >= 28
+
+***Empty Feasible Region -- No Optimal Solution***
+==========================================================
+
+Node 6L
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x <= 28
+y >= 64
+x <= 27
+y <= 64
+
+Vertex   Lines Through Vertex   Value of Objective
+(27,64)  y = 64; x = 27         482 Maximum
+(0,64)   y = 64; x = 0          320
+
+===========================================================
+
+Node 6R
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x <= 28
+y >= 64
+x <= 27
+y >= 65
+
+Vertex         Lines Through Vertex     Value of Objective
+(26.5,65)      20x+18y = 1700; y = 65   484 Maximum
+(0,94.444444)  20x+18y = 1700; x = 0    472.222222
+(0,65)         y = 65; x = 0            325
+
+=========================================================
+
+Node 7L
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x <= 28
+y >= 64
+x <= 27
+y >= 65
+x <= 26
+
+Vertex          Lines Through Vertex     Value of Objective
+(26,65.555556)  20x+18y = 1700; x = 26   483.777778 Maximum
+(0,94.444444)   20x+18y = 1700; x = 0    472.222222
+(26,65)         y = 65; x = 26           481
+(0,65)          y = 65; x = 0            325
+
+=======================================================
+
+Node 7R
+
+maximize p = 6x+5y subject to
+25x + 14y <= 1600
+20x + 18y <= 1700
+x <= 29
+y >= 63
+x <= 28
+y >= 64
+x <= 27
+y >= 65
+x >= 27
+
+***Empty Feasible Region -- No Optimal Solution***
+
