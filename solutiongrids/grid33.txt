@@ -1,0 +1,201 @@
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+
+Vertex                 Lines Through Vertex       Value of Objective
+(27,4)                 2x-y = 50; x = 27          287
+(25,0)                 2x-y = 50; y = 0           225
+(10.666667,31.666667)  5x+4y = 180; 5x+7y = 275   444.333333 Maximum
+(20,20)                5x+4y = 180; 5x+3y = 160   400
+(4.6,36)               5x+7y = 275; y = 36        437.4
+(27,8.333333)          5x+3y = 160; x = 27        334.666667
+(0,36)                 y = 36; x = 0              396
+(0,0)                  x = 0; y = 0               0
+
+====================================================
+
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y <= 31
+
+Vertex         Lines Through Vertex       Value of Objective
+(27,4)         2x-y = 50; x = 27          287
+(25,0)         2x-y = 50; y = 0           225
+(20,20)        5x+4y = 180; 5x+3y = 160   400
+(11.2,31)      5x+4y = 180; y = 31        441.8 Maximum
+(27,8.333333)  5x+3y = 160; x = 27        334.666667
+(0,31)         y = 31; x = 0              341
+(0,0)          x = 0; y = 0               0
+
+====================================================
+Node 1B
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y >= 32
+
+Vertex     Lines Through Vertex   Value of Objective
+(4.6,36)   5x+7y = 275; y = 36    437.4
+(10.2,32)  5x+7y = 275; y = 32    443.8 Maximum
+(0,36)     y = 36; x = 0          396
+(0,32)     y = 32; x = 0          352
+
+====================================================
+Node 2A
+
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y <= 31
+x <= 11
+
+Vertex   Lines Through Vertex   Value of Objective
+(11,31)  y = 31; x = 11         440 Maximum
+(0,31)   y = 31; x = 0          341
+(11,0)   x = 11; y = 0          99
+(0,0)    x = 0; y = 0           0
+
+====================================================
+Node 2B
+
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y <= 31
+x >= 12
+
+Vertex         Lines Through Vertex       Value of Objective
+(27,4)         2x-y = 50; x = 27          287
+(25,0)         2x-y = 50; y = 0           225
+(20,20)        5x+4y = 180; 5x+3y = 160   400
+(12,30)        5x+4y = 180; x = 12        438 Maximum
+(27,8.333333)  5x+3y = 160; x = 27        334.666667
+(12,0)         x = 12; y = 0              108
+
+====================================================
+Node 2C
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y >= 32
+x <= 10
+
+Vertex          Lines Through Vertex   Value of Objective
+(4.6,36)        5x+7y = 275; y = 36    437.4
+(10,32.142857)  5x+7y = 275; x = 10    443.571429 Maximum
+(0,36)          y = 36; x = 0          396
+(10,32)         y = 32; x = 10         442
+(0,32)          y = 32; x = 0          352
+
+====================================================
+Node 2D
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y >= 32
+x >= 11
+
+***Empty Feasible Region -- No Optimal Solution***
+====================================================
+Node 3E
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y >= 32
+x <= 10
+y <= 32
+
+Vertex   Lines Through Vertex   Value of Objective
+(10,32)  y = 32; x = 10         442 Maximum
+(0,32)   y = 32; x = 0          352
+
+====================================================
+Node 3F
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y >= 32
+x <= 10
+y >= 33
+
+Vertex    Lines Through Vertex   Value of Objective
+(4.6,36)  5x+7y = 275; y = 36    437.4
+(8.8,33)  5x+7y = 275; y = 33    442.2 Maximum
+(0,36)    y = 36; x = 0          396
+(0,33)    y = 33; x = 0          363
+====================================================
+Node 4L
+
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y >= 32
+x <= 10
+y >= 33
+x <= 8
+
+Vertex         Lines Through Vertex   Value of Objective
+(4.6,36)       5x+7y = 275; y = 36    437.4
+(8,33.571429)  5x+7y = 275; x = 8     441.285714 Maximum
+(0,36)         y = 36; x = 0          396
+(8,33)         y = 33; x = 8          435
+(0,33)         y = 33; x = 0          363
+
+====================================================
+Node 4R
+
+
+maximize p = 9x + 11y subject to
+2x - y <= 50
+5x + 4y <= 180
+5x + 7y <= 275
+5x + 3y <= 160
+y <= 36
+x <= 27
+y >= 32
+x <= 10
+y >= 33
+x >= 9
+
+***Empty Feasible Region -- No Optimal Solution***
