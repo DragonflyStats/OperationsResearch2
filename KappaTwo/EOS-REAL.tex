@@ -323,6 +323,66 @@ The results, in picocuries per litre, are as shown in the table below.
 		\item[(iv)] (1 Mark) Write a short note to compare and contrast the multiple R squared and asjusted R squared.
 		
 	\end{itemize}
+	
+%=================================================================================%
+\subsubsection*{Standard Additions}	
+The gold content of a concentrated sea-water sample was determined by using
+atomic-absorption spectrometry with the method of standard additions.
+\begin{framed}
+\begin{verbatim}
+> summary(lm(Abso~Gold))
+
+Call:
+lm(formula = Abso ~ Gold)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.034662 -0.014833 -0.013924  0.004695  0.096057 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 0.2589060  0.0234791   11.03 4.07e-06 ***
+Gold        0.0056720  0.0004668   12.15 1.95e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.03852 on 8 degrees of freedom
+Multiple R-squared:  0.9486,    Adjusted R-squared:  0.9422 
+F-statistic: 147.6 on 1 and 8 DF,  p-value: 1.949e-06
+
+\end{verbatim}
+\end{framed}
+The results obtained were as follows:
+
+
+% Gold <-c(30,40,50,60,70,0,10,20,80,70)
+% Abso <-c(0.415,0.472,0.528,0.579,0.641,0.271,0.323,0.369,0.678,0.752)
+
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Sat Oct 29 21:05:55 2016
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrr}
+		\hline
+Gold Addition   & Absorbance \\
+(ng/ml)         & \\
+
+		\hline
+		1 & 30.00 & 0.41 \\ 
+		2 & 40.00 & 0.47 \\ 
+		3 & 50.00 & 0.53 \\ 
+		4 & 60.00 & 0.58 \\ 
+		5 & 70.00 & 0.64 \\ 
+		6 & 0.00 & 0.27 \\ 
+		7 & 10.00 & 0.32 \\ 
+		8 & 20.00 & 0.37 \\ 
+		9 & 80.00 & 0.68 \\ 
+		10 & 70.00 & 0.75 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+
 \subsubsection*{Part B - Linear Regression (8 Marks)}
 In an experiment to determine hydrolysable tannins in plants by absorption spectroscopy, the following results from ten samples were obtained and are tabulated below. A simple linear regression model, predicting absorbance values using concentration as the independent variable, was fitted to the data. The scatterplot is depicted below.
 %%Absorbance= c(0.084, 0.183, 0.326, 0.464, 0.643, 0.707, 0.717, 0.734 ,0.749 ,0.732) ;
@@ -679,27 +739,22 @@ The required values are indicated by question marks.
 %======================================================
 \subsection*{Question 3. (25 marks) Experimental Design }
 
-\begin{itemize}
+
+\subsubsection*{Question 2 - Two Way ANOVA (6 Marks )}
+
+\begin{enumerate}[(i)]
 %-----------------------%
-	\item[(f)] (4 marks) What is the purpose of a post hoc test?
-	\item[(f)] (4 marks) What are the key components that need to be identified when designing an
+	\item (4 marks) What is the purpose of a post hoc test?
+	\item (4 marks) What are the key components that need to be identified when designing an
 experiment?
-	\item[(f)] (4 marks) What is a completely randomised design?
-	\item[(f)] (4 marks) What is a randomised block design?
-	\item[(f)] (4 marks) What is an ``a x b" factorial experimental design?
-	\item[(f)] (4 marks)  What is the difference between a between-treatments estimate and a withintreatments
+	\item (4 marks) What is a completely randomised design?
+	\item (4 marks) What is a randomised block design?
+
+\item (4 marks) What is an ``$a \times b$" factorial experimental design?
+	\item (4 marks)  What is the difference between a between-treatments estimate and a withintreatments
 estimate?
-	\item[(f)] (4 marks) What distinguishes a factorial experiment from a completely randomised experiment or a randomised block experiment?
-	
-	
-	
-	\item[(f)] (4 marks) What is the purpose of a post hoc test? 	
-	
-	\item[(g)] (4 marks) What is an ``$a \times b$" factorial experimental design?
-	
-	
-	\item[(f)] (4 marks) How would you fit a quadratic regression model to bivariate data and why?
-\end{itemize}	
+	\item (4 marks) What distinguishes a factorial experiment from a completely randomised experiment or a randomised block experiment?
+\end{enumerate}}	
 
 
 
