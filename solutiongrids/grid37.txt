@@ -1,0 +1,4 @@
+maximize p = 2x + 5y subject to
+2x - y <= 80
+2x + 3y <= 72
+y <= 9
