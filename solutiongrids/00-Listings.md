@@ -17,3 +17,24 @@
  - grid 17 - Level 3 Solution, Very Good Example
  - grid 18 - Level 4 Solution, Very Good Example
  - grid 19 - Level 3 Solution, Very Good Example
+ - grid 20 - level 1 solution
+ - grid 21 - level 1 solution
+ - grid 22 - level 4 solution
+ - grid 23 - level 2 solution
+ - grid 24 - Long
+ - grid 25 - Level 4 Solution
+ - grid 26 - Level 7 solution
+ - grid 27 - Should go Long
+ - grid 28 - Level 4 Solution
+ - grid 29 - Level 3 Solution
+ - grid 30 untested
+ - grid 31 - Level 6 solution
+ - grid 32 - level 2 or 3
+ - grid 33 - should go 4 deep
+ - grid 34 Error - FIx UP
+ - grid 35 Level 1 solution
+ - grid 36 Level 2
+ - grid 37 untested 
+
+
+
