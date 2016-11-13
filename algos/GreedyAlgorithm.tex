@@ -1,5 +1,9 @@
+%- http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsI.pdf
+%- https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/tutorial/
 
-Greedy Introduction
+%==================================================================%
+\begin{frame}
+\frametitle{Greedy Algorithm}
 
 
 
@@ -7,10 +11,22 @@ Greedy Introduction
 
 Greedy algorithms are simple and straightforward. They are shortsighted in their approach in the sense that they take decisions on the basis of information at hand without worrying about the effect these decisions may have in the future. They are easy to invent, easy to implement and most of the time quite efficient. Many problems cannot be solved correctly by greedy approach. Greedy algorithms are used to solve optimization problems
 
+
+\end{frame}
+%===============================%
+\begin{frame}
+\frametitle{Greedy Algorithm}
+
+
 Greedy Approach
 
 Greedy Algorithm works by making the decision that seems most promising at any moment; it never reconsiders this decision, whatever situation may arise later.
 
+
+\end{frame}
+%===============================%
+\begin{frame}
+\frametitle{Greedy Algorithm}
 As an example consider the problem of "Making Change".
 
 Coins available are:
@@ -24,6 +40,10 @@ pennies (1 cent)
 
 Problem    Make a change of a given amount using the smallest possible number of coins.
 
+\end{frame}
+%===============================%
+\begin{frame}
+\frametitle{Greedy Algorithm}
  
 
 Informal Algorithm
@@ -32,6 +52,11 @@ Start with nothing.
 at every stage without passing the given amount.
 add the largest to the coins already chosen.
  
+ 
+\end{frame}
+%===============================%
+\begin{frame}
+\frametitle{Greedy Algorithm}
 
 Formal Algorithm
 
@@ -49,11 +74,19 @@ MAKE-CHANGE (n)
             sum ← sum + x
         RETURN S
 
- 
+
+\end{frame}
+%===============================%
+\begin{frame}
+\frametitle{Greedy Algorithm} 
 
 Example     Make a change for 2.89 (289 cents) here n = 2.89 and the solution contains 2 dollars, 3 quarters, 1 dime and 4 pennies. The algorithm is greedy because at every stage it chooses the largest coin without worrying about the consequences. Moreover, it never changes its mind in the sense that once a coin has been included in the solution set, it remains there.
 
- 
+
+\end{frame}
+%===============================%
+\begin{frame}
+\frametitle{Greedy Algorithm} 
 
 Characteristics and Features of Problems solved by Greedy Algorithms
 
@@ -67,6 +100,10 @@ A function that checks the feasibility of a set.
 The selection function tells which of the candidates is the most promising.
 An objective function, which does not appear explicitly, gives the value of a solution.
  
+\end{frame}
+%===============================%
+\begin{frame}
+\frametitle{Greedy Algorithm}
 
 Structure Greedy Algorithm
 
@@ -78,6 +115,10 @@ reject items under consideration (and is never consider again).
 ELSE IF set is still feasible THEN
 add the current item.
  
+\end{frame}
+%===============================%
+\begin{frame}
+\frametitle{Greedy Algorithm}
 
 Definitions of feasibility
 
