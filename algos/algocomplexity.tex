@@ -9,50 +9,7 @@
 
 % Onotation
 
-\section{Section 1 : Algorithms}
-%==================================%
-\begin{frame}
-\frametitle{Algorithms}
-\large
-	\begin{itemize}
-		\item Algorithm is a step by step procedure, which defines a set of instructions to be executed in certain order to get the desired output.
-		\item Algorithms are generally created independent of underlying languages, i.e. an algorithm can be implemented in more than one programming language.
-		 
-	\end{itemize}
 
-\end{frame}
-%==================================%
-\begin{frame}
-From data structure point of view, following are some important categories of algorithms −
-
-\begin{description}
-	\item[Search] − Algorithm to search an item in a datastructure.
-	\item[Sort] − Algorithm to sort items in certain order
-	\item[Insert] − Algorithm to insert item in a datastructure
-	\item[Update] − Algorithm to update an existing item in a data structure
-	\item[Delete] − Algorithm to delete an existing item from a data structure
-\end{description}
-
-\end{frame}
-%=====================================%
-\begin{frame}
-Characteristics of an Algorithm
-Not all procedures can be called an algorithm. An algorithm should have the below mentioned characteristics −
-
-Unambiguous − Algorithm should be clear and unambiguous. Each of its steps (or phases), and their input/outputs should be clear and must lead to only one meaning.
-
-\begin{description}
-\item[Input] − An algorithm should have 0 or more well defined inputs.
-
-\item[Output] − An algorithm should have 1 or more well defined outputs, and should match the desired output.
-
-\item[Finiteness] − Algorithms must terminate after a finite number of steps.
-
-\item[Feasibility] − Should be feasible with the available resources.
-
-\item[Independent] − An algorithm should have step-by-step directions which should be independent of any programming code.
-\end{description}
-\end{frame}
 %=====================================%
 \begin{frame}
 \frametitle{How to write an algorithm?}
@@ -113,13 +70,15 @@ Efficiency of an algorithm can be analyzed at two different stages, before imple
 \begin{description}
 \item[A priori analysis] − This is theoretical analysis of an algorithm. Efficiency of algorithm is measured by assuming that all other factors e.g. processor speed, are constant and have no effect on implementation.
 
-\item[A posterior analysis] − This is empirical analysis of an algorithm. The selected algorithm is implemented using programming language. This is then executed on target computer machine. In this analysis, actual statistics like running time and space required, are collected.
+\item[A posterior analysis] − This is empirical analysis of an algorithm. The selected algorithm is implemented using programming language. This is then executed on target computer machine. \textit{In this analysis, actual statistics like running time and space required, are collected.}
 \end{description}
 \end{frame}
 %=====================================%
 \begin{frame}
 	\frametitle{Algorithm Analysis}
-We shall learn here a priori algorithm analysis. Algorithm analysis deals with the execution or running time of various operations involved. Running time of an operation can be defined as no. of computer instructions executed per operation.
+\begin{itemize}
+	\item Algorithm analysis deals with the execution or running time of various operations involved. Running time of an operation can be defined as number of computer instructions executed per operation.
+\end{itemize} 
 \end{frame}
 %=====================================%
 \begin{frame}
@@ -171,32 +130,7 @@ Hence S(P) = 1+3. Now space depends on data types of given variables and constan
 \end{itemize}
 \end{frame}
 
-%==========================================================================%
-\subsection{1A - Brute Force and Combinatorial explosion}
-\begin{frame}
-\frametitle{Brute Force Search}
-\begin{itemize}
-\item The brute-force search or exhaustive search, also known as generate and test, is a very general problem-solving technique that consists of systematically enumerating all possible candidates for the solution and checking whether each candidate satisfies the problem's statement.
-\end{itemize}
-\end{frame}
 
-
-\begin{frame}
-\frametitle{Set Theory Revision: The Power Set}
-The Power Set is the set of all possible subsets of a set. If there are $n$ elements in the set, then there are $2^n$ elements in the power set.
-\[ \{A,B,C,D,E\}\]
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Combinatorial explosion}
-\begin{itemize}
-	\item The main disadvantage of the brute-force method is that, for many real-world problems, the number of natural candidates is prohibitively large. For instance, if we look for the divisors of a number as described above, the number of candidates tested will be the given number n. 
-	\item So if n has sixteen decimal digits, say, the search will require executing at least 1015 computer instructions, which will take several days on a typical PC. If n is a random 64-bit natural number, which has about 19 decimal digits on the average, the search will take about 10 years.
-	\item  This steep growth in the number of candidates, as the size of the data increases, occurs in all sorts of problems. 
-\end{itemize}
-
-\end{frame}
 
 
 \begin{frame}
@@ -230,77 +164,7 @@ pushing the intractable instance sizes as far as possible – far enough to solv
 combinatorial optimization is all about!
 \end{itemize}
 \end{frame}
-%=====================================================================%
 
-\section{Section 2}
-%%- http://www.tutorialspoint.com/data_structures_algorithms/asymptotic_analysis.htm
-%=====================================%
-\begin{frame}
-\frametitle{Data Structures - Asymptotic Analysis}
- 
- \begin{itemize}
-\item Asymptotic analysis of an algorithm, refers to defining the mathematical boundation/framing of its run-time performance. Using asymptotic analysis, we can very well conclude the best case, average case and worst case scenario of an algorithm.
-\item 
-Asymptotic analysis are input bound i.e., if there's no input to the algorithm it is concluded to work in a constant time. Other than the "input" all other factors are considered constant.
-\item 
-Asymptotic analysis refers to computing the running time of any operation in mathematical units of computation. For example, running time of one operation is computed as f(n) and may be for another operation it is computed as g(n2). Which means first operation running time will increase linearly with the increase in n and running time of second operation will increase exponentially when n increases. Similarly the running time of both operations will be nearly same if n is significantly small.
-\end{itemize}
-\end{frame}
-%==================================%
-\begin{frame}
-
-Usually, time required by an algorithm falls under three types −
-\begin{description}
-\item[Best Case] − Minimum time required for program execution.
-
-\item[Average Case] − Average time required for program execution.
-
-\item[Worst Case] − Maximum time required for program execution.
-\end{description}
-\end{frame}
-%===================================================%
-\begin{frame}
-\frametitle{Asymptotic Notations}
-Following are commonly used asymptotic notations used in calculating running time complexity of an algorithm.
-
-\begin{itemize}
-\item Ο Notation
-\item $\omega$ Notation
-\item $\theta$ Notation
-\end{itemize}
-\end{frame}
-%===========================%
-\begin{frame}
-\frametitle{Big O notation}
-\large
-\begin{itemize}
-\item Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. 
-\item It is a member of a family of notations invented by Paul Bachmann, Edmund Landau, and others, collectively called Bachmann-Landau notation or asymptotic notation.
-\end{itemize}
-\end{frame}
-
-%==================================%
-\begin{frame}
-\frametitle{Big O notation}
-\large
-\begin{itemize}
-\item In computer science, big O notation is used to classify algorithms by how they respond to changes in input size, such as how the processing time of an algorithm changes as the problem size becomes extremely large.
-\item In analytic number theory it is used to estimate the "error committed" while replacing the asymptotic size of an arithmetical function by the value it takes at a large finite argument. 
-\item A famous example is the problem of estimating the remainder term in the prime number theorem.
-\end{itemize}
-\end{frame}
-%==================================%
-\begin{frame}
-\frametitle{Big O notation}
-\large
-\begin{itemize}
-\item Big O notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same O notation.
-\item 
-The letter O is used because the growth rate of a function is also referred to as order of the function. A description of a function in terms of big O notation usually only provides an upper bound on the growth rate of the function.
-\item Associated with big O notation are several related notations, using the symbols o, Ω, ω, and Θ, to describe other kinds of bounds on asymptotic growth rates.
-\end{itemize}
-\end{frame}
-%==================================%
 \begin{frame}
 \frametitle{Formal definition}
 Let f and g be two functions defined on some subset of the real numbers. One writes
