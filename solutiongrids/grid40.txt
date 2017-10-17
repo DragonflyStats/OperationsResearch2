@@ -1,0 +1,36 @@
+maximize p = 4x + 6y subject to
+4x - 2y <= 95
+3x + 5y <= 120
+y <= 20
+x <= 26
+
+%=======================================%
+
+maximize p = 4x + 6y subject to
+4x - 2y <= 95
+3x + 5y <= 120
+y <= 20
+x <= 8
+
+Vertex     Lines Through Vertex   Value of Objective
+(26,4.5)   4x-2y = 95; x = 26     131
+(23.75,0)  4x-2y = 95; y = 0      95
+(26,8)     y = 8; x = 26          152 Maximum
+(0,8)      y = 8; x = 0           48
+(0,0)      x = 0; y = 0           0
+
+%=======================================%
+
+
+maximize p = 4x + 6y subject to
+4x - 2y <= 95
+3x + 5y <= 120
+y <= 20
+x <= 26
+y >= 9
+
+Vertex         Lines Through Vertex   Value of Objective
+(6.666667,20)  3x+5y = 120; y = 20    146.666667
+(25,9)         3x+5y = 120; y = 9     154 Maximum
+(0,20)         y = 20; x = 0          120
+(0,9)          y = 9; x = 0           54
