@@ -1,0 +1,119 @@
+
+%=====================================%
+Node 0
+
+maximize p = 8x + 10y subject to
+2x - y <= 40
+2x + 3y <= 90
+
+%--------------------------------------%
+
+Vertex        Lines Through Vertex    Value of Objective
+(26.25,12.5)  2x-y = 40; 2x+3y = 90   335 Maximum
+(20,0)        2x-y = 40; y = 0        160
+(0,30)        2x+3y = 90; x = 0       300
+(0,0)         x = 0; y = 0            0
+
+
+%======================================%
+
+Node 1A
+
+maximize p = 8x + 10y subject to
+2x - y <= 40
+2x + 3y <= 90
+y <= 12
+%-------------------------------------%
+Vertex   Lines Through Vertex   Value of Objective
+(26,12)  2x-y = 40; y = 12      328 Maximum
+(20,0)   2x-y = 40; y = 0       160
+(0,12)   y = 12; x = 0          120
+(0,0)    x = 0; y = 0           0
+
+%=====================================%
+
+Node 1B
+
+maximize p = 8x + 10y subject to
+2x - y <= 40
+2x + 3y <= 90
+y >= 13
+
+%-------------------------------------%
+
+Vertex     Lines Through Vertex   Value of Objective
+(25.5,13)  2x+3y = 90; y = 13     334 Maximum
+(0,30)     2x+3y = 90; x = 0      300
+(0,13)     y = 13; x = 0          130
+
+
+%=====================================%
+Node 2C
+
+maximize p = 8x + 10y subject to
+2x - y <= 40
+2x + 3y <= 90
+y >= 13
+x <= 25
+%-------------------------------------%
+Vertex          Lines Through Vertex   Value of Objective
+(25,13.333333)  2x+3y = 90; x = 25     333.333333 Maximum
+(0,30)          2x+3y = 90; x = 0      300
+(25,13)         y = 13; x = 25         330
+(0,13)          y = 13; x = 0          130
+%=====================================%
+Node 2D
+
+maximize p = 8x + 10y subject to
+2x - y <= 40
+2x + 3y <= 90
+y >= 13
+x >= 26
+
+%-------------------------------------%
+
+NFS
+
+%=====================================%
+
+Node 3E
+
+maximize p = 8x + 10y subject to
+2x - y <= 40
+2x + 3y <= 90
+y >= 13
+x <= 25
+y <= 13
+
+%-------------------------------------%
+
+Vertex   Lines Through Vertex   Value of Objective
+(25,13)  y = 13; x = 25         330 Maximum
+(0,13)   y = 13; x = 0          130
+
+
+
+%=====================================%
+
+Node 3F
+
+maximize p = 8x + 10y subject to
+2x - y <= 40
+2x + 3y <= 90
+y >= 14
+x <= 25
+
+%-------------------------------------%
+
+Vertex   Lines Through Vertex   Value of Objective
+(24,14)  2x+3y = 90; y = 14     332 Maximum
+(0,30)   2x+3y = 90; x = 0      300
+(0,14)   y = 14; x = 0          140
+
+%=====================================%
+
+
+
+
+
+
