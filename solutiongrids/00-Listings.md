@@ -27,7 +27,7 @@
  - grid 27 - Should go Long
  - grid 28 - Level 4 Solution
  - grid 29 - Level 3 Solution
- - grid 30 untested
+ - grid 30 - Level 3 Solution
  - grid 31 - Level 6 solution
  - grid 32 - level 2 or 3
  - grid 33 - should go 4 deep
@@ -35,6 +35,7 @@
  - grid 35 Level 1 solution
  - grid 36 Level 2
  - grid 37 untested 
+ - grid 38 - Level 3 solution
 
 
 
